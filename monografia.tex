@@ -7,40 +7,47 @@
 %  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
 
 % \documentclass[engenharia]{UnB-CIC}%
-\documentclass[qualificacao,mestrado,ppca]{UnB-CIC}%
+\documentclass[licenciatura]{UnB-CIC}%
 
 \usepackage{pdfpages}% incluir PDFs, usado no apêndice
+\usepackage{authblk}%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Informações do Trabalho
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\orientador{\prof \dr Guilherme Novaes Ramos}{CIC/UnB}%
+\orientador{\prof \dr Jorge Henrique Cabral Fernandes}{CIC/UnB}%
 %\coorientador{\prof \dr José Ralha}{CIC/UnB}
-\coordenador[a]{\prof[a] \dr[a] Ada Lovelace}{Bibliothèque universelle de Genève}%
-\diamesano{24}{dezembro}{2014}%
+%\\coordenador[a]{\prof[a] \dr[a] Ada Lovelace}{Bibliothèque universelle de Genève}%
+\diamesano{28}{abril}{2021}%
 
-\membrobanca{\prof \dr Donald Knuth}{Stanford University}%
-\membrobanca{\dr Leslie Lamport}{Microsoft Research}%
+%\\membrobanca{\prof \dr Donald Knuth}{Stanford University}%
+%\\membrobanca{\dr Leslie Lamport}{Microsoft Research}%
 
-\autor{Guilherme N.}{Ramos}%
+\author[1]{Ricardo A. Rodrigues}
+\author[2]{Thiago S. Marques}
+%\author[2]{Corresponding Author\thanks{email@2nduniversity.com}}
+\affil[1-2]{}
+
+
 
 \titulo{UnB-CIC: Uma classe em LaTeX para textos do Departamento de Ciência da Computação}%
 
-\palavraschave{LaTeX, metodologia científica, trabalho de conclusão de curso}%
-\keywords{LaTeX, scientific method, thesis}%
+\palavraschave{GAMA Platform, políticas de saúde, simulação}%
+\keywords{GAMA Platform, health policy, simulation}%
 
-\newcommand{\unbcic}{\texttt{UnB-CIC}}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Texto
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}%
     \capitulo{1_Introducao}{Introdução}%
-    \capitulo{2_UnB-CIC}{A Classe \unbcic}%
-    \capitulo{3_TCC}{Trabalho de Conclusão de Curso}%
-    \capitulo{4_Apresentacao}{Apresentações}%
+    \capitulo{2_Modelagem de agentes e sistemas baseados em agentes}{ Modelagem de agentes e sistemas baseados em agentes}%
+    \capitulo{3_Ferramenta para a Modelagem de Simulações}{Ferramenta para a Modelagem de Simulações}%
+    \capitulo{4_Plataformas de Modelagem e Simulação Baseada em Agentes}{Plataformas de Modelagem e Simulação Baseada em Agentes}%
+    \capitulo{5_Resultados e Discussões}{Resultados e Discussões}%
+    \capitulo{6_Conclusão}{Conclusão}%
 
     \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
-    \anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
+    \anexo{Anexo1}{Documentação Original (parcial)}%
 \end{document}%
