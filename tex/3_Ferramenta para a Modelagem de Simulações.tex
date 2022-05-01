@@ -11,14 +11,69 @@ Apoiar o desenvolvimento de tais modelos requer o endereçamento de um conjunto 
 
 \section{GAMA}%
 
-O GAMA tem se desenvolvido desde 2007 como um projeto open-source, passando por diversas melhorias ao longo dos anos para atender às necessidades de sua crescente base de usuários: lidar com cada vez mais formatos de dados, melhorando sua ergonomia, eficiência e estabilidade. No entanto, o GAMA também visa ir além e fornecer novas maneiras de criar ou simular modelos.  (Taillandirer, Gaudou, Grignard, Quang, Húynh, Nicolas, Damien, Drogul, 2019). De acordo com a documentação técnica do GAMA, o software foi codificado em Java e utiliza uma linguagem GAML (Gama Modeling Language), uma linguagem orientada a agentes dedicada à definição de simulações baseadas em agentes e tem suas raízes em linguagens orientadas a objetos[].  
+O GAMA tem se desenvolvido desde 2007 como um projeto open-source, passando por diversas melhorias ao longo dos anos para atender às necessidades de sua crescente base de usuários: lidar com cada vez mais formatos de dados, melhorando sua ergonomia, eficiência e estabilidade. 
+No entanto, o GAMA também visa ir além e fornecer novas maneiras de criar ou simular modelos.  (Taillandirer, Gaudou, Grignard, Quang, Húynh, Nicolas, Damien, Drogul, 2019). 
+O paradigma da modelagem orientada a agentes dita que todo o “ativo” (entidades de um modelo, sistemas, processos, atividades, tais como, simulações e experimentos) pode ser representado como agente. Tendo isso em vista, o agente pode ser pensado como um componente computacional que apresenta seus próprios
+dados e executa seus próprios comportamentos, seja sozinho ou em interação com os outros agentes (Taillandier et al., 2017). 
+De acordo com a documentação técnica do GAMA, o software foi codificado em Java e utiliza uma linguagem GAML (Gama Modeling Language), uma linguagem orientada a agentes dedicada à definição de simulações baseadas em agentes e tem suas raízes em linguagens orientadas a objetos[].  
+
+
+\subsection{Semântica Lexical de GAML}
+
+A documentação técnica da Plataforma GAMA [], define que o papel do GAML é apoiar modeladores na escrita de modelos, que são especificações de simulações que podem ser executadas e controladas durante experimentos, especificados por planos de experimentos.
+
+Devido ao paradigma orientado a objetos, um agente significa que tudo "ativo" pode ser representado como um agente. Em GAML, um agente pode ser representado como um componente computacional possuindo seu próprio dados e executando seu próprio comportamento, sozinho ou em interação com outros agentes. O uso de classes fornece as especificações para os objetos e os agentes são especificados por suas espécies, que lhes fornecem um conjunto de atributos, ações, comportamentos e também especifica propriedades de sua população , por exemplo, sua topologia ou cronograma [].
+
+Qualquer espécie pode estar aninhada em outra espécie, o que é definido como macroespécie, caso em que as populações de suas instâncias serão obrigatoriamente hospedados por uma instância dessa macroespécie []. O conceito de herança e especialização estão presentes, semelhantes ao design orientado a objetos, as espécies podem herdar propriedades de outras espécies e possuir habilidades que são conjuntos de atributos e ações compartilhados entre diferentes espécies e herdados por seus filhos [].
+
+As simulações e experimentos são definidos como duas espécies: modelo e plano de experimento. As relações entre espécies, modelos e planos de experimentos são codificados no metamodelo do GAML na forma de framework composto por três espécies abstratas que são os agentes, pai direto ou indireto de todas as espécies, modelo, o pai de todas as espécies que definem um modelo e experimento, pai de todas as espécies que definem um plano de experimento [].
+
+Neste meta-modelo, as instâncias dos filhos do agente conhecem a instância do filho do modelo em que estão hospedados como seu mundo , enquanto a instância de plano de experimento identifica o mesmo agente como uma das simulações de que é responsável. O diagrama a seguir resume esse framework:
+
+\figura{metamodelo_GAMA}{meta-modelo do GAML na forma de um framework }{metamodelo1}{width=0.75\textwidth}
+
+A escrita de um modelo em GAML consiste na definição de um modelo na qual outras espécies, herdando diretamente ou não de um agente e representando entidades serão aninhadas com um ou vários planos de experimentos:
+
+Ao executar um experimento no GAMA, é criado um agente de experimentos. O comportamento é especificado pelo plano de experimentos, responsável por criar agentes de simulação que os executará. Recursivamente, a inicialização de um agente de simulação criará a população de agentes das espécies definidas no modelo. Cada um desses agentes, ao serem criados, pode criar a população de sua microespécie []. 
+
+\figura{metamodelo_and_usermodel_GAMA}{meta-modelo do GAML e modelo de usuário na forma de um framework }{metamodelo2}{width=0.75\textwidth}
+
+\subsection{Organização de um modelo GAML}
+
+Para realizar uma simulação em GAML devemos definir um modelo em GAML e posteriormente instanciar um agente modelo, que pode ou não conter microespécies.
+
+A estrutura conceitual segue um padrão:
+
+1. Definição de espécie global, precedida de um cabeçalho, para representar a espécie modelo;
+
+2. Definição de microespécies;
+
+3. Definição de planos de experimentos direcionados a este modelo.
+
+A seguir, uma imagem que define a estrutura básica de um modelo em GAML:
+
+\figura{basic_model}{estrutura básica de um modelo GAML}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Cabeçalho do modelo}
+
+O cabeçalho de um arquivo de modelo começa com a declaração do nome do modelo. Este nome é usado para construir o nome da espécie modelo nas quais as simulações serão instanciadas.
+
+\figura{header}{exemplo de um cabeçalho}{header}{width=0.75\textwidth}
+
+O exemplo acima criará uma espécie chamada \textit{dummy_model}, filho da espécie abstrata \textit{model}, a partir da qual as simulações serão instanciadas. 
+
+A importação de um modelo pode ser realizada de duas formas: por herança ou importação direta.
+
+\figura{import_1}{estrutura básica de um modelo GAML}{basicmodel}{width=0.75\textwidth}
+
+\figura{import_2}{estrutura básica de um modelo GAML}{basicmodel}{width=0.75\textwidth}
+
+A importação 
 
 
 
 
 
-
-% \subsection{Os tipos}
 % A monografia, a dissertação e a tese são, respectivamente, os trabalhos de conclusão de curso de graduação ou especialização, mestrado e doutorado. A grande diferença é a profundidade exigida no projeto, aumentada de acordo com a importância do título de cada nível acadêmico. Mas, em todos os casos, a pesquisa deve abordar o tema selecionado com coerência, consistência e referencial teórico adequado.
 
 % Alguns cursos de graduação não exigem monografia, mas um relatório de estágios realizados, como acontece nas licenciaturas. A metodologia de pesquisar e apresentar resultados se mantém, como é exigido em todo projeto final.
