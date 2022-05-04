@@ -12,11 +12,61 @@
 \\\vspace{\baselineskip}}%
 
 
-Este capítulo busca apresentar uma introdução sobre modelos e modelagem seguindo a partir disso apresentar no capitulo 2.1...
+Este capítulo busca elucidar conceitos importantes para o entendimento do trabalho, partindo de uma melhor descrição da COVID-19 iniciada na introdução, assim como suas politicas publicas e o dessas impacto em diversas regiões. Bem como uma conceitos essenciais sobre modelagem espacialmente explícitas utilizando-se software de modelagem multiagente. Seguindo a partir disso apresentar no capitulo 2.1...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{O que são coronavírus}
+
+Os coronavírus são uma família de vírus que possuem esse nome por conta das espículas na sua superfície que assemelham a uma coroa. Alguns sintomas vão desde resfriado leve, a síndrome respiratória aguda grave. Essa família começou a ser estudada em meados de 1960,  porém foi observado maior foco nesses vírus a partir de 2002 com o SARS (SARS-CoV), no qual essa nova variante era mais mortal e contagiosa do que as anteriores. 
+
+\section{Tipos de coronavírus}
+
+Atualmente são conhecidos 7 tipos de coronavirus que podem causar infecções respiratórias:
+
+\begin{itemize}
+\item Alfa coronavirus 229E e NL63;
+\item Beta coronavirus OC43 e HKU1;
+\item SARS-CoV;
+\item MERS-CoV;
+\item SARS-CoV-2.
+\end{itemize}
+
+\section{Impacto dos coronavírus }
+
+Desses vírus já citados tanto os Alfa coronavirus quanto os Beta coronavirus já estavam presente no sociedade, porém seu impacto não é visto de forma tão alarmantes, pois seus sintomas estão associados a gripes comuns e problemas gastrointestinais como diarreias, náuseas e vômitos.
+
+SARS-CoV (causador da Síndrome Respiratória Aguda Grave ou SARS), segundo a Organização Mundial da Saúde(OMS) foi a primeira nova doença grave e prontamente transmissível a surgir no século 21 e mostrou uma clara capacidade de se espalhar pelas rotas das viagens aéreas internacionais. O impacto dessa cepa foi notado ainda final de 2002 se espalhando por mais de 26 países e contaminando mais de 8000 pessoas até que foi totalmente controlada em julho de 2003, a Organização Mundial da Saúde definiu sua letalidade em torno de 3\%.
+
+MERS-CoV (causador da Síndrome Respiratória do Oriente Médio ou MERS) gerou uma visibilidade internacional após em um surto em abril de 2012 na Arabia Saudita e diferente da SARS-CoV que foi controlada em menos de 1 ano, o MERS-CoV, segundo a Organização Mundial da Saúde, somente foi erradicado em fevereiro de 2022. Como pode ser observado na imagem abaixo.
+
+O Novo Coronavirus inicialmente conhecido como 2019-nCoV começou a se propagar em Wuhan, na China no final de 2019 que posteriormente se espalhou pelo mundo, atingindo mais de 120 países (Ribeiro & Silva, 2021).
+
+O nome da doença foi posteriormente sugerido como COVID-19 pela Organização Mundial da Saúde(OMS). Algum tempo depois o Comitê Internacional de Taxonomia de Vírus denominou o vírus como SARS-CoV-2.
+
+Segundo o Ministério da Saúde, o Brasil já ultrapassou os 30 milhões de pessoas que foram infectados desses mais de 29 milhões recuperados e mais de 660 mil óbitos. Além disso segundo a Organização Mundial da Saúde o número de infectados já ultrapassava 511 milhões de pessoas.
+
+\includegraphics[width=16cm, height=16cm]{MERS.PNG}
+
+\section{Epidemiologia do COVID-19}
+
+O COVID-19 possui características muito semelhantes ao do SARS-CoV, fato que é observado no trabalho de Zhou e colaboradores (2020) ao comparar o COVID-19 com coronavirus de encontrados em morcegos foi possível encontrar uma relação de 96\% de proximidade entre eles. Por conta disso suspeita-se que teve origem em morcegos passando posteriormente a algum animal intermediário que após sofrer mutações foi possível a transmissão para humanos(Nogueira e Silva, 2020), embora haja essas suspeitas ainda não foi encontrado esse animal intermediário. 
+
+A propagação do COVID-19 já era especulado que seria também por gotículas presentes na fala, em tosses e espirros, contato pessoal próximo, como toque, abraço ou aperto de mão; contato com objetos ou superfícies contaminadas, seguido de contato com a boca, nariz ou olhos características que os outros coronavirus possuem na sua transmissão. Entretanto sua propagação é muito superior aos outros da sua família. Além disso, segundo a Organização Mundial da Saúde (OMS) embora o período de incubação do SARS-CoV possa ser de 2-10 dias, o do COVID-19 pode variar entre 5-12 dias, pode ser um agravante adicional para a propagação do vírus, pois como foi observado Zhengdong e colaboradores (2020) e também por BAI e colaboradores (2020) já estava ocorrendo casos de possíveis pacientes assintomáticos transmitindo o vírus em fevereiro de 2020.
+
+Dentre o grupos de pessoas mais propensas a terem complicações estão as pessoas com comorbidades e idosos(Galvão e Roncalli, 2020). Esses grupos estão em uma situação de vulnerabilidade maior e possuem uma maior probabilidade de desenvolver a forma mais grave da doença e até levar a óbito, sobretudo dentro desses grupos é classificado como mais vulnerável ainda os idosos acima de 80 anos.
+
+O que tornou o vírus potencialmente destrutivo não foi sua mortalidade que em um contexto geral, segundo os dados da Organização Mundial da Saúde, ficou em torno de 1.2\%, mas também a sua alta disseminação gerando assim uma superlotação dos leitos por pacientes com a síndrome respiratória aguda grave que é o quadro mais grave da doença, além disso existem problemas cardíacos, neurológicos, hepáticos e intestinais associados a doença. Ao gerar o colapso do sistema de saúde, pacientes inclusive com outras doenças não poderiam ser atendidos como foi o caso da Itália primeiro bimestre de 2020.
+
+Formas de prevenção para o COVID-19 e outras doenças virais são cuidados com a higiene como lavar as mãos e uso de máscara principalmente em locais com grande aglomerações. As máscaras são o primeiro cuidado que pode ser tomada para evitar o contágio, mas não somente isso, como apontado por SINCLAIR e colaboradores (2020) diminui a probabilidade que as próprias pessoas infectadas possuem transmitir o viros, muitos profissionais de saúde que tem contato frequente com pessoas potencialmente iniciam seus turnos e ao longo desse desenvolve sintomas leves e continua trabalhando.    
+
+\section{COVID-19 como pandemia}
+
+Diante da crescente propagação do vírus no dia 30 de janeiro de 2020, a Organização Mundial da Saúde(OMS) declarou que o surto do novo coronavírus constitui uma Emergência de Saúde Pública de Importância Internacional (ESPII), essa medida é caracterizada como avançada no controle ao vírus que se propagava por diversos países. Tal medida somente pode ser feito pelo diretor-geral da OMS, após realizar uma reunião com especialistas os quais o orientam sobre medidas emergências e para barrar o crescente número de casos do vírus. Esse estado de emergência de Saúde Pública busca a cooperação global para reduzir os casos da doença.
+No dia 11 de março de 2020 – O diretor-geral da OMS,  anunciou que o COVID-19, passaria a ser caracterizado como uma pandemia. Devido a sua propagação por mais de 114 países e no momento do seu anuncio mais de 1e 4,2 mil pessoas perderam a vida.
+
+
 \section{Modelo}
 
 Um modelo pode ser entendido como uma representação abstrata e simples que busca apresentar um processo ou sistema com objetivo de analisar, compreender e explicar. Este elemento é feito a partir da escolha dos parâmetros no qual o modelador define quais são importantes para a sua construção e elaboração.
