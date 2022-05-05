@@ -1,12 +1,11 @@
-A Organização Pan-Americana da Saúde (OPAS) publicou que em 31 de dezembro de 2019, a Organização Mundial da Saúde (OMS) foi alertada sobre casos de pneumonia na cidade de Wuhan, província de Hubei, na República Popular da China. A nova cepa, até o momento ainda desconhecida a seres humanos de coronavírus foi confirmada em janeiro de 2020.
+De que forma a simulação multiagente pode ser útil para a construção de políticas públicas para tratamento de epidemias?
 
-Ao todo, sete coronavírus humanos (HCoVs) já foram identificados: HCoV-229E, HCoV-OC43, HCoV-NL63, HCoV-HKU1, SARS-COV (que causa síndrome respiratória aguda grave), MERS-COV (que causa síndrome respiratória do Oriente Médio) e o, mais recente, novo coronavírus (que no início foi temporariamente nomeado 2019-nCoV e, em 11 de fevereiro de 2020, recebeu o nome de SARS-CoV-2). Esse novo coronavírus é responsável por causar a doença COVID-19.
 
-No Brasil, foi inicialmente declarado uma Emergência de Saúde Pública de Importância Nacional (ESPIN) de acordo com a Portaria Nº 188, de 3 de fevereiro de 2020 publicada no Diário Oficial da União, a portaria recomendou divulgar informações a população e até o momento não aplicou determinações restritivas para controle da COVID-19, chamada até a data da divulgação da portaria de  2019-nCoV.
+Este trabalho relata os casos de desenvolvimento de duas simulações baseadas em agentes, para simulação casos de COVID-19 na população de dois territórios do DF.
 
-De acordo com informações divulgadas pela Organização Pan-Americana da Saúde (OPAS), foi declarado em 11 de março de 2020 com objetivo de interromper a propagação do vírus uma Emergência de Saúde Pública de Importância Internacional (ESPII) – o mais alto nível de alerta da Organização.  
 
-Este trabalho realiza uma simulação baseada em agentes de uma população brasileira de até 10.000 indivíduos que foram submetidos a medidas restritivas para controle da COVID-19 de acordo com a Lei Nº 13.979 de 6 de fevereiro de 2020, onde os indivíduos são submetidos ao isolamento social, de meios de transporte, mercadorias ou encomendas postais e a quarentena que restringe atividades, separa indivíduos suspeitos de contaminação de outros indivíduos que não estejam doentes.
+\paragraph{Mover para outro lugar}
+de uma população brasileira de até 10.000 indivíduos que foram submetidos a medidas restritivas para controle da COVID-19 de acordo com a Lei Nº 13.979 de 6 de fevereiro de 2020, onde os indivíduos são submetidos ao isolamento social, de meios de transporte, mercadorias ou encomendas postais e a quarentena que restringe atividades, separa indivíduos suspeitos de contaminação de outros indivíduos que não estejam doentes.
 
 %\url{http://www.escritacientifica.com/}
 
@@ -16,7 +15,7 @@ Este trabalho realiza uma simulação baseada em agentes de uma população bras
 \section{Questão de pesquisa}%
 As perguntas fundamentais que foram base para essa pesquisa.
 
-É possível construir uma simulação baseada em agentes da pandemia do COVID-19 em um determinado espaço geográfico ?  Essa simulação corresponde de fato ao que aconteceu ? Alguma dificuldade que não pode ser contornada ?
+Como é possível construir uma simulação multiagentes de uma epidemia do COVID-19 em um determinado espaço geográfico, visando subsidiar a construção de políticas publicas no Brasil ?  Quais são as características, possibilidades e dificuldades computacionais para a realização dessas simulações? Como é  possível a construção de simulações que correspondam de fato ao que aconteceu ou acontecerá ? Que dificuldade precisam ser contornadas para que essas possibilidades sejam alcançadas ?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +35,7 @@ Simulações baseadas em agentes pode ser entendida como simulação de agentes 
 
 Um bom exemplo seria a movimentação de um cardume de peixes, trânsito em uma cidade, disseminação de uma doença e voo de pássaros. Inclusive esse último possui um modelo muito bem elaborado na ferramenta Netlogo, uma linguagem de programação e um ambiente de desenvolvimento integrado baseada em agentes, que utiliza-se de 3 regras “alinhamento”, “coesão” e “separação” na movimentação individual de cada pássaro para obter o movimento coordenado de um bando de pássaros.
 
-Neste trabalho será utilizado a ferramenta GAMA devido a sua praticidade tanto com dados georeferenciados quanto por ser uma linguagem de alto nível, a qual possibilita a criação intuitiva de agentes. Além disso possui diversas interfaces, tanto 2D quanto 3D, para a visualização de resultados com painel controláveis pelo usuário.
+Neste trabalho será utilizado a ferramenta COMOKIT/GAMA devido à sua praticidade tanto no uso de dados georreferenciados quanto por dispor uma linguagem de alto nível, a qual possibilita a criação intuitiva de agentes. Além disso possui diversas interfaces, tanto 2D quanto 3D, para a visualização de resultados com painel controláveis pelo usuário.
 
 A história mostra que a humanidade já passou por outras pandemias e por conta da atual globalização existe uma enorme possibilidade de acontecer outra como a atual da COVID-19. Por isso é importante a construção de modelos para analisar parâmetros e padrões das pandemias com objetivo de ajudar tanto no controle da atual quanto na redução de danos de futuras pandemias. 
 
@@ -50,15 +49,22 @@ Este trabalho baseado na linguagem GAMA busca obter um modelo ao qual forneça d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Objetivos Gerais e Específicos}%
-Como objetivo geral nesse trabalho é desenvolver uma modelagem e simulação espacialmente explícita sobre o impacto da COVID-19, em região próxima ao Distrito Federal, utilizando-se uma linguagem baseada em agentes.
+
+Como objetivo geral nesse trabalho é desenvolver casos de modelagem e simulação espacialmente explícita sobre o impacto da COVID-19, em regiões do Distrito Federal, utilizando-se de uma ferramenta COMOKIT baseada numa linguagem de simulação  em agentes.
 
 Como objetivos específicos: 
 \begin{enumerate}
-\item Identificar ferramentas para obter dados de um sistema de informação geográfica livre e aberta;
-\item Identificar ferramentas para as modelagens e simulações;
-\item Identificar regiões as quais são possíveis obter dados e desenvolver um modelo;
-\item Construir o modelo baseado na região selecionada;
-\item Comparar o resultado obtido no modelo com os dados apresentados na região.
+\item Criar simulações (casos);
+\item Realizar as simulações e coletar dados;
+\item comparar os dados obtidos com dados reais disponíveis;
+\item identificar questões que afetam a utilidade da simulação ma formulação de políticas de saúde pública.
+
+
+%\item ferramentas para obter dados de um sistema de informação geográfica livre e aberta;
+%\item Identificar ferramentas para as modelagens e simulações;
+%\item Identificar regiões as quais são possíveis obter dados e desenvolver um modelo;
+%\item Construir o modelo baseado na região selecionada;
+%\item Comparar o resultado obtido no modelo com os dados apresentados na região.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
