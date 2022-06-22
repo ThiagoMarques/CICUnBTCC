@@ -1,26 +1,16 @@
-Descrição detalhada de tudo que foi necessário conhecer para criar as simulações.
-
-\section{Gama}
-\section{COMOKIT}
-\section{Os territórios}
-\section{Produçao de Dados}
-\section{Configuração do COMOKIT}
-\section{Dificiuldades com a construççao}
-
-
+	A simulação computacional nos permite compreender um sistema complexo e tem sido empregada no auxílio à tomada de decisão [Chung, 2003]. Com o auxílio da simulação, podemos identificar e solucionar problemas de uma determinada região geográfica baseado em variáveis que influenciam os agentes e o meio que vivem. 
 
 A modelagem e simulação baseada em agentes (ABMS) é um paradigma de simulação que utiliza agentes para analisar, reproduzir ou predizer fenômenos normalmente complexos e emergentes [Klügl, F. and Bazzann 2012]. Na modelagem baseada em agente (ABM), um sistema é modelado como uma coleção de entidades autônomas de tomada de decisão chamadas agentes. Cada agente avalia individualmente sua situação e toma decisões com base em um conjunto de regras (BONABEAU, 2002). A ABMS aplica o conceito de sistemas multiagentes para a estrutura básica de modelos de simulação, onde o sistema é modelado como
 uma coleção de entidades autônomas de tomadas de decisão chamadas agentes (NORTH; MACAL, 2007).
 
 Um modelo representa uma simplificação da realidade e o processo de modelar envolve escolhas de níveis de abstração  e a linguagem utilizada para representação do modelo. 
 
-Um sistema, que consiste em um grupo de agentes que podem potencialmente interagir uns com os outros, é chamado de Sistema multiagentes ou Multiagent
-system (MAS) (WOOLDRIDGE, 2001).
+Um sistema, que consiste em um grupo de agentes que podem potencialmente interagir uns com os outros, é chamado de Sistema multiagentes ou Multiagent system (MAS) (WOOLDRIDGE, 2001).
 
 A modelagem baseada em agentes é agora uma abordagem popular para representar, estudar ou explorar sistemas geográficos complexos (Crooks, Batty, 2011). Esta abordagem de modelagem se propõe a representar individualmente as entidades que compõem um sistema e suas interações, e permitir que  comportamentos macroscópicos surjam por simulação. A adoção de tal abordagem de modelagem foi muito estimulada pelo surgimento de plataformas de software cada vez mais poderosas, que agora permitem que modeladores sem um forte conhecimento em ciência da computação desenvolvam seus próprios modelos de maneira fácil e rápida. A tendência observada há alguns anos é o desenvolvimento de modelos muito mais descritivos integrando uma grande quantidade de dados, com uma representação detalhada do ambiente.
-Apoiar o desenvolvimento de tais modelos requer o endereçamento de um conjunto de bloqueios científicos relacionados à integração de dados, eficiência de cálculo e visualização de simulações, que são particularmente desafiadores se a plataforma tiver que ser utilizável mesmo por cientistas que não são da computação. Tentar superar esses desafios é um dos principais objetivos da plataforma GAMA (GIS Agent-based Modeling Architecture).  (Taillandirer, Gaudou, Grignard, Quang, Húynh, Nicolas, Damien, Drogul, 2019).
+Apoiar o desenvolvimento de tais modelos requer o endereçamento de um conjunto de bloqueios científicos relacionados à integração de dados, eficiência de cálculo e visualização de simulações, que são particularmente desafiadores se a plataforma tiver que ser utilizável mesmo por cientistas que não são da computação. Tentar superar esses desafios é um dos principais objetivos da plataforma GAMA (GIS Agent-based Modeling Architecture). (Taillandirer, Gaudou, Grignard, Quang, Húynh, Nicolas, Damien, Drogul, 2019).
 
-\section{GAMA}%
+\section{Gama}
 
 O GAMA tem se desenvolvido desde 2007 como um projeto open-source, passando por diversas melhorias ao longo dos anos para atender às necessidades de sua crescente base de usuários: lidar com cada vez mais formatos de dados, melhorando sua ergonomia, eficiência e estabilidade. 
 No entanto, o GAMA também visa ir além e fornecer novas maneiras de criar ou simular modelos.  (Taillandirer, Gaudou, Grignard, Quang, Húynh, Nicolas, Damien, Drogul, 2019). 
@@ -61,25 +51,21 @@ A estrutura conceitual segue um padrão:
 
 3. Definição de planos de experimentos direcionados a este modelo.
 
-A seguir, uma imagem que define a estrutura básica de um modelo em GAML:
-
-\figura{basic_model}{estrutura básica de um modelo GAML}{basicmodel}{width=0.75\textwidth}
-
 \subsubsection{Cabeçalho do modelo}
 
 O cabeçalho de um arquivo de modelo começa com a declaração do nome do modelo. Este nome é usado para construir o nome da espécie modelo nas quais as simulações serão instanciadas.
 
-\figura{header}{exemplo de um cabeçalho}{header}{width=0.75\textwidth}
+\figura{3_1_model}{declaração de um modelo}{basicmodel}{width=0.75\textwidth}
 
 O exemplo acima criará uma espécie chamada \textit{dummy\underline{ }model}, filho da espécie abstrata model, a partir da qual as simulações serão instanciadas. 
 
 A importação de um modelo pode ser realizada de duas formas: por herança ou importação direta. A imagem abaixo importa dois modelos por herança, ou seja, as declarações dos modelos importados serão mescladas na ordem de importação.
 
-\figura{import_1}{importação de um modelo por herança}{basicmodel}{width=0.75\textwidth}
+\figura{3_2_import}{importação de um modelo}{basicmodel}{width=0.75\textwidth}
 
 A segunda forma de importação chamada de \textit{usage import } é reservado a \textit{micromodelos} e de acordo com a documentação técnica, está em fase experimental.
 
-\figura{global_}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
+\figura{3_3_usage_import}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
 
 
 \subsubsection{Declarações de espécies}
@@ -88,102 +74,54 @@ Uma espécie define seus atributos, ações e comportamentos, e por fim aspectos
 
 A declaração da espécie global é única e não tem um nome específico. Ela representa um mundo, onde deve conter todos os atributos, ações e comportamentos globais.
 
-\figura{global_}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
+\figura{3_4_global}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
 
-As espécies regulares podem ser declaradas com o uso da palavra-chave \textit{species}e todas precisam ser renomeadas.
+As espécies regulares podem ser declaradas com o uso da palavra-chave \textit{species} e todas precisam ser renomeadas.
 
-\figura{species_}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
+\figura{3_5_regular}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
 
 
 \subsubsection{Declarações do experimento}
 
 A declaração de experimentos começam com o uso da palavra-chave \textit{experiment} e contêm todos os parâmetros de simulação e a definição de saída que podem ser displays, monitores ou inspetores. 
 
+\figura{3_6_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+
 Existem quatro tipos de experimentos disponíveis no GAMA:
 
 \begin{enumerate}
 \item Experimento GUI que permite a exibição de uma interface gráfica com parâmetros de entrada e saída;
+		
+		\figura{3_7_gui_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+		
+
 \item Experimento em lote que perimte a execução de várias simulações sucessivas;
+
+		\figura{3_8_batch_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+
 \item Experimento de testes que permite a escrita de testes de unidade em um modelo para garantir a qualidade;
+
+		\figura{3_9_test_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+
 \item Experimento de memorização que permite armazenar cada etapa de simulação na memória e voltar etapas anteriores.
+
+		\figura{3_10_memorize_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
 \end{enumerate}
 
 \subsubsection{Esqueleto básico de um modelo}
 
 Abaixo, a imagem de um esqueleto básico de um modelo no GAMA:
 
-\figura{basic_model_complete}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
+\figura{3_11_basic_model}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
 
 A estrutura acima é básica e comum a todos os modelos do GAMA. Para construção de modelos, o uso de conceitos de programação são requeridos.
 
-\section{COMOKIT}%
+\section{COMOKIT}
 
 O COMOKIT (COVID-19 Modeling Kit) é baseado na plataforma de modelagem e simulação em agentes GAMA [], um modelo que combina vários submodelos especializados para comparação de intervenções contra a pandemia de COVID-19. 
 
+\section{Os territórios}
+\section{Produção de Dados}
+\section{Configuração do COMOKIT}
+\section{Dificuldades com a construção}
 
-\section{QGIS}%
-
-
-
-% A monografia, a dissertação e a tese são, respectivamente, os trabalhos de conclusão de curso de graduação ou especialização, mestrado e doutorado. A grande diferença é a profundidade exigida no projeto, aumentada de acordo com a importância do título de cada nível acadêmico. Mas, em todos os casos, a pesquisa deve abordar o tema selecionado com coerência, consistência e referencial teórico adequado.
-
-% Alguns cursos de graduação não exigem monografia, mas um relatório de estágios realizados, como acontece nas licenciaturas. A metodologia de pesquisar e apresentar resultados se mantém, como é exigido em todo projeto final.
-
-% Uma monografia é, genericamente, um relatório de pesquisa sobre o assunto estudado. É específico a um tema pré-definido dentro de uma área de conhecimento e aborda questões e análises de um problema, a construção de uma teoria ou o desenvolvimento de um produto.
-
-% Exigida no mestrado, a dissertação cobra do futuro mestre um conhecimento mais profundo. A pesquisa deve ser o resultado em relatório que representa o trabalho experimental ou exposição científica com um tema bem delimitado, e demonstrar o conhecimento de literatura existente sobre o assunto.
-
-% A mais densa entre todos os projetos finais, a tese de doutorado exige mais no que diz respeito a teoria e metodologia do tema pesquisado. Deve apresentar contribuições reais para o desenvolvimento específico da especialidade em questão. A base do estudo demanda uma investigação original.
-
-% \subsection{Teoria e prática}
-% Todo projeto de conclusão de curso exige um relatório escrito baseado em teorias, mesmo que o assunto estudado seja algo prático como uma campanha publicitária ou um projeto arquitetônico. Porém, o inverso não se aplica.
-
-% As divisões dos tipos de trabalho variam entre cada área de conhecimento. Em suma, o projeto pode ser teórico, prático ou uma união dos dois. Na primeira situação, o aluno pode fazer estudo de caso - pesquisar sobre um fato histórico ou evento importante - ou formular uma teoria - por meio de pesquisa ou reavaliação das semelhantes.
-
-% O projeto prático se dedica a criação e construção de um produto, que pode variar de um novo motor a uma composição musical. O curso de graduação costuma oferecer a opção de um trabalho prático aos alunos. No caso dos cursos de mestrado e doutorado, nem todos os departamentos da universidade dispõem de linhas de pesquisa que permitam um projeto que vá além da teoria acadêmica.
-
-% A união dos dois gêneros é comum quando o universitário relata a experiência de estágio ou na simulação de um projeto, como a construção de maquetes ou esquemas computacionais. As opções são vastas e o aluno deve explicar como e o que se deve fazer para que o projeto se torne possível.
-
-% \subsection{Começo do projeto}
-% Parece óbvio, mas muitos alunos esquecem a questão principal na hora de escolher o tema: o assunto deve interessar e estimular a pesquisa. Conviver meses com um tema que não agrada torna o trabalho mais complicado. Porém, escolher um bom tema não é abraçar e desenvolver sobre tudo que ele é e engloba. É preciso delimitar o assunto de forma específica.
-
-% Um trabalho sobre a história do mundo, por exemplo, está fadado a se tornar superficial. Além de extremamente amplo, é grande o volume de informações a ser levantado e estudado. É importante ter foco para desenvolver um projeto coeso e com credibilidade.
-
-% Além disso, o estudante necessita desenvolver um problema e traçar uma hipótese. Em um exemplo bem simples: a Guerra no Iraque (tema) e o terrorismo mundial (problema) – o aumento dos ataques depois da invasão americana (hipótese); ou seja, o que o aluno quer tratar e onde ele espera chegar na pesquisa. A não comprovação da hipótese não inviabiliza o trabalho, desde que o desenvolvimento da análise enriqueça os conhecimentos sobre o tema tratado.
-
-% A prática essencial para o desenvolvimento de qualquer projeto é a pesquisa bibliográfica. As consultas às bibliotecas respaldam a parte teórica do estudo e podem elucidar diversas questões, sejam específicas do projeto ou sobre metodologias científicas. Nesse ponto, o papel do professor orientador é fundamental para a condução da pesquisa. Além da seleção dos livros, o docente analisa as melhores possibilidades de desenvolver o assunto, em todas as suas fases. Ele também pode indicar a aplicação de entrevistas e outros elementos de apoio ao conteúdo do projeto.
-
-% Atualmente, o meio mais difundido de pesquisa é a Internet. Além de facilitar o acesso a documentos, pela rede é possível saber quanto o tema escolhido já foi objeto de estudo de outros acadêmicos. Mas essa facilidade deve ser utilizada para indicar um caminho.
-
-% \subsection{Estrutura e regras}
-% Antes do próprio trabalho escrito, o estudante deve fazer um projeto ou plano de pesquisa. O documento identifica o que deve ser feito, o porquê, como e onde será realizado o levantamento. Não há um modelo rígido para a apresentação do projeto de pesquisa, mas os seguintes elementos devem ser respondidos no texto:
-
-% \begin{enumerate}
-%   \item Definição do objeto de estudo (tema/problema da pesquisa)
-%   \item Justificativa
-%   \item Hipóteses de trabalho
-%   \item Discussão teórica
-%   \item Metodologia
-%   \item Pesquisa Bibliográfica
-% \end{enumerate}
-
-% Seja monografia, dissertação ou tese, a parte escrita possui uma estrutura semelhante, embora cada uma tenha características próprias referentes à profundidade do tema estudado.
-
-% De acordo com a Associação Brasileira de Normas Técnicas (ABNT), um trabalho acadêmico deve englobar os elementos pré-textuais (como resumo e índice), pós-textuais (bibliografia, anexos, entre outros) e textuais. Esses últimos compõem a parte central do trabalho - introdução, desenvolvimento e conclusão.
-
-% A introdução é a parte inicial do texto e deve constar o objeto de pesquisa, os objetivos, a justificativa da escolha do tema e outras informações que sejam necessárias para esclarecer o assunto.
-
-% A parte principal do trabalho está concentrada no desenvolvimento. É uma exposição sistematizada e ordenada de toda o estudo desenvolvido, apresentando análise e interpretação das informações e dados obtidos. A conclusão é a etapa final do texto. Nela, são apresentados os resultados tendo como referência os objetivos e hipóteses da pesquisa.
-
-% Em todo o trabalho a linguagem utilizada deve ser interessante, sem apelar para a linguagem coloquial. O trabalho deve estar de acordo com as normas da ABNT. Procure livros sobre estrutura e regras do tipo de projeto final específico de seu interesse.
-
-% \subsection{O projeto está pronto. E agora?}
-% Após a finalização do projeto, chega o momento de preparar a apresentação. Em geral, a banca examinadora é formada por três docentes, sendo um deles o professor orientador do projeto. Também é comum aos alunos o direito de escolha dos avaliadores, desde que seja pertinente ao assunto e ao objetivo do estudo.
-
-% Esses professores recomendam uma apresentação resumida do projeto, pontuando as características essenciais e como se chegou às conclusões. É sempre bom explicar o cronograma de todo o trabalho. É preciso, também, ficar atento ao tempo. Não é necessário explicar os conceitos já citados no projeto e pode influenciar a nota final. Lembre-se que as explicações são voltadas para os avaliadores, que já leram o seu trabalho.
-
-% Durante as considerações da banca examinadora não se deve interromper a avaliação dos professores, exceto quando eles dirigirem diretamente uma pergunta ao aluno. Educação e conhecimento dos procedimentos acadêmicos são essenciais para uma boa apresentação. Após a avaliação, os professores pedem para os presentes se retirarem da sala. É feita uma reunião onde será decidida a nota do projeto.
-
-% Cada departamento possui regras e orientações para a apresentação dos trabalhos de conclusão. Cabe ao aluno perguntar à coordenação do curso e ao orientador todas as etapas do processo de elaboração do projeto final.
-
-\fontshape{n}\selectfont%
