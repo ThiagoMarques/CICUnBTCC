@@ -178,18 +178,55 @@ A cidade surgiu por volta da década de 1960 após a inauguração de Brasília.
 Dentro da Cidade Estrutural existe o Setor de Chácara Santa Luzia, surgiu junto à invasão da Cidade estrutural em meados de 1996 , por um grupo populacional que se apropriou da área, que antes é considerada rural. De acordo com o Censo de 2010 os dados realizados pelo Instituto Brasileiro de Geografia e Estatísticas (IBGE), classificam o Setor de Chácara dentro da Cidade Estrutural, como Aglomerado Subnormal ou Favela. \cite{souza2016nao}
 A conceituação do Setor de Chácara Santa Luzia, considerado impróprio para moradia, corresponde, também em o não acesso aos direitos básicos como: escola, saúde, educação, cultura, esporte e lazer, saneamento básico, entre outros. Por não haver uma estrutura mínima para habitação os moradores recorrem a ligações de água e energia clandestina e utilizam de cisternas como forma de esgotamento. \cite{souza2016nao}.
 
-/%% em construção: -----------------------------------------
-Não há dados precisos sobre a comunidade Santa Luzia, por ser em território irregular não são classificados na amostra por domicílio do PDAD (verificar)
 
 
-
-Para realizar o processo de mapeamento de residências, foi escolhido residências aleatórias e iniciado a marcação na base de dados do Open Street Map, um repositório livre de informação geográfica mundial.
-
-\figura{3_12_openstreetmap}{Openstreetmap - bairro Santa Luzia}{basicmodel}{width=0.75\textwidth}
-
-/%% -----------------------------------------------------------------------
+% Inserir dados de território sobre COMOKIT
 
 \section{Produção de Dados}
+
+\subsection{Bairro Santa Luzia}
+
+O OpenStreetMap foi desenvolvido para criar um mapa livre editável do mundo. A ferramenta de mapeamento colaborativo Open Street Map (OSM) foi desenvolvida no ano de 2004, pelo estudante de computação Steve Coast, da University College London (UCL). Inicialmente, a ideia do projeto era realizar o mapeamento apenas da região do Reino Unido, mas logo despertou o interesse de pesquisadores de outros países do globo. \cite{ramm2011openstreetmap}.
+
+Os mapas são criados usando dados de dispositivos portáteis de GPS, fotografias aéreas, de outras fontes livres ou simplesmente a partir do conhecimento local. O projeto foi iniciado porque a maioria dos mapas têm restrições legais ou técnicas para sua utilização, restringindo as pessoas de usá-los de forma criativa, produtiva ou outras formas alternativas. Ambas as imagens fundidas e o conjunto de dados vetoriais do OSM estão disponíveis para download sob uma licença Creative Commons Attribution ShareAlike 2.0 \cite{OpenStre2:online}.
+
+Dados primitivos OSM são uma classe de objetos que podem serem armazenados via API no servidor. Os três tipos de suporte de dados são: \textit{Node}, \textit{Way} e \textit{Relation}. \cite{OpenStre2:online}
+
+\begin{itemize}
+\item Um nó é um par de coordenada de latitude/longitude. É usado como um bloco de construção para as outras características e como uma característica própria (pontos de interesse), para serem marcados, conforme necessário.
+\item Um Caminho é uma lista de pelo menos dois nós que descrevem uma feição linear, tal como uma rua, ou similar. Os nós podem fazer parte de vários caminhos.
+\item Uma relação é um grupo de zero ou mais com funções primitivas associadas. Ele é usado para especificar as relações entre objetos, e também pode modelar um objeto abstrato.
+\end{itemize}
+
+Não há dados precisos sobre a comunidade Santa Luzia, por ser em território irregular, não são classificados na amostra por domicílio do PDAD (Pesquisa Distrital por Amostra de Domicílios). Para realizar o processo de mapeamento de residências, foi escolhido residências aleatórias e iniciado a marcação na base de dados do Open Street Map.
+
+\figura{3_12_openstreetmap}{Openstreetmap - Bairro Santa Luzia}{basicmodel}{width=0.75\textwidth}
+
+Para identificação de residências, foi iniciado o processo de atribuição de etiquetas (\textit{tags}) no Open Street Map. De forma consensual, ficou definido que cada residência observada na imagem do GPS conteria 4 membros de uma mesma família e que seria necessário mapear ao menos três blocos de residências.
+
+\figura{3_13_openstreetmap}{Openstreetmap - Identificação de uma residência no Bairro Santa Luzia}{basicmodel}{width=0.75\textwidth}
+
+Foi realizado o mapeamento de 421 unidades residências, totalizando um total de 1.684 moradores para execução da simulação neste espaço territorial do Bairro Santa Luzia.
+
+Foi realizado a exportação para um arquivo do tipo .OSM (Open Street Map) e o software QGIS foi utilizado para leitura dos dados. O Qgis é um software livre para Sistema de Informação Geográfica, incubado pela Open Source Geospatial Foundation (OSGeo) e impulsionado por um grupo ativo de desenvolvedores voluntários que regularmente lançam atualizações e correções para os problemas verificados neste aplicativo. É utilizado em ambientes acadêmicos e profissionais, caracterizando-se por oferecer um número crescente de recursos nativos e “plugins” que podem ser desenvolvidos por qualquer usuário que saiba programar em C++ ou Python. Suporta uma ampla gama de formatos geoespaciais, tais como vetores, rasters e bases de dados. \cite{bruno2017aplicabilidade}
+
+A conexão OSM com o QGIS ocorre com exibição em camadas vetoriais QGIS. Os dados OSM consistem de Nós, Caminhos e Relações. No QGIS, eles são exibidos em três diferentes tipos de camada: camada de ponto, camada de linha e camada de polígono. Não é possível remover qualquer uma dessas camadas e trabalhar com as outras. \cite{OpenStre2:online}
+
+\begin{itemize}
+\item Uma Camada de Ponto exibe todas as feições de tipo nó que fica sozinho. Isso significa que apenas nós que não estão incluídos em qualquer Caminho pertence à camada Ponto.
+\item Uma Camada de linha exibe as feições OSM de Caminho do tipo que não estão fechados. Isso significa que, nenhum desses Caminhos inicia e termina com o mesmo Nó.
+\item Uma Camada de poligono exibe todos os Caminhos que não estão incluídos na camada Linha.
+\end{itemize}
+
+Após carregar o arquivo OSM no QGIS, é possível identificar as etiquetas e exportar o arquivo para o formato \textit{shapefile}. O \textit{shapefile} é um formato para bases de dados geoespaciais e vetoriais em sistemas de informação geográfica (no inglês, GIS - \textit{Geographic Information System}). Ele foi desenvolvido e é regulado pela empresa Esri. É considerado um formato aberto, apesar de proprietário. Por ser aberto, o formato recebe suporte de diversos aplicativos de processamento de mapas gratuitos e de código livre. O \textit{shapefile} pode descrever espacialmente qualidades de vetores (pontos, linhas e polígonos, para rios, lagos e poços, por exemplo) e cada item normalmente possui atributos que o descrevem, como nome e temperatura. \cite{41Format2:online}
+
+\figura{3_14_qgis}{QGIS - Identificação de residências no Bairro Santa Luzia}{basicmodel}{width=0.75\textwidth}
+
+
+\end{itemize}
+
+
+
 \section{Configuração do COMOKIT}
 \section{Dificuldades com a construção}
 
