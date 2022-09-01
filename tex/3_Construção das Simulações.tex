@@ -218,15 +218,92 @@ A conexão OSM com o QGIS ocorre com exibição em camadas vetoriais QGIS. Os da
 \item Uma Camada de poligono exibe todos os Caminhos que não estão incluídos na camada Linha.
 \end{itemize}
 
-Após carregar o arquivo OSM no QGIS, é possível identificar as etiquetas e exportar o arquivo para o formato \textit{shapefile}. O \textit{shapefile} é um formato para bases de dados geoespaciais e vetoriais em sistemas de informação geográfica (no inglês, GIS - \textit{Geographic Information System}). Ele foi desenvolvido e é regulado pela empresa Esri. É considerado um formato aberto, apesar de proprietário. Por ser aberto, o formato recebe suporte de diversos aplicativos de processamento de mapas gratuitos e de código livre. O \textit{shapefile} pode descrever espacialmente qualidades de vetores (pontos, linhas e polígonos, para rios, lagos e poços, por exemplo) e cada item normalmente possui atributos que o descrevem, como nome e temperatura. \cite{41Format2:online}
+Após carregar o arquivo OSM no QGIS, é possível identificar as etiquetas e exportar o arquivo para o formato \textit{shapefile}. O \textit{shapefile} é um formato para bases de dados geoespaciais e vetoriais em sistemas de informação geográfica (no inglês, GIS - \textit{Geographic Information System}). Foi desenvolvido e regulado pela empresa Esri. É considerado um formato aberto, apesar de proprietário. Por ser aberto, o formato recebe suporte de diversos aplicativos de processamento de mapas gratuitos e de código livre. 
 
 \figura{3_14_qgis}{QGIS - Identificação de residências no Bairro Santa Luzia}{basicmodel}{width=0.75\textwidth}
 
+O \textit{shapefile} pode descrever espacialmente qualidades de vetores (pontos, linhas e polígonos, para rios, lagos e poços, por exemplo) e cada item normalmente possui atributos que o descrevem, como nome e temperatura. \cite{41Format2:online}
 
 
 
 
 
 \section{Configuração do COMOKIT}
+
+A utilização do COMOKIT é realizada em conjunto com o GAMA. Inicialmente, é fornecido um conjunto de dados com modelo padrão não funcional. 
+Ao criar um novo modelo para estudo na seção de espaço de trabalho, o COMOKIT requer um conjunto mínimo de dados \cite{ComokitDoc} para realizar simulações.
+
+\subsection{Dados espaciais}
+
+O COMOKIT necessita de um arquivo no formato shapefile para compor as limitações geográficos de um estudo de caso. 
+
+De acordo com Almeida (2015) “Esta característica marcante do GIS deve-se ao modo como seus arquivos nativos (shapefiles) relacionam-se entre si e com demais fontes. Um shapefile consiste basicamente em um arquivo principal (*.shp), um arquivo-índice (*.shx) e uma tabela dBASE (*.dbf), havendo ainda outros arquivos acessórios que também podem estar associados a um mesmo shapefile. O arquivo principal é um arquivo de acesso direto no qual cada um representa um conjunto de dados de uma mesma natureza de forma (ponto, linha ou polígono) com uma lista de seus vértices. O arquivo-índice tem a finalidade de indexar a leitura do arquivo principal, de modo a permitir que o software faça buscas rápidas no conteúdo deste. A tabela dBASE contém todos os atributos literais atribuídos às eições presentes naquele arquivo principal. \cite{almeida2015integraccao}
+
+Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "boundary.shp", indicando que este arquivo contém as limitações de estudo do caso.
+
+Para identificar os locais e edifícios da simulações, inserimos um arquivo com nome "buildings.shp". Não obrigatório, o arquivo pode conter ou não uma identificação do tipo de edifíco na tabela de atributos do aquivo shapefile. Caso não exista, o COMOKITornece um modelo que solicita servidores OSM com relação
+a área definida em boudary.shp e constrói automaticamente o arquivo.
+
+\subsection{Dados demográficos}
+
+O COMOKIT trabalha com a leitura de um arquivo no formato CSV (Comma Separated Values) para leitura de informações da população simulada. O arquivo deve conter atributos básicos dos indivíduos como idade, sexo, status de emprego e o identificador de sua residência. Caso o arquivo não esteja presente, a população será gerada com base nas edificações disponíveis.
+
+\figura{3_15_population.png}{Exemplo de um arquivo em CSV}{basicmodel}{width=0.75\textwidth}
+
+\subsection{Parâmetros}
+
+As informações de parâmetros dos submodelos podem ser especificados no código
+GAML ou em arquivos de configurações separados.
+
+\subsection{Modificando os parâmetros em Model/Parameters.gaml}
+
+Os parâmetros já definidos estão disponíveis no arquivo chamado "parameters.gaml". A vantagem deste método é utilizar os parâmetros já pré-definidos no COMOKIT, mas não há flexibilidade e heterogeneidade na simulação.
+
+A documentação técnica do COMOKIT descreve uma lista de parâmetros disponíveis para ajustes no arquivo "Parameters.gaml" \cite{ParametrosCOMOKIT:online}.
+
+\subsubsection{DINÂMICA DE CONTAMINAÇÃO AMBIENTAL}
+
+\begin{itemize}
+\item \textit{allow\_transmission\_building}: permite a dinâmica de contaminação ambiental, definida por padrão para \textit{true};
+\item \textit{basic\_viral\_decrease}: diminuição ao longo do tempo da carga viral no ambiente, definida por padrão para o valor de 0.33.
+\item {basic\_viral\_release}: liberação ao longo do tempo da carga viral no ambiente por um Indivíduo infectado, definido por padrão para o valor de 3.0.
+\item {successfu\_contact\_rate\_building}: taxa de contato bem-sucedida para transmissão do ambiente para o homem derivado do R0 e o período infeccioso médio, definido por padrão para \ 2.5 * 1/(14.69973*{nb\_step\_for\_one\_day})\ .
+\end{itemize}
+
+\subsubsection{DINÂMICA DE TRANSMISSÃO DE HUMANO PARA HUMANO}
+
+\begin{itemize}
+\item {allow\_transmission\_human}: permite a dinâmica de transmissão de humano para humano, definida por padrão para true.
+\item {init\_all\_ages\_factor\_contact\_rate\_asymptomatic}: fator não dependente da idade da taxa de contato bem-sucedida para transmissão assintomática/pré-sintomática de humano para humano, definido por padrão para o valor 0.55.
+\item {init\_all\_ages\_proportion\_asymptomatic}: proporção não dependente da idade de indivíduos assintomáticos, definida por padrão para o valor 0.3.
+\item {init\_all\_ages\_successful\_contact\_rate\_human}: taxa de contato bem-sucedida não dependente da idade para transmissão de humano para humano derivada do R0 e o período infeccioso médio, definido por padrão para \ 2.5 * 1/(14.69973), - {reduction\_coeff\_all\_buildings\_individuals}, a redução da taxa de contato para indivíduos pertencentes a diferentes famílias, mas que vivem no mesmo prédio , definido por padrão para o valor 0.05.
+\item {reduction\_coeff\_all\_buildings\_inhabitants}: a redução da taxa de contacto para os indivíduos pertencentes a agregados familiares diferentes mas a residir no mesmo edifício, definido por defeito para o valor 0.01.
+\item {init\_all\_ages\_distribution\_type\_incubation\_period\_symptomatic}: a distribuição não dependente da idade para o período de incubação de indivíduos sintomáticos, definida por padrão para Lognormal.
+\item {init\_all\_ages\_parameter\_1\_incubation\_period\_symptomatic}: o primeiro parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos sintomáticos, definido por padrão para o valor 1.57.
+\item {init\_all\_ages\_parameter\_2\_incubation\_period\_symptomatic}:  o segundo parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos sintomáticos, definido por padrão para o valor 0.65.
+\item {init\_all\_ages\_distribution\_type\_incubation\_period\_asymptomatic}:  distribuição não dependente da idade para o período de incubação de Indivíduos assintomáticos, definida por padrão para Lognormal.
+\item {init\_all\_ages\_parameter\_1\_incubation\_period\_asymptomatic}:  primeiro parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos assintomáticos, definido por padrão para o valor 1.57.
+\item {init\_all\_ages\_parameter\_2\_incubation\_period\_asymptomatic}: o segundo parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos assintomáticos, definido por padrão para valor 0.65.
+\item {init\_all\_ages\_distribution\_type\_serial\_interval}: a distribuição não dependente da idade para o intervalo serial, definida por padrão como Normal.
+\item {init\_all\_ages\_parameter\_1\_serial\_interval}: o primeiro parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos assintomáticos, definido por padrão para o valor 3.96.
+\item {init\_all\_ages\_parameter\_2\_serial\_interval}: o segundo parâmetro para a distribuição não dependente da idade para o período de incubação de indivíduos assintomáticos, definido por padrão para o valor 3.75.
+\item {init\_all\_ages\_distribution\_type\_infectious\_period\_symptomatic}: a distribuição não dependente da idade para o período infeccioso de indivíduos sintomáticos, definida por padrão para Lognormal.
+\item {init\_all\_ages\_parameter\_1\_infectious\_period\_symptomatic}: o primeiro parâmetro para a distribuição não dependente da idade para o período infeccioso de indivíduos sintomáticos, definido por padrão para o valor 3.034953.
+\item {init\_all\_ages\_parameter\_2\_infectious\_period\_symptomatic}: o segundo parâmetro para a distribuição não dependente da idade para o período infeccioso de indivíduos sintomáticos, definido por padrão para o valor 0.34.
+\item {init\_all\_ages\_distribution\_type\_infectious\_period\_asymptomatic}: a distribuição não dependente da idade para o período infeccioso de Indivíduos assintomáticos, definida por padrão para Lognormal.
+\item {init\_all\_ages\_parameter\_1\_infectious\_period\_asymptomatic}: o primeiro parâmetro para a distribuição não dependente da idade para o período infeccioso de indivíduos assintomáticos, definido por padrão para o valor 3.034953.
+\item {init\_all\_ages\_parameter\_2\_infectious\_period\_asymptomatic}: o segundo parâmetro para a distribuição não dependente da idade para o período infeccioso de indivíduos assintomáticos, definido por padrão para 0.34
+\end{itemize}
+
+\subsubsection{HOSPITALIZAÇÃO E GRAVIDADE}
+
+
+
+
+
+
+
+
+
 \section{Dificuldades com a construção}
 
