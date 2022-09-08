@@ -297,13 +297,74 @@ A documentação técnica do COMOKIT descreve uma lista de parâmetros disponív
 
 \subsubsection{HOSPITALIZAÇÃO E GRAVIDADE}
 
+\begin{itemize}
+\item {init\_all\_ages\_proportion\_hospitalisation}: proporção não dependente da idade de indivíduos sintomáticos que precisarão de hospitalização, definida por padrão para 0.2
+\end{itemize}
 
+\begin{itemize}
+\item {init\_all\_ages\_distribution\_type\_onset\_to\_hospitalisation}: distribuição não dependente da idade do tempo entre o início dos sintomas e a admissão hospitalar para indivíduos sintomáticos, definida por padrão para Lognormal
+\item {init\_all\_ages\_parameter\_1\_onset\_to\_hospitalisation}: primeiro parâmetro da distribuição não dependente da idade do tempo entre o início dos sintomas e a admissão hospitalar para indivíduos sintomáticos, definido por padrão para 3.034953
+\item {init\_all\_ages\_parameter\_2\_onset\_to\_hospitalisation}: segundo parâmetro da distribuição não dependente da idade do tempo entre o início dos sintomas e a admissão hospitalar para indivíduos sintomáticos, definido por padrão para 0.34
+\item {init\_all\_ages\_proportion\_icu}: proporção não dependente da idade de Indivíduos hospitalizados que precisarão ir para UTI, definida por padrão para 0.1
+\item {init\_all\_ages\_distribution\_type\_hospitalisation\_to\_ICU}: distribuição não dependente da idade do tempo entre a hospitalização e a admissão na UTI para Indivíduos hospitalizados, definida por padrão para Lognormal
+\item {init\_all\_ages\_parameter\_1\_hospitalisation\_to\_ICU}: primeiro parâmetro da distribuição não dependente da idade do tempo entre a internação e a admissão na UTI para Indivíduos hospitalizados, definido por padrão para 3.034953
+\item {init\_all\_ages\_parameter\_2\_hospitalisation\_to\_ICU}: segundo parâmetro da distribuição não dependente da idade do tempo entre a internação e a admissão na UTI para Indivíduos hospitalizados, definido por padrão para 0.34
+\item {init\_all\_ages\_distribution\_type\_stay\_ICU}: distribuição não dependente da idade da duração da permanência na UTI para Indivíduos, definida por padrão para Lognormal
+\item {init\_all\_ages\_parameter\_1\_stay\_ICU}: primeiro parâmetro da distribuição não dependente da idade do tempo de permanência na UTI para Indivíduos, definido por padrão para 3.034953
+\item {init\_all\_ages\_parameter\_2\_stay\_ICU}: egundo parâmetro da distribuição não dependente da idade do tempo de permanência na UTI para Indivíduos, definido por padrão para 0.34
+\item {init\_all\_ages\_proportion\_dead\_symptomatic}: proporção não dependente da idade de indivíduos sintomáticos que morrerão mesmo se tratados, definida por padrão para 0.01
+\end{itemize}
 
+\subsubsection{TESTE E USO DE MÁSCARA}
 
+\begin{itemize}
+\item {init\_all\_ages\_probability\_true\_negative}: probabilidade não dependente da idade de ser testado positivo quando infectado, definido por padrão para 0.92
+\item {init\_all\_ages\_probability\_true\_positive}: probabilidade não dependente da idade de ser testado positivo quando infectado, definido por padrão para 0.89
+\item {init\_all\_ages\_proportion\_wearing\_mask}: proporção não dependente da idade de Indivíduos que usam máscara, definida por padrão como 0.0
+\item {init\_all\_ages\_factor\_contact\_rate\_wearing\_mask}: fator não dependente da idade de transmissão bem-sucedida para um indivíduo infeccioso usando uma máscara, definido por padrão para 0.5
+\end{itemize}
 
+\subsection{Modificando os parâmetros no arquivo CSV}
 
+De acordo com a documentação técnica do COMOKIT \cite{ComokitDoc}, é possível inserir um arquivo CSV para definir múltiplos valores para um mesmo parâmetro, levando em consideração a idade dos indivíduos. Ainda é possível fornecer não somente um valor fixo, mas também uma distribuição Weibull, Gamma, Uniforme, Normal e Lognormal para gerar valores diferentes para cada indivíduo.
 
+\subsection{Geração de população sintética}
 
+Na descrição ODD do COMOKIT \cite{ODDCOMOKit32}, é descrito duas maneiras de gerar uma população sintética de agentes: a partir de um arquivo CSV, onde cada linha corresponde a um agente ou usando o gerador embutido do COMOKIT.
+
+\subsubsection{Parametrização do gerador integrado}
+
+A documentação do COMOKIT \cite{ComokitDoc} descreve que o gerador padrão do COMOKIT faz uso de um arquivo de configuração para definir as variáveis-chave do algoritmo. Para definir de acordo com o estudo de caso, é necessário criar um arquivo CSV e nomeá-lo para Population parameter.csv. A primeira coluna deve corresponder ao nome do parâmetro e uma segunda coluna o valor do parâmetro.
+
+A documentação descreve os parâmetros que podem ser definidos e os valores padrão quando omitidos:
+
+\begin{itemize}
+\item \textit{male\_ratio}: probabilidade de ser um homem ( 1 - male\_ratio dá a probabilidade de ser uma mulher). O padrão é 21/41.
+\item \textit{proba\_active\_family}: a probabilidade de criar um agregado familiar de duas ou mais pessoas ( 1 - proba\_active\_family sendo a probabilidade de criar um agregado familiar individual). O padrão é 0.95.
+\item \textit{number\_children\_mean}: o número médio (valor esperado) de crianças por família. O padrão é 2.0.
+\item \textit{number\_children\_std}: o desvio padrão (variância) para determinar o número de crianças por domicílio. O padrão é 0.5.
+\item \textit{number\_children\_max}: o número máximo de crianças por família. O padrão é 3.
+\item \textit{proba\_grandfather}: a probabilidade de incluir o avô na família. O padrão é 0.2.
+\item \textit{proba\_grandmother}: a probabilidade de incluir a avó no agregado familiar. O padrão é 0.3.
+\item \textit{retirement\_age}: o limite de idade para a aposentadoria. O padrão é 55.
+\item \textit{max\_age}: a idade máxima que um agente pode ter na inicialização. O padrão é 100.
+\item \textit{nb\_friends\_mean}: o número médio (valor esperado de um gaussiano) de amigos por agente individual. O padrão é 5.0.
+\item \textit{nb\_friends\_std}: o desvio padrão (variância de uma Gaussiana) para determinar o número de amigos por indivíduo. O padrão é 3.0.
+\item \textit{nb\_classmates\_mean}: número médio de colegas de classe com os quais um Indivíduo terá contato próximo. O padrão é 10.0.
+\item \textit{nb\_classmates\_std}: desvio de suporte do número de colegas com os quais um Indivíduo terá contato próximo. O padrão é 5.0.
+\item \textit{nb\_work\_colleagues\_meannúmero} médio de colegas de trabalho com os quais um Indivíduo terá contato próximo. O padrão é 5.0.
+\item \textit{nb\_work\_colleagues\_std}: desvio de estande do número de colegas de trabalho com os quais um Indivíduo terá contato próximo. O padrão é 3.0.
+\item \textit{proba\_work\_at\_home}: a probabilidade de fazer trabalho remoto. O padrão é 0.05.
+\item \textit{proba\_unemployed\_M}: a probabilidade de um agente individual masculino estar desempregado. O padrão é 0.03.
+\item \textit{proba\_unemployed\_F}: a probabilidade de um agente individual feminino estar desempregado. O padrão é 0.03.
+\end{itemize}
 
 \section{Dificuldades com a construção}
 
+Alguns desafios foram superados, como mapear regiões utilizando o processo de atribuição de etiquetas, conhecido como tags no Open Street Map e lidar com a pandemia que estava atingindo números recordes no desenvolvimento do trabalho. 
+
+\subsection{Mapeamento do Bairro Santa Luzia}
+
+A proposta de mapear as residências no bairro Santa Luzia utilizando o software Open Street Map surgiu pois no momento não havia dados compartilhados para execução de uma simulação no local. Não foi possível trabalhar com dados fornecidos pela Coraci, representante da parte social/civil e que está em contato direto com a Fiocruz \cite{silva2020estudo}.
+
+A execução manual de identificação de residências e a utilização de dados aleatórios poderia não dar resultados satisfatórios para simulação. Apesar dos esforços e utilização de técnicas que aumentam o valor de confiança dos dados, utilizamos os dados provenientes do Centro de Estudos Ambientais – Condomínio RK.
