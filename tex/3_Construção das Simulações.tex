@@ -168,19 +168,14 @@ Os comportamentos horários dos indivíduos são determinados por suas agendas, 
 
 Obviamente, as atividades personalizadas também podem ser criadas a partir das espécies genéricas de atividade. \cite{gaudou2020comokit}
 
-No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho ... Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{gaudou2020comokit}
+No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho. Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{gaudou2020comokit}
 
 \section{Os territórios}
 
-O primeiro território analisado foi o bairro Santa Luzia, localizado na cidade Estrutural em Brasília, Distrito Federal.  Dentro do Distrito Federal existe a Cidade Estrutural como uma das regiões administrativas, uma localidade urbana que compõem o Setor Complementar de Indústria e
-Abastecimento – SCIA, \cite{souza2016nao}.
+O primeiro território analisado foi o bairro Santa Luzia, localizado na cidade Estrutural em Brasília, Distrito Federal.  Dentro do Distrito Federal existe a Cidade Estrutural como uma das regiões administrativas, uma localidade urbana que compõem o Setor Complementar de Indústria e Abastecimento – SCIA, \cite{souza2016nao}.
 A cidade surgiu por volta da década de 1960 após a inauguração de Brasília. Nomeada como Lixão da Estrutural a área passou a ser utilizada para descargo de lixos provenientes da cidade. A partir do início dessa área sugiram os primeiros catadores de matérias reutilizáveis e recicláveis o que desencadeou ao redor do aterro sanitário a construção de casas. Em meados de 1990, próximo ao Lixão da Estrutural, já contava com quase 100 mil domicílios, o que chamou a atenção do Governo para que tomasse algumas providências. (PDAD, 2013).
 Dentro da Cidade Estrutural existe o Setor de Chácara Santa Luzia, surgiu junto à invasão da Cidade estrutural em meados de 1996 , por um grupo populacional que se apropriou da área, que antes é considerada rural. De acordo com o Censo de 2010 os dados realizados pelo Instituto Brasileiro de Geografia e Estatísticas (IBGE), classificam o Setor de Chácara dentro da Cidade Estrutural, como Aglomerado Subnormal ou Favela. \cite{souza2016nao}
 A conceituação do Setor de Chácara Santa Luzia, considerado impróprio para moradia, corresponde, também em o não acesso aos direitos básicos como: escola, saúde, educação, cultura, esporte e lazer, saneamento básico, entre outros. Por não haver uma estrutura mínima para habitação os moradores recorrem a ligações de água e energia clandestina e utilizam de cisternas como forma de esgotamento. \cite{souza2016nao}.
-
-
-
-% Inserir dados de território sobre COMOKIT
 
 \section{Produção de Dados}
 
@@ -225,9 +220,6 @@ Após carregar o arquivo OSM no QGIS, é possível identificar as etiquetas e ex
 O \textit{shapefile} pode descrever espacialmente qualidades de vetores (pontos, linhas e polígonos, para rios, lagos e poços, por exemplo) e cada item normalmente possui atributos que o descrevem, como nome e temperatura. \cite{41Format2:online}
 
 
-
-
-
 \section{Configuração do COMOKIT}
 
 A utilização do COMOKIT é realizada em conjunto com o GAMA. Inicialmente, é fornecido um conjunto de dados com modelo padrão não funcional. 
@@ -241,8 +233,8 @@ De acordo com Almeida (2015) “Esta característica marcante do GIS deve-se ao 
 
 Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "boundary.shp", indicando que este arquivo contém as limitações de estudo do caso.
 
-Para identificar os locais e edifícios da simulações, inserimos um arquivo com nome "buildings.shp". Não obrigatório, o arquivo pode conter ou não uma identificação do tipo de edifíco na tabela de atributos do aquivo shapefile. Caso não exista, o COMOKITornece um modelo que solicita servidores OSM com relação
-a área definida em boudary.shp e constrói automaticamente o arquivo.
+Para identificar os locais e edifícios da simulações, inserimos um arquivo com nome "buildings.shp". Não obrigatório, o arquivo pode conter ou não uma identificação do tipo de edifíco na tabela de atributos do aquivo shapefile. Caso não exista, o COMOKIT fornece um modelo que solicita servidores OSM com relação
+a área definida em "boundary.shp" e constrói automaticamente o arquivo.
 
 \subsection{Dados demográficos}
 

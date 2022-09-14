@@ -30,13 +30,68 @@ Os dados disponibilizados pelo CEA/RK é fruto de um estudo interno da populaç�
 
 A população absoluta informada foi de 8000 moradores, com idade média de 35 anos e idade máxima de 93 anos. O condomínio possui uma média de quatro residentes por casa, totalizando em média 1900 habitações. O condomínio possui comércio local, com aproximadamente 41 imóveis comerciais na entrada do condomínio. A região possui uma densidade demográfica de 5,4 habitantes por quilômetro quadrado e uma área total de 1.481 km² \cite{}.
 
-
-
-
-
-
 \section{Passos para como executar}
-\sections{Apresentação das execuções}
+
+Os arquivos do COMOKIT são disponibilizados na plataforma de hospedagem GitHub. O GitHub é uma plataforma de hospedagem de código para controle de versão e colaboração \cite{githubdocumentation:online}.
+
+O repositório do COMOKIT no Github possui arquivos de um modelo GAMA na avaliação e comparação de políticas de intervenção contra a pandemia de CoVid-19. Esses modelos ilustram como a modelagem baseada em agente pode ser usada para avaliar os impactos de várias políticas de contenção em estudos de caso definidos por seus limites geográficos \cite{GithubCOMOKIT:online}.
+
+Ainda, de acordo com a documentação do COMOKIT, é necessário realizar o download do modelo no GitHub e extrair os arquivos no formato ZIP em algum lugar do seu computador. Por fim, importar os arquivos do COMOKIT no Gama e inseri-las no espaço para modelos do projeto \cite{ComokitDoc}.
+
+\figura{4_2_gama.PNG}{Inicialização do aplicativo GAMA}{basicmodel}{width=0.75\textwidth}
+
+A importação dos arquivos do COMOKIT deve ser realizada na pasta de modelo do GAMA. Ao extrair os arquivos baixados do repositório COMOKIT no GitHub, basta indicar o caminho do local extraído e importar como um projeto GAMA.
+
+\figura{4_3_import_GAMA.PNG}{Importação de um projeto GAMA}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Configuração dos arquivos}
+
+Após a importação, a pasta do COMOKIT estará disponível para abertura. A estrutura de pastas do COMOKIT:
+
+\begin{itemize}
+\item \textit{beta\_output}: pasta que armazena um arquivo CSV da calibração do valor da taxa de transmissão (β);
+\item \textit{Datasets}: pasta com arquivos demográficos e espaciais;
+\item \textit{Experiments}: pasta com todos os experimentos do COMOKIT.;
+\item \textit{Model}: pasta que contém as entidades e modelos da simulação;
+\item \textit{Parameters}: pasta que contém parâmetros epidemiológicos da simulação;
+\item \textit{Utilities}: pasta que contém arquivos utilitários como os arquivos GAMA que geram pontos e edificações nas simulações, um arquivo GAMA responsável por calibrar o experimento.
+\end{itemize}
+
+As informações demográficas e espaciais do condomínio RK foram inseridas na subpasta RK em Datasets e estão disponíveis no repositório https://github.com/ThiagoMarques/comokitcovidunb. O COMOKIT necessita de um arquivo no formato \textit{shapefile} para compor as limitações geográficas. Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "\textit{boundary.shp}", indicando que este arquivo contém as limitações de estudo do caso do condomínio RK.
+
+\subsubsection{Configuração dos parâmetros}
+
+Ao realizar o download dos arquivos COMOKIT, alguns arquivos de exemplos estão contidos na pasta \textit{Datasets}. É necessário indicar no arquivos de parâmetros da simulação o nome do estudo de caso padrão e a pasta que está contido. 
+
+Portanto, no arquivo \textit{Parameters.gaml} na pasta \textit{Model}, é necessário alterar a \textit{string} DEFAULT\_CASE\_STUDY\_FOLDER\_NAME e indicar o nome da pasta criada chamada "RK", conforme a imagem abaixo:
+
+\figura{4_4_parameters_RK.PNG}{Parâmetros da simulação}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Gerar edificações e pontos}
+
+O COMOKIT fornece um modelo que solicita servidores OSM com 
+ relação a área definida em \textit{boundary.shp} e constrói automaticamente o arquivo. 
+É necessário abrir o arquivo "\textit{Generate Buildings from Points.gaml}" localizado na pasta Utilites e indicar a pasta com o arquivo que delimita a área geográfica da simulação (\textit{boundary.shp}).
+
+\figura{4_5_generate_buildings.PNG}{Parâmetros para gerar edificações e pontos na simulação}{basicmodel}{width=0.75\textwidth}
+
+Ao iniciar a execução do arquivo "\textit{Generate Buildings from Points.gaml}", um mapa é apresentado com informações geográficas obtidas a partir do arquivo "\textit{boundary.shp}":
+
+\begin{itemize}
+\item 2919 blocos e pontos reconhecidos;
+\item \textit{background} disponível.
+\end{itemize}
+
+
+\figura{4_6_generate_buildings_map.PNG}{Experimento pronto para gerar dados de edificações no GAMA}{basicmodel}{width=0.75\textwidth}
+
+Após realizar a execução do experimento "\textit{Generate Buildings from Points.gaml}", é inserido automaticamente o arquivo "\textit{buildings.shp}" e imagens de satélites na pasta RK, localizada em \textit{Datasets}.
+
+
+\section{Apresentação das execuções}
+
+
 \section{Coleta e organização dos dados}
 
 \section{Execução da Santa Luzia e dados coletados}
