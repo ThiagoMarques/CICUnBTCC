@@ -161,6 +161,7 @@ Variáveis personalizadas para geração de dados GAML:
 \item max\_age: 93;
 \end{itemize}
 
+
 Variáveis personalizadas para geração da agenda sintética:
 
 \begin{itemize}
@@ -178,13 +179,15 @@ Variáveis personalizadas para geração da agenda sintética:
 
 
 
-
-
 \section{Execução da Santa Luzia e dados coletados}
 
 \section{Execução do RK e dados coletados}
 
 \subsection{Lockdown}
+
+A execução da simulação que simula o lockdown foi iniciada com número de infectados inicial de 1 caso no condomínio. O prazo de 15 dias resultou na infecção de 3 agentes e não houve mortes nesse período:
+
+\figura{4_12_lockdown_end.PNG}{Execução da simulação lockdown}{basicmodel}{width=0.75\textwidth}
 
 \subsection{Escolas e trabalhos fechados}
 
@@ -198,9 +201,21 @@ Após 50 dias, os casos começaram a espalhar pelo condomínio, e pontos amarelo
 
 \figura{4_20_escolas_trabalhos_execucao_3.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
 
-A simulação estabilizou o número de infectados após 5 meses, onde há um declínio na curva de casos. O número total de casos foram de 39 agentes infectados em uma população de 8811 indivíduos. A simulação indica os locais infectados, no total houve 33 casas infectadas e 6 estabelecimentos comerciais. Não houve registro de morte na simulação.
+A simulação estabilizou o número de infectados após 5 meses, onde há um declínio na curva de casos. O número total de casos foram de 39 agentes infectados em uma população de 8811 indivíduos. Os locais onde ocorreram as infecções durante o período da simulação foram em 33 casas e 6 estabelecimentos comerciais. Não houve registro de morte na simulação.
 
+\subsection{Escolas e trabalhos abertos}
 
+A execução da simulação que libera o acesso as escolas, universidades e trabalhos foi iniciada com número de infectados inicial de 1 caso no condomínio. Foi observado que o número de infectados atingiu o número de XXX infectados após 50 dias. Os casos ficaram concentrados XXXX do mapa, indicando que XXXX:
+
+\figura{4_18_escolas_trabalhos_execucao_1.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos em 50 dias}{basicmodel}{width=0.75\textwidth}
+
+Após 50 dias, os casos começaram a espalhar pelo condomínio, e pontos amarelos surgiram a direta do mapa. A partir deste ponto, o número de casos começa a crescer, indicando a proliferação do vírus fora do ponto inicial:
+
+\figura{4_19_escolas_trabalhos_execucao_2.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
+
+\figura{4_20_escolas_trabalhos_execucao_3.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
+
+A simulação estabilizou o número de infectados após 5 meses, onde há um declínio na curva de casos. O número total de casos foram de 39 agentes infectados em uma população de 8811 indivíduos. Os locais onde ocorreram as infecções durante o período da simulação foram em 33 casas e 6 estabelecimentos comerciais. Não houve registro de morte na simulação.
 
 
 
