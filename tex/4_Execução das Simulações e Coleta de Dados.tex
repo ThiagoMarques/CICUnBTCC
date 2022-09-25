@@ -11,10 +11,7 @@ O Condomínio RK foi construído no Rancho Karina, com 148.188,85 hectares de ex
 
 A fim de administrar a saúde ambiental, considerando os aspectos geográficos em que o condomínio se insere, foi criado em 2013, em Assembleia Geral Extraordinária, o Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK), ligado à administração do condomínio, com o objetivo de controlar e reduzir riscos à saúde da comunidade \cite{CondominioRK:online}.
 
-Faz-se, assim, como proposta para o CEA/RK integrar diferentes áreas do
-conhecimento – Ciências Ambientais, Medicina Veterinária e Saúde Coletiva –
-utilizando-se da coleta e análise de dados, reconhecimento das demandas da
-comunidade e aplicação de ações para promoção da Saúde Única. \cite{miranda2020acompanhamento}
+Faz-se, assim, como proposta para o CEA/RK integrar diferentes áreas do conhecimento – Ciências Ambientais, Medicina Veterinária e Saúde Coletiva – utilizando-se da coleta e análise de dados, reconhecimento das demandas da comunidade e aplicação de ações para promoção da Saúde Única. \cite{miranda2020acompanhamento}
 
 O Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) se aproxima ao serviço de vigilância, pois a medida que informações apreendidas a campo a partir do contato com a comunidade levam às ações tomadas – “informação para ação” \cite{wunsch1993sistema}.
 
@@ -28,7 +25,7 @@ Os dados disponibilizados pelo CEA/RK é fruto de um estudo interno da populaç�
 
 \figura{4_1_perfil_etário_RK}{Perfil etário dos moradores do Condomínio RK}{basicmodel}{width=0.75\textwidth}
 
-A população absoluta informada foi de 8000 moradores, com idade média de 35 anos e idade máxima de 93 anos. O condomínio possui uma média de quatro residentes por casa, totalizando em média 1900 habitações. O condomínio possui comércio local, com aproximadamente 41 imóveis comerciais na entrada do condomínio. A região possui uma densidade demográfica de 5,4 habitantes por quilômetro quadrado e uma área total de 1.481 km² \cite{}.
+De acordo com dados disponibilizados pelo Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK), a população absoluta informada foi de 8000 moradores, com idade média de 35 anos e idade máxima de 93 anos. O condomínio possui uma média de quatro residentes por casa, totalizando em média 1900 habitações. O condomínio possui comércio local, com aproximadamente 41 imóveis comerciais na entrada do condomínio. A região possui uma densidade demográfica de 5,4 habitantes por quilômetro quadrado e uma área total de 1.481 km².
 
 \section{Passos para como executar}
 
@@ -40,16 +37,16 @@ Ainda, de acordo com a documentação do COMOKIT, é necessário realizar o down
 
 \figura{4_2_gama.PNG}{Inicialização do aplicativo GAMA}{basicmodel}{width=0.75\textwidth}
 
-A importação dos arquivos do COMOKIT deve ser realizada na pasta de modelo do GAMA. Ao extrair os arquivos baixados do repositório COMOKIT no GitHub, basta indicar o caminho do local extraído e importar como um projeto GAMA.
-
 \figura{4_3_import_GAMA.PNG}{Importação de um projeto GAMA}{basicmodel}{width=0.75\textwidth}
+
+A importação dos arquivos do COMOKIT deve ser realizada na pasta de modelo do GAMA. Ao extrair os arquivos baixados do repositório COMOKIT no GitHub, é necessário indicar o caminho do local extraído e importar como um projeto GAMA.
 
 \subsubsection{Configuração dos arquivos}
 
-Após a importação, a pasta do COMOKIT estará disponível para abertura. A estrutura de pastas do COMOKIT:
+Após a importação, a pasta do COMOKIT estará disponível para abertura. Abaixo, a imagem com a estrutura de pastas do COMOKIT:
 
 \begin{itemize}
-\item \textit{beta\_output}: pasta que armazena um arquivo CSV da calibração do valor da taxa de transmissão (\β);
+\item \textit{beta\_output}: pasta que armazena um arquivo CSV da calibração do valor da taxa de transmissão (β);
 \item \textit{Datasets}: pasta com arquivos demográficos e espaciais;
 \item \textit{Experiments}: pasta com todos os experimentos do COMOKIT.;
 \item \textit{Model}: pasta que contém as entidades e modelos da simulação;
@@ -88,10 +85,21 @@ Ao iniciar a execução do arquivo "\textit{Generate Buildings from Points.gaml}
 
 Após realizar a execução do experimento "\textit{Generate Buildings from Points.gaml}", é inserido automaticamente o arquivo "\textit{buildings.shp}" e imagens de satélites na pasta RK, localizada em \textit{Datasets}.
 
+Para aproximação da realidade, o Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) disponibilizou o mapa do condomínio no formato shapefile com informações das edificações do condomínio:
+
+\figura{4_27_QGIS_RK.PNG}{Imagem do condomínio RK no software QGIS}{basicmodel}{width=0.75\textwidth}
+
+No software QGIS, foi inserido na tabela de atributos as informações sobre os tipos de edificação em cada ponto mapeado para identificação de residências e comércios. De acordo com a documentação do QGIS, cada linha da tabela representa uma feição, podendo conter uma geometria ou não, e cada coluna contém uma informação específica sobre a feição. As feições podem ser pesquisadas, selecionadas, movidas ou editadas \cite{DocQGIS:online}.
+
+\figura{4_28_QGIS_feicoes.PNG}{Feições do condomínio RK no software QGIS}{basicmodel}{width=0.75\textwidth}
+
+Após edição da tabela de atributos no QGIS, o arquivo shapefile chamado boundary.shp foi exportado para a pasta RK contida no COMOKIT e utilizada para gerar as simulações.
+
+
 
 \section{Apresentação das execuções}
 
-O primeiro diagnóstico de Covid-19 no Distrito Federal foi no dia 05 de março de 2020 \cite{SESCovid19S7}. O caso tratava-se de uma mulher, de 53 anos, que viajou pela Inglaterra e Suíça \cite{Brasilco67:online}. No dia 14 de março de 2022, foi publicado o decreto Nº 40.520 publicado no Diário Oficial da União que aplicava de acordo com a imprensa \cite{CorreioBraziliense032020:online} o primeiro lockdown no Distrito Federal.
+O primeiro diagnóstico de Covid-19 no Distrito Federal foi no dia 05 de março de 2020 \cite{SESCovid19S7:online}. O caso tratava-se de uma mulher, de 53 anos, que viajou pela Inglaterra e Suíça \cite{Brasilco67:online}. No dia 14 de março de 2022, foi publicado o decreto Nº 40.520 publicado no Diário Oficial da União que aplicava de acordo com a imprensa \cite{CorreioBraziliense032020:online} o primeiro lockdown no Distrito Federal.
 
 O decreto Nº 40520 suspendeu pelo prazo de quinze dias eventos, atividades coletivas de cinema e teatro, atividades educacionais em todas as escolas, universidades, faculdades das redes públicas e privadas, academias de esportes de todas as modalidades \cite{Brasilco67:online}. O decreto Nº 40522 incluiu a suspensão aos museus \cite{Decreto441:online} e o decreto Nº 40529 incluiu a suspensão ao zoológico, parques ecológicos, recreativos, urbanos, vivenciais e afins e boates e casas noturnas, atendimento ao público em shoppings centers, feiras populares e clubes recreativos \cite{Decreto412:online}.
 
@@ -101,43 +109,160 @@ Os dados divulgados do condomínio RK pelo Centro de Estudos Ambientais do Condo
 
 \figura{4_8_CEA_RK_1.jpeg}{Número total de novos casos no condomínio RK por semana epidemiológica de início de sintomas}{basicmodel}{width=0.75\textwidth}
 
-\figura{4_9_CEA_RK_2.jpeg}{Curva epidemiológica dos casos de COVID 19 no condomínio RK, segundo data de início dos sintomas e evolução}{basicmodel}{width=0.75\textwidth}
+\subsection{Simulação no COMOKIT}
 
-\subsection{Lockdown}
-
-Para realizar a simulação do primeiro lockdown no COMOKIT, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio.
-
-\figura{4_7_parameters_lockdown.PNG}{Parâmetros para realizar a simulação do lockdown no condomínio RK}{basicmodel}{width=0.75\textwidth}
-
-O COMOKIT fornece um modelo que simula a política de bloqueio total aplicada a um determinado número de dias. O modelo simula o bloqueio total de atividades, que é aplicada a todos os indivíduos. Após o período informado de número de dias, nenhuma política é aplicada. 
-
-Logo, o número de 15 dias foi configurado para execução da simulação:
-
-\figura{4_10_model_lockdown.PNG}{Configuração do modelo lockdown no COMOKIT}{basicmodel}{width=0.75\textwidth}
-
-Para visualização da simulação, é apresentado um painel com os parâmetros configurados, um gráfico com a evolução epidemiológica de casos de COVID na simulação e um mapa do condomínio interativo com os agentes saudáveis na cor verde, casos suspeitos na cor amarela e laranja representando agentes infectados. A cor preta representa agentes que faleceram por COVID.
+Para visualização da simulação, é apresentado um painel com os parâmetros configurados, um gráfico com a evolução epidemiológica de casos de COVID na simulação e um mapa do condomínio interativo com os agentes separados por cores.
 
 \figura{4_11_lockdown_ready.PNG}{Modelo Lockdown no COMOKIT pronto para execução de simulação}{basicmodel}{width=0.75\textwidth}
 
+Cada simulação importa pelo menos dois arquivos abaixo para realizar a execução:
+\begin{enumerate}
+\item Global.gaml
+\item Abstract Experiment.gaml
+\end{enumerate}
 
-\figura{4_12_lockdown_end.PNG}{Modelo Lockdown no COMOKIT após execução de simulação}{basicmodel}{width=0.75\textwidth}
+\subsubsection{Global.gaml}
+
+O arquivo Global.gaml contém declarações globais de ações e atributos, usados principalmente para inicializar o modelo em experimentos. Esse modelo importa entidades que de acordo com a documentação do COMOKIT, as entidades representam os habitantes individuais com suas características de sexo, situação de emprego, idade e situação epidemiológica e entidades espaciais que são edificações onde os agentes individuais realizam atividades, que dependem do tipo de edifício definido \cite{ComokitDoc}.
+
+\figura{4_29_global_gaml.PNG}{Importações no arquivo Global.gaml}{basicmodel}{width=0.75\textwidth}
+
+Este arquivo é o responsável por criar as edificações e atividades da simulação e inserir os parâmetros epidemiológicos. No condomínio RK, como não existe uma edificação do tipo Hospital, o COMOKIT constrói automaticamente uma edificação especial fora da região delimitada no arquivo boundary.shp para simular um hospital. Caso exista um hospital inserido no arquivo shapefile, o código abaixo deve ser removido:
+
+\figura{4_30_Global_gaml_hospital.PNG}{Simulação de hospital no arquivo Global.gaml}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Abstract Experiment.gaml}
+
+O arquivo Abstract Experiment.gaml insere variáveis que são responsáveis pela interface gráfica da simulação, como cores, gráficos e imagens de fundo da simulação. Alguns parâmetros importantes para identificação em tempo real dos casos da simulação são feitas neste arquivo, como a identificação de cores dos agentes com situação epidemiológica. 
+
+As cores abaixo representam o status epidemiológico dos agentes, representados no mapa por um quadrado:
+
+\begin{itemize}
+\item verde: representa um agente saudável, que não possui status recuperado, suscetível ou infectado;
+\item azul: representa um agente recuperado;
+\item amarelo: representa um agente suscetível;
+\item laranja: representa um agente infectado;
+\item preta: representa um agente morto.
+\end{itemize}
+
+
+\subsection{Lockdown}
+
+O COMOKIT fornece um modelo chamado Lockdown que simula a política de bloqueio total aplicada a um determinado número de dias. O modelo simula o bloqueio total de atividades, que é aplicada a todos os indivíduos. Após a finalização do período inicial de dias de lockdown configurado, nenhuma política é aplicada na simulação. 
+
+\figura{4_31_lockdown_basic.PNG}{Modelo Lockdown no COMOKIT}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Importações}
+
+O modelo utiliza os arquivos Global.gaml para instanciar agentes individuais e agentes espaciais e o arquivo Abstract Experiment.gaml para exibição de interface gráfica.
+
+\subsubsection{Definições globais}
+
+O número de 15 dias foi configurado para execução da simulação na variável num\_days:
+
+\figura{4_10_model_lockdown.PNG}{Configuração do modelo Lockdown no COMOKIT}{basicmodel}{width=0.75\textwidth}
+
+A política aplicada foi nomeada como create\_lockdown\_policy, herdada do arquivo Authority.gaml. A política percorre uma lista de atividades chamada ActivitiesListingPolicy, onde todas as atividades dos agentes são configuradas para o valor falso:
+
+\figura{4_32_ActivitiesListingPolicy.PNG}{Aplicação da política de Lockdown na lista de atividades dos agentes}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Interface gráfica}
+
+Para exibição do gráfico e informações da simulação, foi configurado o tipo default\_display para exibição dos agentes no mapa e para exibição do gráfico, foi configurado o tipo states\_evolution\_chart:
+
+\figura{4_33_lockdown_grafico.PNG}{Configuração da interface gráfica para execução do modelo Lockdown}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Parâmetros globais}
+
+Para realizar a simulação do lockdown no COMOKIT, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio.
+
+\figura{4_7_parameters_lockdown.PNG}{Parâmetros para realizar a simulação do lockdown no condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Resultados}
+
+Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
+
+\figura{4_24_lockdown_1.PNG}{Resultado da simulação do modelo lockdown no condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+
+\subsection{No Activities with Meeting}
+
+O COMOKIT fornece um modelo chamado No Activities with Meeting que simula uma política restritiva que impede os agentes de praticar qualquer atividade que permita que os indivíduos conheçam outros indivíduos. E por fim, as atividades como trabalhar, estudar, ir à escola, comer, lazer ou esporte são proibidas.
+
+\figura{4_34_NoActivitiesMeeting.PNG}{Modelo No Activities with Meeting COMOKIT}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Importações}
+
+O modelo utiliza os arquivos Global.gaml para instanciar agentes individuais e agentes espaciais e o arquivo Abstract Experiment.gaml para exibição de interface gráfica.
+
+\subsubsection{Definições globais}
+
+A política aplicada foi nomeada como create\_no\_meeting\_policy, herdada do arquivo Authority.gaml. A política percorre uma lista de atividades chamada ActivitiesListingPolicy. As atividades definidas como uma atividade com reunião são definidas nos parâmetros globais do COMOKIT. Essa variável global chamada de meeting\_relaxing\_act contém as atividades dos agentes inseridas na lista, que serão proibidas ao escolher essa política. As definições dessa variável estão nas configurações globais de parâmetros (Parameters.gaml):
+
+\figura{4_36_meeting_relaxing.PNG}{Parâmetros para atividades proibidas ao escolher a política No activity with meeting}{basicmodel}{width=0.75\textwidth}
+
+Abaixo, o retorno configurado para falso de todas as atividades dos agentes.
+
+\figura{4_35_CreateNoMeetingPolicy.PNG}{Aplicação da política No activity with meeting na lista de atividades dos agentes}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Interface gráfica}
+
+Para exibição do gráfico e informações da simulação, foi configurado o tipo default\_display para exibição dos agentes no mapa e para exibição do gráfico, foi configurado o tipo states\_evolution\_chart:
+
+\figura{4_32_ActivitiesListingPolicy_parameters.PNG}{Configuração da interface gráfica para execução da simulação do modelo No activity with meeting}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Parâmetros globais}
+
+Para realizar a simulação do modelo No activity with meeting no COMOKIT, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio.
+
+\figura{4_7_parameters_lockdown.PNG}{Parâmetros para realizar a simulação do modelo No activity with meeting no condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Resultados}
+
+Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
+
+\figura{4_25_no_active_1.PNG}{Dados da simulação após execução do modelo No activity with meeting}{basicmodel}{width=0.75\textwidth}
 
 
 \subsection{Escolas e trabalhos fechados}
 
-Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio.
+O COMOKIT fornece um modelo chamado School and Workplace Closures que simula uma política restritiva que impede os agentes de se deslocarem ao trabalho, escolas e universidades.
 
-\figura{4_7_parameters_lockdown.PNG}{Parâmetros para realizar a simulação de escolas e trabalhos fechados no condomínio RK}{basicmodel}{width=0.75\textwidth}
+\figura{4_37_SchoolWorkplaceClosures_1.PNG}{Modelo School and Workplace Closure}{basicmodel}{width=0.75\textwidth}
 
-O COMOKIT fornece um modelo que simula escolas e trabalhos fechados na região indicada. As escolas fechadas impedem os agentes de irem a escolas ou universidades e o trabalho fechado impede os agentes com emprego de irem ao trabalho.
+\subsubsection{Importações}
 
-Ao iniciar a execução do modelo, uma caixa é exibida perguntando se a simulação deve aplicar a política que simula escolas fechadas e trabalhos fechados. A opção marcada como verdadeira aplica a política:
+O modelo utiliza os arquivos Global.gaml para instanciar agentes individuais e agentes espaciais e o arquivo Abstract Experiment.gaml para exibição de interface gráfica.
 
-\figura{4_17_escolas_trabalhos_ready.PNG}{Modelo que simula restrições a  escolas e trabalhos no COMOKIT pronto para execução}{basicmodel}{width=0.75\textwidth}
+\subsubsection{Definições globais}
 
-A simulação foi executada até o dia 25 de agosto, onde ocorre uma diminuição dos casos infectados na simulação:
+A política aplicada foi nomeada como create\_school\_work\_allowance\_policy, herdada do arquivo Authority.gaml. A política percorre uma lista de atividades chamada ActivitiesListingPolicy e marca como falso as atividades dos agentes de se deslocarem a locais de estudo e trabalho.
 
-\figura{4_21_escolas_trabalhos_end.PNG}{Modelo que simula restrições a  escolas e trabalhos no COMOKIT após execução de simulação}{basicmodel}{width=0.75\textwidth}
+\figura{4_38_CreateSchoolWorkAllowancePolicy.PNG}{Aplicação da política create\_school\_work\_allowance\_policy na lista de atividades dos agentes}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Interface gráfica}
+
+Para exibição do gráfico e informações da simulação, foi configurado o tipo default\_display para exibição dos agentes no mapa e para exibição do gráfico, foi configurado o tipo states\_evolution\_chart:
+
+\figura{4_37_SchoolWorkplaceClosures_parameters.PNG}{Configuração da interface gráfica para execução da simulação do modelo School and Workplace Closures}{basicmodel}{width=0.75\textwidth}
+
+
+\subsubsection{Parâmetros globais}
+
+Para realizar a simulação do modelo School and Workplace Closures no COMOKIT, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio.
+
+\figura{4_7_parameters_lockdown.PNG}{Parâmetros para realizar a simulação do modelo School and Workplace Closures no condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Resultados}
+
+Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
+
+\figura{4_26_escolas_trabalhos_fechados_1.PNG}{Dados da simulação após execução do modelo School and Workplace Closures}{basicmodel}{width=0.75\textwidth}
+
 
 \section{Coleta e organização dos dados}
 
@@ -149,7 +274,16 @@ Os locais de escola e trabalho são simulados no mapa e escolhida de forma rand�
 
 Os parâmetros da simulação foram mantidas conforme os valores fornecidos por padrão do COMOKIT que podem ser consultados em https://comokit.org/docs/parameterize.
 
-As configurações personalizadas para aproximação da realidade foram feitas com base nos dados divulgados pelo Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) e de aproximações informada pelo IPEA (Instituto de Pesquisa Econômica Aplicada) \cite{IPEA:online}.
+Foi realizado um ajuste na variável basic\_viral\_release que configura a liberação ao longo do tempo da carga viral no ambiente por um indivíduo infectado, valor ajustado para 4.0.
+
+Outro ajuste realizado na variável basic\_viral\_decrease, responsável pela diminuição ao longo do tempo da carga viral no ambiente, ajustada para o valor de 0.5.
+
+\begin{itemize}
+\item basic\_viral\_release: 4.0;
+\item basic\_viral\_decrease: 0.5;
+\end{itemize}
+
+As configurações personalizadas abaixo para aproximação da realidade foram feitas com base nos dados divulgados pelo Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) e de aproximações informada pelo IPEA (Instituto de Pesquisa Econômica Aplicada) \cite{IPEA:online}.
 
 Variáveis personalizadas para geração de dados GAML:
 
@@ -178,45 +312,38 @@ Variáveis personalizadas para geração da agenda sintética:
 \end{itemize}
 
 
-
-\section{Execução da Santa Luzia e dados coletados}
-
 \section{Execução do RK e dados coletados}
 
 \subsection{Lockdown}
 
-A execução da simulação que simula o lockdown foi iniciada com número de infectados inicial de 1 caso no condomínio. O prazo de 15 dias resultou na infecção de 3 agentes e não houve mortes nesse período:
+A simulação do lockdown aplicou a política restritiva de 15 dias resultou na infecção de 3 agentes:
 
 \figura{4_12_lockdown_end.PNG}{Execução da simulação lockdown}{basicmodel}{width=0.75\textwidth}
 
+Após 15 dias de execução, percebemos um aumento do número de casos, motivado pela não aplicação de política restritiva:
+
+\figura{4_24_lockdown_1.PNG}{Execução da simulação lockdown}{basicmodel}{width=0.75\textwidth}
+
+De acordo com o gráfico da simulação, há um declínio no número de casos após aproximadamente 1500 horas ou 62 dias. O pico de casos neste período está abaixo de 15 casos infectados.
+
+Após aproximadamente 2000 horas de execução ou 84 dias, os casos ficaram abaixo de 5 infectados e deste ponto em diante, há um aumento expressivo no número de casos chegando a mais de 100 infectados no condomínio.
+
+\subsection{Escolas, trabalhos e atividades de lazer fechados}
+
+A execução da simulação que restringe o acesso as escolas, universidades e trabalhos e atividades de lazer foi iniciada com número de infectados inicial de 1 caso no condomínio. Foi observado que o número de infectados atingiu o número de 4 infectados após 20 dias. Os casos ficaram concentrados a esquerda do mapa, indicando que o contágio provavelmente aconteceu pela proximidade das pessoas na mesma área:
+
+\figura{4_25_no_active_1.PNG}{Execução da simulação que restringe o acesso dos agentes a escola, universidades, trabalhos e atividades de lazer}{basicmodel}{width=0.75\textwidth}
+
+Após 20 dias, não houve registro de casos na simulação.
+
 \subsection{Escolas e trabalhos fechados}
 
-A execução da simulação que restringe o acesso as escolas, universidades e trabalhos foi iniciada com número de infectados inicial de 1 caso no condomínio. Foi observado que o número de infectados atingiu o número de 4 infectados após 50 dias. Os casos ficaram concentrados a esquerda do mapa, indicando que o contágio provavelmente aconteceu pela proximidade das pessoas na mesma área:
+A execução da simulação que restringe o acesso as escolas, universidades e trabalhos foi iniciada com número de infectados de 1 caso no condomínio. 
 
-\figura{4_18_escolas_trabalhos_execucao_1.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos em 50 dias}{basicmodel}{width=0.75\textwidth}
+\figura{4_26_escolas_trabalhos_fechados_1.PNG}{Execução da simulação que restringe o acesso dos agentes a escola, universidades, trabalhos}{basicmodel}{width=0.75\textwidth}
 
-Após 50 dias, os casos começaram a espalhar pelo condomínio, e pontos amarelos surgiram a direta do mapa. A partir deste ponto, o número de casos começa a crescer, indicando a proliferação do vírus fora do ponto inicial:
 
-\figura{4_19_escolas_trabalhos_execucao_2.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
-
-\figura{4_20_escolas_trabalhos_execucao_3.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
-
-A simulação estabilizou o número de infectados após 5 meses, onde há um declínio na curva de casos. O número total de casos foram de 39 agentes infectados em uma população de 8811 indivíduos. Os locais onde ocorreram as infecções durante o período da simulação foram em 33 casas e 6 estabelecimentos comerciais. Não houve registro de morte na simulação.
-
-\subsection{Escolas e trabalhos abertos}
-
-A execução da simulação que libera o acesso as escolas, universidades e trabalhos foi iniciada com número de infectados inicial de 1 caso no condomínio. Foi observado que o número de infectados atingiu o número de XXX infectados após 50 dias. Os casos ficaram concentrados XXXX do mapa, indicando que XXXX:
-
-\figura{4_18_escolas_trabalhos_execucao_1.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos em 50 dias}{basicmodel}{width=0.75\textwidth}
-
-Após 50 dias, os casos começaram a espalhar pelo condomínio, e pontos amarelos surgiram a direta do mapa. A partir deste ponto, o número de casos começa a crescer, indicando a proliferação do vírus fora do ponto inicial:
-
-\figura{4_19_escolas_trabalhos_execucao_2.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
-
-\figura{4_20_escolas_trabalhos_execucao_3.PNG}{Execução da simulação que restringe o acesso a escola, universidades e trabalhos após 50 dias}{basicmodel}{width=0.75\textwidth}
-
-A simulação estabilizou o número de infectados após 5 meses, onde há um declínio na curva de casos. O número total de casos foram de 39 agentes infectados em uma população de 8811 indivíduos. Os locais onde ocorreram as infecções durante o período da simulação foram em 33 casas e 6 estabelecimentos comerciais. Não houve registro de morte na simulação.
-
+Os casos anteriores a 145 dias ficaram abaixo de 20 casos. Após esse período, os casos cresceram consideravelmente, chegando ao pico de 54 casos.
 
 
 
