@@ -1,18 +1,80 @@
-\section{Busca de dados disponíveis para o Santa Luzia}
+%\section{Busca de dados disponíveis para o Santa Luzia}
 
-Em um levantamento realizado em 2018 pela Companhia de Planejamento do Distrito Federal(Codeplan) foi feito o estudo da Pesquisa Distrital por Amostra de Domicílio (PDAD), esse estudo tem como principal função atualizar o perfil socioeconômico dos moradores do Distrito Federal(DF), analisar possíveis carências na região urbana do DF e avaliar mudanças estudos anteriores. Nessa pesquisa foram visitados 21908 domicílios ao longo de 7 meses e observou-se que dentre as áreas abrangidas pelo estudo na região da Santa Luzia a quantidade de domicílios era 3.793 e que população de Santa Luzia contava com aproximadamente 16 mil moradores.\cite{CODEPLAN:online}
+%Em um levantamento realizado em 2018 pela Companhia de Planejamento do Distrito Federal(Codeplan) foi feito o estudo da Pesquisa Distrital por Amostra de Domicílio (PDAD), esse estudo tem como principal função atualizar o perfil socioeconômico dos moradores do Distrito Federal(DF), analisar possíveis carências na região urbana do DF e avaliar mudanças estudos anteriores. Nessa pesquisa foram visitados 21908 domicílios ao longo de 7 meses e observou-se que dentre as áreas abrangidas pelo estudo na região da Santa Luzia a quantidade de domicílios era 3.793 e que população de Santa Luzia contava com aproximadamente 16 mil moradores.\cite{CODEPLAN:online}
 
-O programa de Pesquisa Distrital por Amostra de Domicilio(PDAD) foi elaborado e dividido em 4 fases. A primeira fase com foco em planejamento como elaboração de manuais, questionários. Logo após isso a segunda fase com um conceito pre-pesquisa com pré-testes e o treinamento dos pesquisadores. Na terceira fase, iniciou-se de fato a pesquisa em campo com os questionários nas residencias dos entrevistados. Por fim na quarta fase foi gerado o relatório e armazenamento no banco de dados assim como analises técnicas dos resultados e o relatório de resultados da PDAD\cite{CODEPLAN:online}
+%O programa de Pesquisa Distrital por Amostra de Domicilio (PDAD) foi elaborado e dividido em 4 fases. A primeira fase com foco em planejamento como elaboração de manuais, questionários. A segunda fase com um conceito pré-pesquisa com pré-testes e o treinamento dos pesquisadores. Na terceira fase, iniciou-se de fato a pesquisa em campo com os questionários nas residencias dos entrevistados. Por fim na quarta fase foi gerado o relatório e armazenamento no banco de dados assim como analises técnicas dos resultados e o relatório de resultados da PDAD\cite{CODEPLAN:online}
 
-quais os dados? onde estão disponíveis? como estão organizados?
-como foram produzidos?
+%Os dados da Coraci é o representante da parte social/civil e está em contato direto com a Fiocruz.
 
 \section{Busca de dados disponíveis para o RK}
 
+Os dados do condomínio RK foram cedidas pela equipe do Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK), ligado à administração do condomínio, com o objetivo de controlar e reduzir riscos à saúde da comunidade \cite{CondominioRK:online}. 
 
-quais os dados? como estão organizados? como foram produzidos?
+\subsubsection{Dados Compilados}
+
+Foram disponibilizados os seguintes dados compilados do condomínio:
+
+
+\begin{itemize}
+\item População absoluta: aproximadamente 8000 moradores;
+\item Idade média: 35 anos;
+\item Idade máxima: 93 anos;
+\item Média de pessoas por casa: 4 habitantes;
+\item Tamanho da área: 1.481km²
+\item Quantidade de casas: 1900 casas;
+\item Quantidade de comércios: 41 imóveis comerciais;
+\item Densidade demográfica preliminar (habitantes/km²): aproximadamente 5,4 hab/km²
+\end{itemize}
+
+Abaixo, os dados de perfil etário dos moradores em um gráfico:
+
+\figura{4_1_perfil_etário_RK.PNG}{Perfil etário dos moradores do Condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Dados geográficos}
+
+Os dados geográficos cedidos pelo Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) foram enviados no formato shapefile, conforme imagem abaixo:
+
+\figura{5_1_shapefile_RK.PNG}{Arquivo no formato shapefile do Condomínio RK}{basicmodel}{width=0.75\textwidth}
+
+O arquivo shapefile contém informações de todas as áreas mapeadas no condomínio, que podem ser consultadas ao exibir a tabela de atributos. A tabela de atributos do arquivo contém dados separados por linhas e colunas, onde as colunas correspondem as informações sobre cada feição mapeada e as linhas correspondem a uma feição. As colunas identificadas:
+
+\begin{itemize}
+\item Endereço: contém informações do endereço no condomínio;
+\item Conjunto: contém informações do conjunto no condomínio;
+\item Quadra: contém informações da quadra no condomínio;
+\item Lote: contém informações do lote no condomínio;
+\item Área: indica a área da feição em metros quadrados;
+\item Piscina: indica se na feição existe uma piscina ou não;
+\item Terrento: indica se a feição possui edificação construída ou não;
+\item Agente: indica o nome do agente que mapeou o local.
+\end{itemize}
+
+
+\figura{4_28_QGIS_feicoes.PNG}{Tabela de atributos do arquivo shapefile do Condomínio RK}{basicmodel}{width=0.75\textwidth}
+
 
 \section{Simulação versos realidade}
+
+A simulação é uma das mais poderosas ferramentas de análise disponível para projeto e operação de sistemas. A realização de um estudo de simulação antes da implantação do sistema real é muito importante porque permite a aceleração do funcionamento do sistema no tempo, possibilita prever os quase inevitáveis acidentes que ocorrem quando da implantação de um sistema real além de poupar recursos econômicos \cite{lobao1999evoluccao}.
+
+Simulações computacionais vão além das simples animações. Elas englobam uma vasta classe de tecnologias, do vídeo a realidade virtual, que podem ser classificadas em certas categorias gerais baseadas fundamentalmente no grau de interatividade entre o aprendiz e o computador \cite{gaddis2000learning}. A simulação computacional é uma das ferramentas que podem ser utilizadas para a aquisição, organização e construção do conhecimento e da visão sistêmica. Esse recurso favorece a educação e o treinamento das pessoas e, consequentemente, sua adaptação às rápidas mudanças de nossa sociedade \cite{de2014simulaccao}.
+
+O comportamento de um sistema é estudado através de um modelo de simulação. Este modelo geralmente utiliza diversos parâmetros sobre a operação do sistema. Uma vez desenvolvido e validado, o modelo pode ser usado para investigar uma grande variedade de questões sobre o sistema. Mudanças no sistema podem ser simuladas a fim de prever seu impacto no seu desempenho. A simulação pode também ser usada para estudar sistemas ainda na fase de concepção, antes que sejam efetivamente implementados. Assim, a simulação pode ser usada como uma ferramenta para predizer os efeitos de uma mudança em sistemas existentes e também como uma ferramenta de projeto para avaliar e validar o desempenho de novos sistemas \cite{miyagi2006introduccao}.
+
+\subsection{Sistemas}
+
+Para modelar um sistema, é necessário assimilar o conceito de sistema e de fronteira do sistema. Um sistema é definido como um grupo de objetos que estão agregados de acordo com uma relação de interdependência para atingir certos objetivos \cite{miyagi2006introduccao}. 
+
+Um sistema é muitas vezes afetado por mudanças que ocorrem fora do sistema. Estas mudanças ocorrem, portanto, no chamado ambiente externo do sistema. Em modelagem de sistemas, é necessário definir a fronteira entre o sistema e seu ambiente. Esta definição depende da finalidade do estudo \cite{miyagi2006introduccao}.
+
+\subsection{Modelos}
+
+Um modelo, em engenharia, pode ser definido como uma representação de um sistema com o intuito de estudá-lo. Para a maioria dos casos, é necessário somente considerar os aspectos do sistema que afetam esse estudo. Estes aspectos são representados no modelo do sistema, e este modelo, por definição, é uma simplificação do sistema. Por outro lado, o modelo deve ser suficientemente detalhado para permitir conclusões válidas sobre o sistema real. Diferentes modelos de um mesmo sistema podem ser necessários de acordo com o objetivo do estudo. Modelos podem ser classificados como sendo matemáticos ou físicos. Um modelo matemático usa notação simbólica e relações matemáticas para representar um sistema. Um modelo de simulação é um tipo particular de modelo matemático de um sistema \cite{miyagi2006introduccao}.
+
+
+
+
+
 
 \subsection{Simulação do santa luzia versus realidade dos dados}
 
