@@ -57,11 +57,12 @@ O arquivo shapefile contém informações de todas as áreas mapeadas no condom�
 
 A simulação é uma das mais poderosas ferramentas de análise disponível para projeto e operação de sistemas. A realização de um estudo de simulação antes da implantação do sistema real é muito importante porque permite a aceleração do funcionamento do sistema no tempo, possibilita prever os quase inevitáveis acidentes que ocorrem quando da implantação de um sistema real além de poupar recursos econômicos \cite{lobao1999evoluccao}.
 
-Simulações computacionais vão além das simples animações. Elas englobam uma vasta classe de tecnologias, do vídeo a realidade virtual, que podem ser classificadas em certas categorias gerais baseadas fundamentalmente no grau de interatividade entre o aprendiz e o computador \cite{gaddis2000learning}. A simulação computacional é uma das ferramentas que podem ser utilizadas para a aquisição, organização e construção do conhecimento e da visão sistêmica. Esse recurso favorece a educação e o treinamento das pessoas e, consequentemente, sua adaptação às rápidas mudanças de nossa sociedade \cite{de2014simulaccao}.
+Simulações computacionais vão além das simples animações. Elas englobam uma vasta classe de tecnologias, do vídeo a realidade virtual, que podem ser classificadas em certas categorias gerais baseadas fundamentalmente no grau de interatividade entre o aprendiz e o computador \cite{gaddis2000learning}. Logo, a simulação computacional é uma das ferramentas que podem ser utilizadas para a aquisição, organização e construção do conhecimento e da visão sistêmica. Esse recurso favorece a educação e o treinamento das pessoas e, consequentemente, sua adaptação às rápidas mudanças de nossa sociedade. \cite{de2014simulaccao}.
 
-O comportamento de um sistema é estudado através de um modelo de simulação. Este modelo geralmente utiliza diversos parâmetros sobre a operação do sistema. Uma vez desenvolvido e validado, o modelo pode ser usado para investigar uma grande variedade de questões sobre o sistema. Mudanças no sistema podem ser simuladas a fim de prever seu impacto no seu desempenho. A simulação pode também ser usada para estudar sistemas ainda na fase de concepção, antes que sejam efetivamente implementados. Assim, a simulação pode ser usada como uma ferramenta para predizer os efeitos de uma mudança em sistemas existentes e também como uma ferramenta de projeto para avaliar e validar o desempenho de novos sistemas \cite{miyagi2006introduccao}.
 
 \subsection{Sistemas}
+
+O comportamento de um sistema é estudado através de um modelo de simulação. Este modelo geralmente utiliza diversos parâmetros sobre a operação do sistema. Uma vez desenvolvido e validado, o modelo pode ser usado para investigar uma grande variedade de questões sobre o sistema. Mudanças no sistema podem ser simuladas a fim de prever seu impacto no seu desempenho. A simulação pode também ser usada para estudar sistemas ainda na fase de concepção, antes que sejam efetivamente implementados. Assim, a simulação pode ser usada como uma ferramenta para predizer os efeitos de uma mudança em sistemas existentes e também como uma ferramenta de projeto para avaliar e validar o desempenho de novos sistemas \cite{miyagi2006introduccao}.
 
 Para modelar um sistema, é necessário assimilar o conceito de sistema e de fronteira do sistema. Um sistema é definido como um grupo de objetos que estão agregados de acordo com uma relação de interdependência para atingir certos objetivos \cite{miyagi2006introduccao}. 
 
@@ -71,13 +72,65 @@ Um sistema é muitas vezes afetado por mudanças que ocorrem fora do sistema. Es
 
 Um modelo, em engenharia, pode ser definido como uma representação de um sistema com o intuito de estudá-lo. Para a maioria dos casos, é necessário somente considerar os aspectos do sistema que afetam esse estudo. Estes aspectos são representados no modelo do sistema, e este modelo, por definição, é uma simplificação do sistema. Por outro lado, o modelo deve ser suficientemente detalhado para permitir conclusões válidas sobre o sistema real. Diferentes modelos de um mesmo sistema podem ser necessários de acordo com o objetivo do estudo. Modelos podem ser classificados como sendo matemáticos ou físicos. Um modelo matemático usa notação simbólica e relações matemáticas para representar um sistema. Um modelo de simulação é um tipo particular de modelo matemático de um sistema \cite{miyagi2006introduccao}.
 
+\subsection{Simulações}
+
+A simulação computacional de sistemas envolve a aquisição de conhecimento. Segundo Dibella \& Nevis, a aquisição de conhecimento está relacionada ao desenvolvimento de novos conceitos e métodos e à identificação de ideias, habilidades e relacionamentos \cite{dibella1999organizaccoes}. Ainda, segundo Nonaka \& Takeuchi, propõem que o conhecimento é adquirido por meio da interação entre o conhecimento tácito e o conhecimento explícito \cite{nonaka1997criaccao}. Eles estabelecem quatro modos diferentes de conversão do conhecimento:
+
+\begin{itemize}
+\item de conhecimento tácito em conhecimento tácito: socialização; 
+\item de conhecimento tácito em conhecimento explícito: externalização; 
+\item de conhecimento explícito em conhecimento explícito: combinação; 
+\item de conhecimento explícito em conhecimento tácito: internalização. 
+\end{itemize}
+
+\figura{5_3_conhecimento.PNG}{Modos de conversão do conhecimento \cite{nonaka1997criaccao}}{basicmodel}{width=0.75\textwidth}
+
+\subsubsection{Conhecimento tácito x Conhecimento explícito}
+
+Os formatos tácito e explícito do conhecimento podem ser bem entendidos e diferenciados pela analogia que Bond \& Otterson (1998) \cite{bond1998creativity} fazem com o trabalho de um artesão, escultor de madeira. Esse escultor experiente pode escrever detalhadas regras e procedimentos e construir elaboradas ferramentas físicas, porém, consegue incorporar nestes recursos formais apenas parte de seu conhecimento, aqueles que o escultor consegue externalizar na forma explícita. Mas quando este inicia uma nova escultura, um dos mais importantes conhecimentos é a visão do todo, do resultado final de seu trabalho, que o vai guiar nos detalhes e pequenas tarefas para conseguir seu intento. Esse conhecimento é tácito, apenas precariamente externalizado na forma de um desenho ou discurso, mas pode ser razoavelmente bem captado e incorporado por um aprendiz deste artesão que junto com ele trabalha por um regular intervalo de tempo \cite{silva2004gestao}.
+
+Já Mascitelli (2000) \cite{mascitelli2000experience} ilustra com a diferenciação das habilidades entre dois pianistas, ambos músicos. Ao descrever que dois pianistas, um aprendiz e um mestre, podem ter acesso ao mesmo conhecimento explícito (as partituras musicais), porém, o entendimento destas partituras será diferente, assim como a reação a esta leitura, em termos de interação com o teclado e ajuste ao som produzido (conhecimento tácito) \cite{silva2004gestao}.
+
+O formato tácito, conhecimento subjetivo é um conjunto de habilidades inerentes a uma pessoa; sistema de ideias, percepção e experiência; difícil de ser formalizado, transferido ou explicado a outra pessoa \cite{silva2004gestao}.
+
+O formato explícito, conhecimento relativamente fácil de codificar, transferir e reutilizar; formalizado em textos, gráficos, tabelas, figuras, desenhos, esquemas, diagramas, etc., facilmente organizados em bases de dados e em publicações em geral, tanto em papel quanto em formato eletrônico \cite{silva2004gestao}.
 
 
+\subsubsection{Socialização}
+
+A socialização é a conversão de parte do conhecimento tácito de uma pessoa no conhecimento tácito de outra pessoa. Esse tipo de conversão também é abordado pelas teorias ligadas à cultura organizacional e ao trabalho em grupo \cite{silva2004gestao}. Um exemplo seria compartilhar informações por reuniões online.
+
+\subsubsection{Externalização}
+
+A externalização é um processo no qual o conhecimento tácito se torna explícito, expresso na forma de modelos, metáforas, analogias, conceitos ou hipóteses. Esse modo de conversão do conhecimento é a chave para a criação do conhecimento, pois gera conceitos novos e explícitos a partir do conhecimento tácito \cite{gavira2003simulaccao}.
 
 
+\subsubsection{Combinação}
 
-\subsection{Simulação do santa luzia versus realidade dos dados}
+A combinação é um processo de sistematização de conceitos em um sistema de conhecimento; ela envolve a combinação de diferentes conjuntos de conhecimento explícito. As pessoas trocam e combinam conhecimentos através de meios como documentos, reuniões, conversas, redes de comunicação computadorizadas etc. A reconfiguração das informações existentes através da classificação, do acréscimo, da combinação e da categorização do conhecimento explícito pode levar a novos conhecimentos \cite{gavira2003simulaccao}.
+
+\subsubsection{Internalização}
+
+Internalização é o processo de inclusão do conhecimento explícito no 
+conhecimento tácito; está intimamente relacionada ao “aprender fazendo”. As experiências, incluindo aquelas adquiridas nos outros modos de conversão, são internalizadas no conhecimento tácito dos indivíduos sob a forma de modelos mentais ou conhecimento técnico \cite{gavira2003simulaccao}.
+
+\subsubsection{Metáfora e Analogia}
+
+A metáfora é uma forma de perceber ou entender algo intuitivamente, através da criação de uma imagem simbólica composta de outros elementos; em outras palavras, faz com que a pessoa entenda determinado problema relacionando-o com uma situação ou objeto conhecido. Através dela, pode-se entender conceitos abstratos pelo uso de imagens de elementos concretos \cite{gavira2003simulaccao}.
+
+A analogia destaca o caráter comum a duas coisas diferentes. A associação entre coisas ou fatos através da analogia é realizada pelo pensamento racional e concentra-se nas semelhanças entre elas. O modelo, por sua vez, é normalmente criado a partir de metáforas; nele, são representados os conceitos explícitos, não devendo haver contradições. Todos os conceitos e proposições devem ser expressos em linguagem sistemática e lógica \cite{gavira2003simulaccao}.
+
+Logo, de acordo com Gaviria 2003, podemos assumir que um modelo de simulação de
+um sistema é uma forma de converter conhecimento tácito em codificado, já que as
+atividades de reflexão, discussão, dedução, indução etc. inerentes à modelagem
+proporcionam o conhecimento do sistema (aquisição de conhecimento sobre o
+sistema modelado) \cite{gavira2003simulaccao}.
+
+
+%\subsection{Simulação do santa luzia versus realidade dos dados}
 
 \subsection{Simulação do RK versus realidade dos dados}
+
+%A simulação computacional do RK permitiu o conhecimento através da experimentação ao analisar diversos cenários com políticas que mitigam a disseminação do COVID-19.
 
 
