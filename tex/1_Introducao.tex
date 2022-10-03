@@ -25,9 +25,29 @@ Como é possível construir uma simulação multiagentes de uma epidemia do COVI
 
 %Método hipotético-dedutivo pois usamos a simulação para verificar o comportamento da população sob restrições da pandemia de COVID-19%
 
+\subsection{Compreensão de Fenômenos Complexos}
+
 Simulações baseadas em agentes pode ser entendida como simulação de agentes individuais, os quais geram algo mais complexo a partir da ação de cada indivíduo, dessa forma um fenômeno em grande escala pode ser mais facilmente entendido se observado cada agente de forma individual.
 
 Um bom exemplo seria a movimentação de um cardume de peixes, trânsito em uma cidade, disseminação de uma doença e voo de pássaros. Inclusive esse último possui um modelo muito bem elaborado na ferramenta Netlogo, uma linguagem de programação e um ambiente de desenvolvimento integrado baseada em agentes, que utiliza-se de 3 regras “alinhamento”, “coesão” e “separação” na movimentação individual de cada pássaro para obter o movimento coordenado de um bando de pássaros.
+
+\subsection{Ensino, Aprendizagem e Treinamento}
+
+São vários os exemplos de uso de simulação multiagente para potencializar momentos de ensino-aprendizagem:
+\begin{description}
+\item [Comportamento Social e COVID-19] Em \cite{santoro_building_2020}, os autores empregaram simulações da difusão da COVID-19 como suporte ao planejamento de comportamentos futuros de estudantes e professores em uma cidade, visando a continuidade de aulas por meio de encontros online; 
+\item [Aprendizagem de Inteligência Artificial] Em \cite{juarez_analysis_2022} os autores usaram simulação da Pandemia da COVID-19 para potencializar o aprendizado da inteligência artificial; Em \cite{filho_proposal_2007} os autores usaram simulação multiagente para motivar atrair e motivar pesquisadores no campo do planejamento e aprendizagem em inteligência artificial;
+\item [Comportamento em Sala de Aula] Em \cite{zhao_research_2011} os autores usaram simulação multiagente para compreender problemas comportamentais de estudantes em sala de aula;
+\item [Educação Especial] Em \cite{galitsky_computational_2013} o autor empregou uma ferramenta de simulação de estados mentais junto a crianças autistas, para fins de reabilitação;
+\item [Aprendizagem de Conceitos Científicos]
+Em \cite{wilensky_thinking_2006} os autores apresentam as possibilidades do uso de simulação multiagente por estudantes do ensino médio, para compreensão da inter relação entre conceitos de biologia em múltiplos níveis de fenômenos, desde o aspecto imunológico até o ecológico; Em \cite{kottonau_interactive_2011} o autor descreveu como o uso de simulação multiagente contribuiu para a aprendizagem do conceito de osmose, entre estudantes universitários de biologia; Em \cite{bollen_simsketch_2013} os autores propõem o uso de uma ferramenta SimSketch, para propiciar a construção de simulações e a aprendizagem de fenômenos científicos;
+\item [Tomada de Decisão em Crises] Em \cite{tena-chollet_design_2016} os autores empregaram um ambiente de simulação multiagente para apoiar a melhoria de habilidades de tomada de decisão de pessoas que vivenciam  situações de crise, onde o stress, a incerteza sobre o desdobramento de fatos, as dificuldades de comunicação e a necessidade de antecipação de fatos afetam a qualidade da decisão; 
+\item [Tomada de Decisão em Negócios] Em \cite{hishiyama_business_2015} os autores usam simulação multiagente de uma empresa fabril para ensinar técnicas de tomada de decisão a gestores em formação; 
+\item [Tomada de Decisão em Políticas Públicas de Segurança] Em \cite{furtado_multiagent_2006} os autores usando um sistema tutorial de simulação multiagente para orientar melhoria de tomada de decisão em contexto de segurança pública;
+\end{description}
+
+
+\subsection{Experiência Prática e Aprendizagem Ativa}
 
 Neste trabalho será utilizado a ferramenta COMOKIT/GAMA devido à sua praticidade tanto no uso de dados georreferenciados quanto por dispor uma linguagem de alto nível, a qual possibilita a criação intuitiva de agentes. Além disso possui diversas interfaces, tanto 2D quanto 3D, para a visualização de resultados com painel controláveis pelo usuário.
 
@@ -35,7 +55,7 @@ A história mostra que a humanidade já passou por outras pandemias e por conta 
 
 Este trabalho baseado na linguagem GAMA busca obter um modelo ao qual forneça dados aproximados ao que de fato aconteceu em uma região de Brasília, com isso é possível buscar meios e novas perspectivas para o enfrentamento da COVID-19.
 
-**(alterar depois) Também será mostrado nesse trabalho a tentativa de elaboração do mesmo modelo, porém em uma região diferente de Brasília com pouco acesso a informação de dados geográficos, qualitativos e quantitativos.
+\todo{(alterar depois) Também será mostrado nesse trabalho a tentativa de elaboração do mesmo modelo, porém em uma região diferente de Brasília com pouco acesso a informação de dados geográficos, qualitativos e quantitativos.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +80,6 @@ Como objetivos específicos:
 %\item Construir o modelo baseado na região selecionada;
 %\item Comparar o resultado obtido no modelo com os dados apresentados na região.
 \end{enumerate}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

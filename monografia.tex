@@ -9,34 +9,98 @@
 % \documentclass[engenharia]{UnB-CIC}%
 \documentclass[licenciatura]{UnB-CIC}%
 
-\usepackage{pdfpages}% incluir PDFs, usado no apêndice
-\usepackage{authblk}%
-\usepackage{indentfirst}
+% \usepackage{authblk}%
+% \usepackage{indentfirst}
+\usepackage[brazil,american]{babel}
 
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,url}
+
+\usepackage{pdfpages}% incluir PDFs, usado no apêndice
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.88]{beramono}    
+\usepackage{listings}
+\usepackage{changes}
+\presetkeys%
+    {todonotes}%
+    {inline,backgroundcolor=yellow}{}
+
+\lstset{basicstyle=\small\ttfamily}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+  {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1 
+}
+
+% remove 1º warning - encontrado na rede profunda
+\pdfstringdefDisableCommands{%
+  \def\\{}%
+  \def\texttt#1{<#1>}%
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Informações do Trabalho
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \orientador{\prof \dr Jorge Henrique Cabral Fernandes}{CIC/UnB}%
+% %\coorientador{\prof \dr José Ralha}{CIC/UnB}
+% \coordenador{\prof \dr Jorge Henrique Cabral Fernandes}{CIC/UnB}%
+% \diamesano{30}{maio}{2022}%
+
+% \membrobanca{\prof \dr Donald Knuth}{Stanford University}%
+% \membrobanca{\dr Leslie Lamport}{Microsoft Research}%
+
+% \author{Ricardo A. Rodrigues}
+% \coauthor{Thiago S. Marques}
+% %\author[2]{Corresponding Author\thanks{email@2nduniversity.com}}
+% %\affil[1-2]{}
+
+
+
+% \titulo{Simulação multiagente da epidemia de COVID-19 usando o COMOKIT/GAMA em dois territórios no Distrito Federal: Os casos do Condomínio RK e da Santa Luzia}%
+
+% \palavraschave{COMOKIT, COVID-19, políticas de saúde, modelagem e simulação}%
+% \keywords{COMOKIT, COVID-19, health policy, modeling and simulation}%
+
+
+% remove 2º warning - encontrado na surface mesmo
+\setlength {\marginparwidth}{2cm} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Informações do Trabalho
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \orientador{\prof \dr Jorge Henrique Cabral Fernandes}{CIC/UnB}%
 %\coorientador{\prof \dr José Ralha}{CIC/UnB}
-%\\coordenador[a]{\prof[a] \dr[a] Ada Lovelace}{Bibliothèque universelle de Genève}%
-\diamesano{30}{maio}{2022}%
+\coordenador{\prof \dr Jorge Henrique Cabral Fernandes}{CIC/UnB}%
+\diamesano{30}{setembro}{2022}%
 
-%\\membrobanca{\prof \dr Donald Knuth}{Stanford University}%
-%\\membrobanca{\dr Leslie Lamport}{Microsoft Research}%
-
-\author[1]{Ricardo A. Rodrigues}
-\author[2]{Thiago S. Marques}
-%\author[2]{Corresponding Author\thanks{email@2nduniversity.com}}
-\affil[1-2]{}
+\membrobanca{\prof[a] \dr[a] X}{CIC/UnB}%
+\membrobanca{\prof \dr Y}{Departamento de Design/UnB}%
 
 
+\autor{Ricardo Alves}{Rodrigues}
+\coautor{Thiago Santana}{Marques}
 
 \titulo{Simulação multiagente da epidemia de COVID-19 usando o COMOKIT/GAMA em dois territórios no Distrito Federal: Os casos do Condomínio RK e da Santa Luzia}%
 
 \palavraschave{COMOKIT, COVID-19, políticas de saúde, modelagem e simulação}%
 \keywords{COMOKIT, COVID-19, health policy, modeling and simulation}%
 
+
+\newcommand{\unbcic}{\texttt{UnB-CIC}}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Texto
@@ -47,10 +111,10 @@
     \capitulo{3_Construção das Simulações}{Construção das Simulações}%
     \capitulo{4_Execução das Simulações e Coleta de Dados}{Execução das Simulações e Coleta de Dados}%
     \capitulo{5_Comparações entre Simulação e Realidade}{Comparações entre Simulação e Realidade}%
-    \capitulo{6_Utilidade Potencial da Simulação em Políticas de Saúde Pública}{Utilidade Potencial da Simulação em Políticas de Saúde Pública}%
+    \capitulo{6_Utilidade Potencial da Simulação em Políticas de Saúde Pública}{Utilidade Potencial da Simulação}%
     \capitulo{7_Discussões}{Discussões}%
     \capitulo{8_Conclusão}{Conclusões}%
 
-    \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
-    \anexo{Anexo1}{Documentação Original (parcial)}%
+    % \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
+    % \anexo{Anexo1}{Documentação Original (parcial)}%
 \end{document}%

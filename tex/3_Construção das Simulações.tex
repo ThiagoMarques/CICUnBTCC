@@ -1,174 +1,3 @@
-A simulação computacional nos permite compreender um sistema complexo e tem sido empregada no auxílio à tomada de decisão \cite{Chung2003}.
-
-Com o auxílio da simulação, podemos identificar e solucionar problemas de uma determinada região geográfica baseado em variáveis que influenciam os agentes e o meio que vivem. 
-
-A modelagem e simulação baseada em agentes (ABMS) é um paradigma de simulação que utiliza agentes para analisar, reproduzir ou predizer fenômenos normalmente complexos e emergentes \cite{Klugl2012agent}. Na modelagem baseada em agente (ABM), um sistema é modelado como uma coleção de entidades autônomas de tomada de decisão chamadas agentes. Cada agente avalia individualmente sua situação e toma decisões com base em um conjunto de regras \cite{bonabeau2002agent}. A ABMS aplica o conceito de sistemas multiagentes para a estrutura básica de modelos de simulação, onde o sistema é modelado como
-uma coleção de entidades autônomas de tomadas de decisão chamadas agentes \cite{macal2007agent}.
-
-Um modelo representa uma simplificação da realidade e o processo de modelar envolve escolhas de níveis de abstração  e a linguagem utilizada para representação do modelo. 
-
-Um sistema, que consiste em um grupo de agentes que podem potencialmente interagir uns com os outros, é chamado de Sistema multiagentes ou Multiagent system (MAS). Um MAS é composto por vários agentes que interagem ou trabalham em conjunto de forma a realizar um determinado número de tarefas ou objetivos. Esses objetivos podem ser globais do sistema, comuns a todos os agentes, ou individuais. Os agentes podem também assumir um comportamento colaborativo ou competitivo, dependendo da finalidade da aplicação com que o sistema multiagente foi designado.  Isto é, os tipos de agentes são definidos de acordo com o ambiente onde irão atuar. \cite{RosaSilvaMAS}
-
-A modelagem baseada em agentes é agora uma abordagem popular para representar, estudar ou explorar sistemas geográficos complexos \cite{heppenstall2011agent}. Esta abordagem de modelagem se propõe a representar individualmente as entidades que compõem um sistema e suas interações, e permitir que  comportamentos macroscópicos surjam por simulação. A adoção de tal abordagem de modelagem foi muito estimulada pelo surgimento de plataformas de software cada vez mais poderosas, que agora permitem que modeladores sem um forte conhecimento em ciência da computação desenvolvam seus próprios modelos de maneira fácil e rápida. A tendência observada há alguns anos é o desenvolvimento de modelos muito mais descritivos integrando uma grande quantidade de dados, com uma representação detalhada do ambiente.
-Apoiar o desenvolvimento de tais modelos requer o endereçamento de um conjunto de bloqueios científicos relacionados à integração de dados, eficiência de cálculo e visualização de simulações, que são particularmente desafiadores se a plataforma tiver que ser utilizável mesmo por cientistas que não são da computação. O GAMA (GIS Agent-based Modeling Architecture) foi desenvolvido para superar esses desafios. \cite{gamaplataform}.
-
-\section{Gama}
-
-O GAMA é um projeto open-source que passou por diversas melhorias de acordo com sua documentação, e hoje fornece uma linguagem acessível com tutoriais práticos para desenvolvimento de simulações. 
-
-O paradigma da modelagem orientada a agentes dita que todo o “ativo” (entidades de um modelo, sistemas, processos, atividades, tais como, simulações e experimentos) pode ser representado como agente. Tendo isso em vista, o agente pode ser pensado como um componente computacional que apresenta seus próprios dados e executa seus próprios comportamentos, seja sozinho ou em interação com os outros agentes \cite{gamaplataform}. 
-
-De acordo com a documentação técnica do GAMA, o software foi codificado em Java e utiliza uma linguagem GAML (Gama Modeling Language), uma linguagem orientada a agentes dedicada à definição de simulações baseadas em agentes e tem suas raízes em linguagens orientadas a objetos \cite{gamaplataform}.  
-
-
-\subsection{Semântica Lexical de GAML}
-
-A documentação técnica da Plataforma GAMA \cite{gamaplataform}, define que o papel do GAML é apoiar modeladores na escrita de modelos, que são especificações de simulações que podem ser executadas e controladas durante experimentos, especificados por planos de experimentos.
-
-Devido ao paradigma orientado a objetos, um agente significa que tudo "ativo" pode ser representado como um agente. Em GAML (Gama Modeling Language), um agente pode ser representado como um componente computacional possuindo seu próprio dados e executando seu próprio comportamento, sozinho ou em interação com outros agentes. O uso de classes fornece as especificações para os objetos e os agentes são especificados por suas espécies, que lhes fornecem um conjunto de atributos, ações, comportamentos e também especifica propriedades de sua população , por exemplo, sua topologia ou cronograma \cite{gamaplataform}.
-
-Qualquer espécie pode estar aninhada em outra espécie, o que é definido como macroespécie, caso em que as populações de suas instâncias serão obrigatoriamente hospedados por uma instância dessa macroespécie \cite{gamaplataform}. O conceito de herança e especialização estão presentes, semelhantes ao design orientado a objetos, as espécies podem herdar propriedades de outras espécies e possuir habilidades que são conjuntos de atributos e ações compartilhados entre diferentes espécies e herdados por seus filhos \cite{gamaplataform}.
-
-As simulações e experimentos são definidos como duas espécies: modelo e plano de experimento. As relações entre espécies, modelos e planos de experimentos são codificados no metamodelo do GAML na forma de framework composto por três espécies abstratas que são os agentes, pai direto ou indireto de todas as espécies, modelo, o pai de todas as espécies que definem um modelo e experimento, pai de todas as espécies que definem um plano de experimento \cite{gamaplataform}.
-
-Neste meta-modelo, as instâncias dos filhos do agente conhecem a instância do filho do modelo em que estão hospedados como seu mundo , enquanto a instância de plano de experimento identifica o mesmo agente como uma das simulações de que é responsável. O diagrama a seguir resume esse framework:
-
-\figura{metamodelo_GAMA}{meta-modelo do GAML na forma de um framework }{metamodelo1}{width=0.75\textwidth}
-
-A escrita de um modelo em GAML consiste na definição de um modelo na qual outras espécies, herdando diretamente ou não de um agente e representando entidades serão aninhadas com um ou vários planos de experimentos:
-
-Ao executar um experimento no GAMA, é criado um agente de experimentos. O comportamento é especificado pelo plano de experimentos, responsável por criar agentes de simulação que os executará. Recursivamente, a inicialização de um agente de simulação criará a população de agentes das espécies definidas no modelo. Cada um desses agentes, ao serem criados, pode criar a população de sua microespécie \cite{gamaplataform}. 
-
-\figura{metamodelo_and_usermodel_GAMA}{meta-modelo do GAML e modelo de usuário na forma de um framework }{metamodelo2}{width=0.75\textwidth}
-
-\subsection{Organização de um modelo GAML}
-
-Para realizar uma simulação em GAML devemos definir um modelo em GAML e posteriormente instanciar um agente modelo, que pode ou não conter microespécies.
-
-A estrutura conceitual segue um padrão:
-
-1. Definição de espécie global, precedida de um cabeçalho, para representar a espécie modelo;
-
-2. Definição de microespécies;
-
-3. Definição de planos de experimentos direcionados a este modelo.
-
-\subsubsection{Cabeçalho do modelo}
-
-O cabeçalho de um arquivo de modelo começa com a declaração do nome do modelo. Este nome é usado para construir o nome da espécie modelo nas quais as simulações serão instanciadas.
-
-\figura{3_1_model}{declaração de um modelo}{basicmodel}{width=0.75\textwidth}
-
-O exemplo acima criará uma espécie chamada \textit{dummy\underline{ }model}, filho da espécie abstrata model, a partir da qual as simulações serão instanciadas. 
-
-A importação de um modelo pode ser realizada de duas formas: por herança ou importação direta. A imagem abaixo importa dois modelos por herança, ou seja, as declarações dos modelos importados serão mescladas na ordem de importação.
-
-\figura{3_2_import}{importação de um modelo}{basicmodel}{width=0.75\textwidth}
-
-A segunda forma de importação chamada de \textit{usage import } é reservado a \textit{micromodelos} e de acordo com a documentação técnica, está em fase experimental.
-
-\figura{3_3_usage_import}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
-
-
-
-
-\subsubsection{Declarações de espécies}
-
-Uma espécie define seus atributos, ações e comportamentos, e por fim aspectos. Em Programação Orientada a Objetos, a espécie pode ser vista como uma classe e os agentes uma instância de uma espécie. 
-
-A declaração da espécie global é única e não tem um nome específico. Ela representa um mundo, onde deve conter todos os atributos, ações e comportamentos globais.
-
-\figura{3_4_global}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
-
-As espécies regulares podem ser declaradas com o uso da palavra-chave \textit{species} e todas precisam ser renomeadas.
-
-\figura{3_5_regular}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
-
-
-\subsubsection{Declarações do experimento}
-
-A declaração de experimentos começam com o uso da palavra-chave \textit{experiment} e contêm todos os parâmetros de simulação e a definição de saída que podem ser displays, monitores ou inspetores. 
-
-\figura{3_6_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
-
-Existem quatro tipos de experimentos disponíveis no GAMA:
-
-\begin{enumerate}
-\item Experimento GUI que permite a exibição de uma interface gráfica com parâmetros de entrada e saída;
-		
-		\figura{3_7_gui_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
-		
-
-\item Experimento em lote que perimte a execução de várias simulações sucessivas;
-
-		\figura{3_8_batch_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
-
-\item Experimento de testes que permite a escrita de testes de unidade em um modelo para garantir a qualidade;
-
-		\figura{3_9_test_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
-
-\item Experimento de memorização que permite armazenar cada etapa de simulação na memória e voltar etapas anteriores.
-
-		\figura{3_10_memorize_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
-\end{enumerate}
-
-\subsubsection{Esqueleto básico de um modelo}
-
-Abaixo, a imagem de um esqueleto básico de um modelo no GAMA:
-
-\figura{3_11_basic_model}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
-
-A estrutura acima é básica e comum a todos os modelos do GAMA. Para construção de modelos, o uso de conceitos de programação são requeridos.
-
-\section{COMOKIT}
-
-O COMOKIT (COVID-19 Modeling Kit) é baseado na plataforma de modelagem e simulação em agentes GAMA \cite{gaudou2020comokit}, um modelo que combina vários submodelos especializados para comparação de intervenções contra a pandemia de COVID-19. O COMOKIT nasceu com a necessidade urgente de ferramentas e metodologias que permitam uma análise rápida da eficácia das respostas à COVID-19 em diferentes comunidades e contextos, incluindo os de pequena escala. No artigo publicado pela HAL \cite{gaudou2020comokit}, os desenvolvedores afirmam que fizeram uma abordagem baseada no desenho e simulação de modelos computacionais baseados em agentes, onde os perfis das pessoas e dos domicílios, suas interações, sua evolução no tempo e no espaço, são explicitamente representados e servem de base para descrever a dinâmica da epidemia. Esta é uma perspectiva de “sistemas complexos”, onde essa dinâmica não é apenas o resultado de um mecanismo de transmissão, mas também de interações não lineares entre atores com relações e mecanismos complexos em vários níveis de organização, que agem e interagem entre si e com seu ambiente.
-Como afirmado em Drogoul et al. \cite{gaudou2020comokit}, o COMOKIT segue um conjunto de princípios:
-
-• estar o mais próximo possível da tomada de decisão pública, tendo a possibilidade de responder a perguntas concretas;
-
-• basear-se em uma representação detalhada e realista do espaço (as políticas públicas de saúde também são predominantemente espaciais);
-
-• contar com dados espaciais e sociais que podem ser coletados com facilidade e rapidez;
-
-• ser genérico, flexível e aplicável a possivelmente qualquer estudo de caso;
-
-• ser confiável contando com mecanismos internos que podem ser isolados e validados separadamente;
-
-• ser aberto e modular o suficiente para apoiar a cooperação interdisciplinar;
-
-• oferecer um fácil acesso à experimentação em larga escala e validação estatística, facilitando a exploração de seus parâmetros;
-
-De acordo com a documentação, o COMOKIT visa simular e comparar a aplicação de políticas para mitigar a disseminação do COVID-19 na escala de uma área urbana, com a doença sendo modelada na escala individual. Seu objetivo é responder a perguntas como: A contenção de um bairro é mais eficaz do que a de um condomínio residencial? O fechamento da escola reduz os picos de transmissão? Como o uso de máscaras afeta a dinâmica da epidemia? Qual deve ser a duração ideal da contenção? Que proporção da população deve ser autorizada a se envolver em atividades durante uma contenção? \cite{gaudou2020comokit}
-
-Em sua documentação, o COMOKIT combina um submodelo de transmissão direta de pessoa para pessoa, um submodelo de transmissão ambiental através do ambiente construído, um modelo de design de políticas e um modelo baseado em agenda de mobilidade e ocupação de pessoas a uma taxa de 1h. Um ponto chave é que permite a representação de heterogeneidades em características individuais (gênero, idade, família), agendas (baseadas em estruturas sociais, serviços disponíveis ou categorias de idade), comportamentos de relações sociais (por exemplo, cumprimento de políticas) e resposta a COVID-19. \cite{gaudou2020comokit}
-
-
-\subsubsection{Descrição das Entidades Modelo}
-
-A entidade central do modelo é o tipo individual (ou espécie) de agentes: representa os habitantes individuais da área em consideração com suas características individuais (idade, sexo, status ocupacional) e seu status epidemiológico, se foram testados, e outros valores epidemiológicos individuais. \cite{gaudou2020comokit}
-
-Eles realizam suas atividades diárias, como exemplo, ir ao trabalho, escola, fazer compras, comer fora, sempre de acordo com sua agenda pessoal. Essa agenda é um conjunto de atividades geradas que podem ser compartilhadas por várias pessoas como exemplo, sair para comer com os amigos, dependendo da idade e do status familiar do agente individual. \cite{gaudou2020comokit}
-
-Os agentes incluem seus pais (sua família, que em nosso modelo corresponde aos demais Agentes Individuais que moram no mesmo apartamento em um Edifício ), amigos (com quem podem compartilhar atividades), colegas (colegas de trabalho ou de classe) e sua casa , local de trabalho e edifícios escolares . Uma visão geral da estrutura do modelo é apresentada na forma de um diagrama de classes UML. \cite{gaudou2020comokit}
-
-
-\figura{3_12_comokit}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
-
-Os agentes de construção são entidades espaciais onde os agentes individuais podem realizar uma atividade, que depende do tipo de construção. Dois tipos especiais de Edifícios foram definidos porque desempenham um papel importante na simulação: o Exterior, que abriga as atividades realizadas por indivíduos fora da área modelada, e o Hospital, onde os agentes individuais doentes com sintomas críticos podem ser contidos e tratados. Para ter em conta a possível transmissão do vírus através do ambiente, todos os Edifícios estão equipados com uma carga viral, que pode ser utilizada pelo submodelo epidemiológico. \cite{gaudou2020comokit}
-
-Os comportamentos horários dos indivíduos são determinados por suas agendas, que associam Atividades com horas. Os indivíduos têm preferências por determinados tipos de Atividades que podem ser definidas de acordo com sua idade e sexo: para uma atividade de lazer, uma criança pode preferir ir a uma brinquedoteca enquanto uma pessoa mais velha pode preferir ir ao cinema. O Edifício onde os Indivíduos realizam uma Atividade pode ser escolhido aleatoriamente (uniformemente), como o mais próximo, ou de acordo com uma probabilidade (função negativa da distância e função positiva da área do local alvo). O COMOKIT também define uma série de atividades específicas para representar algumas clássicas: 
-\begin{itemize}
-\item visitar um vizinho;
-\item trabalhar;
-\item ficar em casa;
-\item estudar;
-\item visitar um amigo.
-\end{itemize}
-
-Obviamente, as atividades personalizadas também podem ser criadas a partir das espécies genéricas de atividade. \cite{gaudou2020comokit}
-
-No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho. Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{gaudou2020comokit}
 
 \section{Os territórios}
 
@@ -181,17 +10,6 @@ A conceituação do Setor de Chácara Santa Luzia, considerado impróprio para m
 
 \subsection{Bairro Santa Luzia}
 
-O OpenStreetMap foi desenvolvido para criar um mapa livre editável do mundo. A ferramenta de mapeamento colaborativo Open Street Map (OSM) foi desenvolvida no ano de 2004, pelo estudante de computação Steve Coast, da University College London (UCL). Inicialmente, a ideia do projeto era realizar o mapeamento apenas da região do Reino Unido, mas logo despertou o interesse de pesquisadores de outros países do globo. \cite{ramm2011openstreetmap}.
-
-Os mapas são criados usando dados de dispositivos portáteis de GPS, fotografias aéreas, de outras fontes livres ou simplesmente a partir do conhecimento local. O projeto foi iniciado porque a maioria dos mapas têm restrições legais ou técnicas para sua utilização, restringindo as pessoas de usá-los de forma criativa, produtiva ou outras formas alternativas. Ambas as imagens fundidas e o conjunto de dados vetoriais do OSM estão disponíveis para download sob uma licença Creative Commons Attribution ShareAlike 2.0 \cite{OpenStre2:online}.
-
-Dados primitivos OSM são uma classe de objetos que podem serem armazenados via API no servidor. Os três tipos de suporte de dados são: \textit{Node}, \textit{Way} e \textit{Relation}. \cite{OpenStre2:online}
-
-\begin{itemize}
-\item Um nó é um par de coordenada de latitude/longitude. É usado como um bloco de construção para as outras características e como uma característica própria (pontos de interesse), para serem marcados, conforme necessário.
-\item Um Caminho é uma lista de pelo menos dois nós que descrevem uma feição linear, tal como uma rua, ou similar. Os nós podem fazer parte de vários caminhos.
-\item Uma relação é um grupo de zero ou mais com funções primitivas associadas. Ele é usado para especificar as relações entre objetos, e também pode modelar um objeto abstrato.
-\end{itemize}
 
 Não há dados precisos sobre a comunidade Santa Luzia, por ser em território irregular, não são classificados na amostra por domicílio do PDAD (Pesquisa Distrital por Amostra de Domicílios). Para realizar o processo de mapeamento de residências, foi escolhido residências aleatórias e iniciado a marcação na base de dados do Open Street Map.
 
@@ -203,7 +21,9 @@ Para identificação de residências, foi iniciado o processo de atribuição de
 
 Foi realizado o mapeamento de 421 unidades residências, totalizando um total de 1.684 moradores para execução da simulação neste espaço territorial do Bairro Santa Luzia.
 
-Foi realizado a exportação para um arquivo do tipo .OSM (Open Street Map) e o software QGIS foi utilizado para leitura dos dados. O Qgis é um software livre para Sistema de Informação Geográfica, incubado pela Open Source Geospatial Foundation (OSGeo) e impulsionado por um grupo ativo de desenvolvedores voluntários que regularmente lançam atualizações e correções para os problemas verificados neste aplicativo. É utilizado em ambientes acadêmicos e profissionais, caracterizando-se por oferecer um número crescente de recursos nativos e “plugins” que podem ser desenvolvidos por qualquer usuário que saiba programar em C++ ou Python. Suporta uma ampla gama de formatos geoespaciais, tais como vetores, rasters e bases de dados. \cite{bruno2017aplicabilidade}
+Foi realizado a exportação para um arquivo do tipo .OSM (Open Street Map) e o software QGIS foi utilizado para leitura dos dados. 
+
+
 
 A conexão OSM com o QGIS ocorre com exibição em camadas vetoriais QGIS. Os dados OSM consistem de Nós, Caminhos e Relações. No QGIS, eles são exibidos em três diferentes tipos de camada: camada de ponto, camada de linha e camada de polígono. Não é possível remover qualquer uma dessas camadas e trabalhar com as outras. \cite{OpenStre2:online}
 
