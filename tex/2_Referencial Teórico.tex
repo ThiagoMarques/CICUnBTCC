@@ -13,7 +13,8 @@
 
 
 Este capítulo busca elucidar conceitos importantes para o entendimento do trabalho, partindo de uma melhor descrição da COVID-19 iniciada na introdução, assim como suas políticas públicas e o seus impactos em diversas regiões. Bem como um conceitos essenciais sobre modelagem espacialmente explícitas utilizando-se software de modelagem multiagente.
-\todo{Seguindo a partir disso apresentar no capitulo 2.1?. Falta completar o roadmap, descrevendo as subseções}
+\todo{Seguindo a partir disso apresentar no capitulo 2.1 Contextualização do COVID-19. 
+Capitulo 2.2 Descrição sobre Epidemiologia e sua atuação na COVID-19. Capitulo 2.3 Conceitos de modelos e de modelagem baseada em agentes. 2.4 Abordagem do geoprocessamento, ferramentas QGIS e OpenStreetMap. 2.5 Simulação Computacional e aprendizagem didáticas com simulações. 2.6 Introdução da linguagem Gama. 2.7 Ferramenta de modelagem COMOKIT. 2.8 Falta completar o roadmap, descrevendo as subseções}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,9 +68,11 @@ Segundo o Ministério da Saúde, o Brasil já ultrapassou os 30 milhões de pess
 
 \subsection{O que é Epidemiologia?}
 
-Segundo Mark Woodward(2013) "epidemiologia é o ramo do estudo responsável por estudar as distribuições e os determinantes na população humana". Essas distribuições podem ser diversas como idade, profissão, classe social, histórico familiar, local geográfico, logo as distribuições não precisam ser baseadas apenas em espaço geográfico. Já os determinantes são fatores de risco que podem levar a infecção ou ao desenvolvimento do agente patológico, por exemplo herança genética, condições ambientais\cite{woodward2013epidemiology}. 
+Segundo Mark Woodward(2013) "epidemiologia é o ramo do estudo responsável por estudar as distribuições e os determinantes na população humana". Essas distribuições podem ser diversas como idade, profissão, classe social, histórico familiar, local geográfico, logo as distribuições não precisam ser baseadas necessariamente em espaço geográfico. Já os determinantes são fatores de risco que podem levar a infecção ou ao desenvolvimento do agente patológico, por exemplo herança genética, condições ambientais, exposição a pessoas contaminadas\cite{woodward2013epidemiology}. 
 
-Leon Gordis(2013) define que os objetivos da atuação da epidemiologia são: Primeiro descobrir a origem da doença, assim como seus fatores de riscos e forma de transmissão. Segundo analisar o impacto que a doença causa na comunidade analisada. Terceiro estudar o grau de mortalidade das doenças, priorizando as que possui alta letalidade, em busca evitar complicações e aliar com tratamentos. Quarto utilizar novas medidas terapêuticas no tratamento das pessoas, analisando se os novos métodos obtiveram resultados melhores do que os antigos. Quinto se atentar a possibilidades de disseminação de novos problemas de saúde, por exemplo a disponibilização de novos produtos químicos no mercado para o consumo das pessoas.   
+Leon Gordis(2013) define que os objetivos da atuação da epidemiologia são: Primeiro descobrir a origem da doença, assim como seus fatores de riscos e forma de transmissão. Segundo analisar o impacto que a doença causa na comunidade analisada. Terceiro estudar o grau de mortalidade das doenças, priorizando as que possui alta letalidade, em busca evitar complicações e aliar com tratamentos. Quarto utilizar novas medidas terapêuticas no tratamento das pessoas, analisando se os novos métodos obtiveram resultados melhores do que os antigos. Quinto se atentar a possibilidades de disseminação de novos problemas de saúde, por exemplo a disponibilização de novos produtos químicos no mercado para o consumo das pessoas\cite{gordis2013epidemiology}.  
+
+A epidemiologia explora em grande parte, as populações de indivíduos em busca de pistas e soluções para sociedade, isso remete diretamente ao ramo da medicina, porém não se restringe somente a esse, possui também uma ligação forte com a estatística na sua analise de dados coletados e construções de gráficos. Quando é mencionado a analise de dados, também já é possível fazer uma associação com a computação. Isso demonstra que a relação dessa área de conhecimento com as demais ocorre por diversas frentes, onde cada um pode desempenhar um papel muito importante na construção de ações governamentais no auxilio da saúde da sociedade.
 
 \subsection{Epidemiologia do COVID-19}
 
@@ -325,3 +328,12 @@ Os comportamentos horários dos indivíduos são determinados por suas agendas, 
 Obviamente, as atividades personalizadas também podem ser criadas a partir das espécies genéricas de atividade. \cite{gaudou2020comokit}
 
 No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho. Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{gaudou2020comokit}
+
+\section{Simulações e modelagem na aprendizagem}
+
+Albert Bandura, em 1961, realizou um experimento social, no qual crianças eram expostas a situações que adultos batiam em um boneco João-Bobo e não eram punidos por suas ações, posteriormente as crianças apresentavam o mesmo comportamento com o boneco, isso demonstrou que as crianças tendem a observar comportamento e suas consequências e então tomar as suas decisões, os adultos seguem a mesma tendência.
+
+Utilizar simulações computacionais baseados em agentes para observar comportamentos de indivíduos que interagem entre si e formam um sistema complexo, é a principal função das Agent-based Modeling and Simulation (ABMS). Esse método permite observar tendências de comportamentos em situações de stress e aliada a praticidade de um sistema computacional, através disso é possível aprender através das observações, elaborar soluções para situações de crises, testa-las e valida-las antes mesmo que possua o caso concreto que envolva vitimas. 
+
+\figura{imagem Rota de fuga}{Imagem das pessoas fugindo de um incêndio. Cenario...}{Incêndio}{width=0.75\textwidth}\cite{bonabeau2002agent}
+
