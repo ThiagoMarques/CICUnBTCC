@@ -1,7 +1,7 @@
 De que forma a simulação multiagente pode ser útil para a construção de políticas públicas para tratamento de epidemias?
 
 
-Este trabalho relata os casos de desenvolvimento de duas simulações baseadas em agentes, para simulação casos de COVID-19 na população de dois territórios do DF.
+Este trabalho relata os casos de desenvolvimento de duas simulações baseadas em agentes, para simulação de casos de COVID-19 na população de dois territórios do DF.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,7 +9,7 @@ Este trabalho relata os casos de desenvolvimento de duas simulações baseadas e
 \section{Questão de pesquisa}%
 As perguntas fundamentais que foram base para essa pesquisa.
 
-Como é possível construir uma simulação multiagentes de uma epidemia do COVID-19 em um determinado espaço geográfico, visando subsidiar a construção de políticas públicas no Brasil ? Quais são as características, possibilidades e dificuldades computacionais para a realização dessas simulações? Como é possível a construção de simulações que correspondam de fato ao que aconteceu ou acontecerá ? Que dificuldade precisam ser contornadas para que essas possibilidades sejam alcançadas ?
+Como é possível construir uma simulação multiagentes de uma epidemia do COVID-19 em um determinado espaço geográfico, visando subsidiar a construção de políticas públicas no Brasil ? Quais são as características, possibilidades e dificuldades computacionais para a realização dessas simulações? Como é possível a construção de simulações que correspondam de fato ao que aconteceu ou acontecerá ? Quais dificuldades precisam ser contornadas para que essas possibilidades sejam alcançadas ?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,16 +29,16 @@ Como é possível construir uma simulação multiagentes de uma epidemia do COVI
 
 Simulações baseadas em agentes pode ser entendida como simulação de agentes individuais, os quais geram algo mais complexo a partir da ação de cada indivíduo, dessa forma um fenômeno em grande escala pode ser mais facilmente entendido se observado cada agente de forma individual.
 
-Um bom exemplo seria a movimentação de um cardume de peixes, trânsito em uma cidade, disseminação de uma doença e voo de pássaros. Inclusive esse último possui um modelo muito bem elaborado na ferramenta Netlogo, uma linguagem de programação e um ambiente de desenvolvimento integrado baseada em agentes, que utiliza-se de 3 regras “alinhamento”, “coesão” e “separação” na movimentação individual de cada pássaro para obter o movimento coordenado de um bando de pássaros.
+Um bom exemplo seria a movimentação de um cardume de peixes, trânsito em uma cidade, disseminação de uma doença e voo de pássaros. Inclusive, esse último possui um modelo muito bem elaborado na ferramenta Netlogo, uma linguagem de programação e um ambiente de desenvolvimento integrado baseadaos em agentes, que utiliza-se de 3 regras “alinhamento”, “coesão” e “separação” na movimentação individual de cada pássaro para obter o movimento coordenado de um bando de pássaros.
 
 \subsection{Ensino, Aprendizagem e Treinamento}
 
-São vários os exemplos de uso de simulação multiagente para potencializar momentos de ensino-aprendizagem:
+São exemplos de uso de simulação multiagente para potencializar momentos de ensino-aprendizagem:
 \begin{description}
-\item [Comportamento Social e COVID-19] Em \cite{santoro_building_2020}, os autores empregaram simulações da difusão da COVID-19 como suporte ao planejamento de comportamentos futuros de estudantes e professores em uma cidade, visando a continuidade de aulas por meio de encontros online; 
-\item [Aprendizagem de Inteligência Artificial] Em \cite{juarez_analysis_2022} os autores usaram simulação da Pandemia da COVID-19 para potencializar o aprendizado da inteligência artificial; Em \cite{filho_proposal_2007} os autores usaram simulação multiagente para motivar atrair e motivar pesquisadores no campo do planejamento e aprendizagem em inteligência artificial;
-\item [Comportamento em Sala de Aula] Em \cite{zhao_research_2011} os autores usaram simulação multiagente para compreender problemas comportamentais de estudantes em sala de aula;
-\item [Educação Especial] Em \cite{galitsky_computational_2013} o autor empregou uma ferramenta de simulação de estados mentais junto a crianças autistas, para fins de reabilitação;
+\item [Comportamento Social e COVID-19:] Em \cite{santoro_building_2020}, os autores empregaram simulações da difusão da COVID-19 como suporte ao planejamento de comportamentos futuros de estudantes e professores em uma cidade, visando a continuidade de aulas por meio de encontros online; 
+\item [Aprendizagem de Inteligência Artificial:] Em \cite{juarez_analysis_2022} os autores usaram simulação da Pandemia da COVID-19 para potencializar o aprendizado da inteligência artificial; Em \cite{filho_proposal_2007} os autores usaram simulação multiagente para atrair e motivar pesquisadores no campo do planejamento e aprendizagem em inteligência artificial;
+\item [Comportamento em Sala de Aula:] Em \cite{zhao_research_2011} os autores usaram simulação multiagente para compreender problemas comportamentais de estudantes em sala de aula;
+\item [Educação Especial:] Em \cite{galitsky_computational_2013} o autor empregou uma ferramenta de simulação de estados mentais junto à crianças autistas, para fins de reabilitação;
 \item [Aprendizagem de Conceitos Científicos]
 Em \cite{wilensky_thinking_2006} os autores apresentam as possibilidades do uso de simulação multiagente por estudantes do ensino médio, para compreensão da inter relação entre conceitos de biologia em múltiplos níveis de fenômenos, desde o aspecto imunológico até o ecológico; Em \cite{kottonau_interactive_2011} o autor descreveu como o uso de simulação multiagente contribuiu para a aprendizagem do conceito de osmose, entre estudantes universitários de biologia; Em \cite{bollen_simsketch_2013} os autores propõem o uso de uma ferramenta SimSketch, para propiciar a construção de simulações e a aprendizagem de fenômenos científicos;
 \item [Tomada de Decisão em Crises] Em \cite{tena-chollet_design_2016} os autores empregaram um ambiente de simulação multiagente para apoiar a melhoria de habilidades de tomada de decisão de pessoas que vivenciam  situações de crise, onde o stress, a incerteza sobre o desdobramento de fatos, as dificuldades de comunicação e a necessidade de antecipação de fatos afetam a qualidade da decisão; 
@@ -70,7 +70,7 @@ Como objetivos específicos:
 \item Criar simulações (casos);
 \item Realizar as simulações e coletar dados;
 \item Comparar os dados obtidos com dados reais disponíveis;
-\item Identificar questões que afetam a utilidade da simulação ma formulação de políticas de saúde pública.
+\item Identificar questões que afetam a utilidade da simulação na formulação de políticas de saúde pública.
 
 
 %\item ferramentas para obter dados de um sistema de informação geográfica livre e aberta;
@@ -86,15 +86,15 @@ Como objetivos específicos:
 
 Nessa pesquisa foram analisadas duas regiões distintas do DF, para tal foi utilizado as ferramentas QGIS para mapeamento da região e GAMA para a modelagem. 
 
-Para criar um modelo no GAMA que faz uso de uma área geográfica é necessário inserir arquivos do tipo \textit{shapefile}, no caso de Santa Luzia por ser um assentamento irregular, poucos dados estavam disponíveis e foi necessário mapear a área utilizando a ferramenta \textit{OpeenStreetMap} e \textit{QGIS}, sendo possível gerar o shapefile para exportar para o GAMA.
+Para criar um modelo no GAMA que faz uso de uma área geográfica é necessário inserir arquivos do tipo \textit{shapefile}, e no caso de Santa Luzia, por ser um assentamento irregular, poucos dados estavam disponíveis e foi necessário mapear a área utilizando a ferramenta \textit{OpeenStreetMap} e \textit{QGIS}, sendo possível gerar o shapefile para exportar para o GAMA.
 
-Na construção do modelo baseado em agentes é necessário definir quais serão os agentes, seus parâmetros, comportamentos e interações com outros agentes. Observando-se isso foi realizado um estudo sobre a região para identificar os principais agentes e suas relações na comunidade, locais de lazer, escolas, hospitais, comércio, são agentes que possuem um impacto significativo na simulação.
+Na construção do modelo baseado em agentes é necessário definir quais serão os agentes, seus parâmetros, comportamentos e interações com outros agentes. Foi realizado um estudo sobre a região para identificar os principais agentes e suas relações na comunidade, locais de lazer, escolas, hospitais, comércio. Esses  agentes são significativos na simulação.
 
-Para auxiliar na elaboração da modelagem da COVID-19 na Santa Luzia foi utilizado o COMOKIT (Kit de modelagem da COVID-19) feito no GAMA para comparar diversos tipos de intervenções possíveis, durante as adaptações do modelo foram encontradas diversas dificuldade em obter dados de infectados e curados pela Covid na região da Santa Luzia o que tornou inviável a continuação da modelagem.
+Para auxiliar na elaboração da modelagem da COVID-19 na Santa Luzia, foi utilizado o COMOKIT (Kit de modelagem da COVID-19) feito no GAMA para comparar diversos tipos de intervenções possíveis, e durante as adaptações do modelo foram encontradas diversas dificuldades em obter dados de infectados e curados pela COVID-19 na região do bairro Santa Luzia, o que tornou inviável a continuação da modelagem.
 
-Com esse obstáculo foi necessário procurar uma nova região a qual pudesse fornecer de forma confiável esses dados que posteriormente ficou definido como Condomínio RK.
+Com a dificuldade em modelar a região de Santa Luzia, foi necessário procurar uma nova região a qual pudesse fornecer de forma confiável esses dados e que posteriormente ficou definido a modelagem com dados do Condomínio RK.
 
-No Condomínio RK foi possível obter dados como shapefile e diversos dados relacionados a COVID na região, dessa forma foi possível fazer ajustes e adaptações no COMOKIT e verificar que o modelo obteve um comportamento similar ao ocorrido de fato na região.
+No Condomínio RK foi possível obter dados como \textit{shapefile} e diversos dados relacionados a COVID na região, dessa forma foi possível fazer ajustes e adaptações no COMOKIT e verificar que o modelo obteve um comportamento similar ao ocorrido de fato na região.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

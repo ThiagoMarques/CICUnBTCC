@@ -37,7 +37,7 @@ Os dados geográficos cedidos pelo Centro de Estudos Ambientais do Condomínio R
 
 \figura{5_1_shapefile_RK.PNG}{Arquivo no formato shapefile do Condomínio RK}{basicmodel}{width=0.75\textwidth}
 
-O arquivo shapefile contém informações de todas as áreas mapeadas no condomínio, que podem ser consultadas ao exibir a tabela de atributos. A tabela de atributos do arquivo contém dados separados por linhas e colunas, onde as colunas correspondem as informações sobre cada feição mapeada e as linhas correspondem a uma feição. As colunas identificadas:
+O arquivo \textit{shapefile} contém informações de todas as áreas mapeadas no condomínio, que podem ser consultadas ao exibir a tabela de atributos. A tabela de atributos do arquivo contém dados separados por linhas e colunas, onde as colunas correspondem as informações sobre cada feição mapeada e as linhas correspondem a uma feição. As colunas identificadas:
 
 \begin{itemize}
 \item Endereço: contém informações do endereço no condomínio;
@@ -121,17 +121,19 @@ A metáfora é uma forma de perceber ou entender algo intuitivamente, através d
 
 A analogia destaca o caráter comum a duas coisas diferentes. A associação entre coisas ou fatos através da analogia é realizada pelo pensamento racional e concentra-se nas semelhanças entre elas. O modelo, por sua vez, é normalmente criado a partir de metáforas; nele, são representados os conceitos explícitos, não devendo haver contradições. Todos os conceitos e proposições devem ser expressos em linguagem sistemática e lógica \cite{gavira2003simulaccao}.
 
-Logo, de acordo com Gaviria 2003, podemos assumir que um modelo de simulação de
-um sistema é uma forma de converter conhecimento tácito em codificado, já que as
-atividades de reflexão, discussão, dedução, indução etc. inerentes à modelagem
-proporcionam o conhecimento do sistema (aquisição de conhecimento sobre o
-sistema modelado) \cite{gavira2003simulaccao}.
+Logo, de acordo com Gaviria 2003, podemos assumir que um modelo de simulação de um sistema é uma forma de converter conhecimento tácito em codificado, já que as atividades de reflexão, discussão, dedução, indução etc. inerentes à modelagem proporcionam o conhecimento do sistema (aquisição de conhecimento sobre o sistema modelado) \cite{gavira2003simulaccao}.
 
-
-%\subsection{Simulação do santa luzia versus realidade dos dados}
 
 \subsection{Simulação do RK versus realidade dos dados}
 
-%A simulação computacional do RK permitiu o conhecimento através da experimentação ao analisar diversos cenários com políticas que mitigam a disseminação do COVID-19.
+A simulação computacional do RK permitiu o conhecimento através da experimentação ao analisar diversos cenários com políticas que mitigam a disseminação do COVID-19.
+
+Foi possível observar baseado nos dados disponibilizados por período epidemiológico fornecido pelo Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) que o modelo de simulação do COMOKIT, mesmo utilizando o gerador embutido sem a personalização dos agentes e alterações na modelagem proposta pelo COMOKIT que a simulação esteve próxima quando aplicado políticas restritivas.
+
+O modelo que aplica a política restritiva chamada Lockdown aplicou efetivamente a política em 15 dias, ou seja, nesse período efetivamente não houve aumento de casos. Após o período de 15 dias, nenhuma política é aplicada. A disseminação do vírus aumenta expressivamente, visto que nessa população, se não houver políticas que inibem a transmissão do COVID-19, um aumento ocorrerá.
+
+O modelo que inibe a interação de agentes com outros agentes mostrou eficiência ao reduzir os casos no condomínio e não deixou surgir novos casos. Apesar das fragilidades do modelo como não modelar outras variáveis possíveis que podem causar a contaminação entre agentes, o isolamento social foi o suficiente para eliminar a COVID-19 no condomínio.
+
+O modelo que simula escolas e trabalhos fechados foi o mais próximo da realidade, pois em um contexto genérico foi um possível cenário real no Condomínio RK. 
 
 
