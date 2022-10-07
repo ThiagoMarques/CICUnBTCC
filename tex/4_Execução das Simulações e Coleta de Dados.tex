@@ -54,7 +54,12 @@ Após a importação, a pasta do COMOKIT estará disponível para abertura. Abai
 \item \textit{Utilities}: pasta que contém arquivos utilitários como os arquivos GAMA que geram pontos e edificações nas simulações, um arquivo GAMA responsável por calibrar o experimento.
 \end{itemize}
 
-As informações demográficas e espaciais do condomínio RK foram inseridas na subpasta RK em Datasets e estão disponíveis no repositório https://github.com/ThiagoMarques/comokitcovidunb. O COMOKIT necessita de um arquivo no formato \textit{shapefile} para compor as limitações geográficas. Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "\textit{boundary.shp}", indicando que este arquivo contém as limitações de estudo do caso do condomínio RK.
+As informações demográficas e espaciais do condomínio RK foram inseridas na subpasta RK em \textit{data/datasets} e estão disponíveis no repositório:
+\begin{itemize}
+\item https://github.com/ThiagoMarques/CICUnBTCC
+\end{itemize}
+
+O COMOKIT necessita de um arquivo no formato \textit{shapefile} para compor as limitações geográficas. Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "\textit{boundary.shp}", indicando que este arquivo contém as limitações de estudo do caso do condomínio RK.
 
 \subsubsection{Configuração dos parâmetros}
 
@@ -67,13 +72,12 @@ Portanto, no arquivo \textit{Parameters.gaml} na pasta \textit{Model}, é necess
 
 \subsubsection{Gerar edificações e pontos}
 
-O COMOKIT fornece um modelo que solicita servidores OSM (Open Street Map) com 
- relação a área definida em \textit{boundary.shp} e constrói automaticamente o arquivo. 
+O COMOKIT fornece um modelo que solicita servidores OSM (Open Street Map) com relação a área definida em \textit{boundary.shp} e constrói automaticamente o arquivo. 
 É necessário abrir o arquivo "\textit{Generate Buildings from Points.gaml}"  localizado na pasta Utilites e indicar a pasta com o arquivo que delimita a área geográfica da simulação (\textit{boundary.shp}).
 
 \figura{4_5_generate_buildings.PNG}{Parâmetros para gerar edificações e pontos na simulação}{basicmodel}{width=0.75\textwidth}
 
-Ao iniciar a execução do arquivo "\textit{Generate Buildings from Points.gaml}", um mapa é apresentado com informações geográficas obtidas a partir do arquivo "\textit{boundary.shp}":
+Ao iniciar a execução do arquivo "\textit{Generate Buildings from  points.gaml}", um mapa é apresentado com informações geográficas obtidas a partir do arquivo "\textit{boundary.shp}":
 
 \begin{itemize}
 \item 2919 blocos e pontos reconhecidos;
@@ -85,7 +89,7 @@ Ao iniciar a execução do arquivo "\textit{Generate Buildings from Points.gaml}
 
 Após realizar a execução do experimento "\textit{Generate Buildings from Points.gaml}", é inserido automaticamente o arquivo "\textit{buildings.shp}" e imagens de satélites na pasta RK, localizada em \textit{Datasets}.
 
-Para aproximação da realidade, o Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) disponibilizou o mapa do condomínio no formato shapefile com informações das edificações do condomínio:
+Para aproximação da realidade, o Centro de Estudos Ambientais do Condomínio Rural Residencial RK (CEA/RK) disponibilizou o mapa do condomínio no formato \textit{shapefile} com informações das edificações do condomínio:
 
 \figura{4_27_QGIS_RK.PNG}{Imagem do condomínio RK no software QGIS}{basicmodel}{width=0.75\textwidth}
 
@@ -93,7 +97,7 @@ No software QGIS, foi inserido na tabela de atributos as informações sobre os 
 
 \figura{4_28_QGIS_feicoes.PNG}{Feições do condomínio RK no software QGIS}{basicmodel}{width=0.75\textwidth}
 
-Após edição da tabela de atributos no QGIS, o arquivo shapefile chamado boundary.shp foi exportado para a pasta RK contida no COMOKIT e utilizada para gerar as simulações.
+Após edição da tabela de atributos no QGIS, o arquivo \textit{shapefile} chamado \textit{boundary.shp} foi exportado para a pasta RK contida no COMOKIT e utilizada para gerar as simulações.
 
 
 
@@ -117,23 +121,23 @@ Para visualização da simulação, é apresentado um painel com os parâmetros 
 
 Cada simulação importa pelo menos dois arquivos abaixo para realizar a execução:
 \begin{enumerate}
-\item Global.gaml
-\item Abstract Experiment.gaml
+\item \textit{Global.gaml}
+\item \textit{Abstract Experiment.gaml}
 \end{enumerate}
 
 \subsubsection{Global.gaml}
 
-O arquivo Global.gaml contém declarações globais de ações e atributos, usados principalmente para inicializar o modelo em experimentos. Esse modelo importa entidades que de acordo com a documentação do COMOKIT, as entidades representam os habitantes individuais com suas características de sexo, situação de emprego, idade e situação epidemiológica e entidades espaciais que são edificações onde os agentes individuais realizam atividades, que dependem do tipo de edifício definido \cite{ComokitDoc}.
+O arquivo \textit{Global.gaml} contém declarações globais de ações e atributos, usados principalmente para inicializar o modelo em experimentos. Esse modelo importa entidades que de acordo com a documentação do COMOKIT, as entidades representam os habitantes individuais com suas características de sexo, situação de emprego, idade e situação epidemiológica e entidades espaciais que são edificações onde os agentes individuais realizam atividades, que dependem do tipo de edifício definido \cite{ComokitDoc}.
 
 \figura{4_29_global_gaml.PNG}{Importações no arquivo Global.gaml}{basicmodel}{width=0.75\textwidth}
 
-Este arquivo é o responsável por criar as edificações e atividades da simulação e inserir os parâmetros epidemiológicos. No condomínio RK, como não existe uma edificação do tipo Hospital, o COMOKIT constrói automaticamente uma edificação especial fora da região delimitada no arquivo boundary.shp para simular um hospital. Caso exista um hospital inserido no arquivo shapefile, o código abaixo deve ser removido:
+Este arquivo é o responsável por criar as edificações e atividades da simulação e inserir os parâmetros epidemiológicos. No condomínio RK, como não existe uma edificação do tipo Hospital, o COMOKIT constrói automaticamente uma edificação especial fora da região delimitada no arquivo \textit{boundary.shp} para simular um hospital. Caso exista um hospital inserido no arquivo \textit{shapefile}, o código abaixo deve ser removido:
 
 \figura{4_30_Global_gaml_hospital.PNG}{Simulação de hospital no arquivo Global.gaml}{basicmodel}{width=0.75\textwidth}
 
 \subsubsection{Abstract Experiment.gaml}
 
-O arquivo Abstract Experiment.gaml insere variáveis que são responsáveis pela interface gráfica da simulação, como cores, gráficos e imagens de fundo da simulação. Alguns parâmetros importantes para identificação em tempo real dos casos da simulação são feitas neste arquivo, como a identificação de cores dos agentes com situação epidemiológica. 
+O arquivo \textit{Abstract Experiment.gaml} insere variáveis que são responsáveis pela interface gráfica da simulação, como cores, gráficos e imagens de fundo da simulação. Alguns parâmetros importantes para identificação em tempo real dos casos da simulação são feitas neste arquivo, como a identificação de cores dos agentes com situação epidemiológica. 
 
 As cores abaixo representam o status epidemiológico dos agentes, representados no mapa por um quadrado:
 
@@ -154,11 +158,11 @@ O COMOKIT fornece um modelo chamado Lockdown que simula a política de bloqueio 
 
 \subsubsection{Importações}
 
-O modelo utiliza os arquivos Global.gaml para instanciar agentes individuais e agentes espaciais e o arquivo Abstract Experiment.gaml para exibição de interface gráfica.
+O modelo utiliza os arquivos \textit{Global.gaml }para instanciar agentes individuais e agentes espaciais e o arquivo \textit{Abstract Experiment.gaml } para exibição de interface gráfica.
 
 \subsubsection{Definições globais}
 
-O número de 15 dias foi configurado para execução da simulação na variável num\_days:
+O número de 15 dias foi configurado para execução da simulação na variável \textit{num\_days}:
 
 \figura{4_10_model_lockdown.PNG}{Configuração do modelo Lockdown no COMOKIT}{basicmodel}{width=0.75\textwidth}
 
@@ -181,24 +185,24 @@ Para realizar a simulação do lockdown no COMOKIT, foi ajustado os parâmetros 
 
 \subsubsection{Resultados}
 
-Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
+Para realizar a simulação do lockdown, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
 
 \figura{4_24_lockdown_1.PNG}{Resultado da simulação do modelo lockdown no condomínio RK}{basicmodel}{width=0.75\textwidth}
 
 
 \subsection{No Activities with Meeting}
 
-O COMOKIT fornece um modelo chamado No Activities with Meeting que simula uma política restritiva que impede os agentes de praticar qualquer atividade que permita que os indivíduos conheçam outros indivíduos. E por fim, as atividades como trabalhar, estudar, ir à escola, comer, lazer ou esporte são proibidas.
+O COMOKIT fornece um modelo chamado No Activities with Meeting que simula uma política restritiva que impede os de interagir com outros agentes. As atividades como trabalhar, estudar, ir à escola, comer, lazer ou esporte são proibidas.
 
 \figura{4_34_NoActivitiesMeeting.PNG}{Modelo No Activities with Meeting COMOKIT}{basicmodel}{width=0.75\textwidth}
 
 \subsubsection{Importações}
 
-O modelo utiliza os arquivos Global.gaml para instanciar agentes individuais e agentes espaciais e o arquivo Abstract Experiment.gaml para exibição de interface gráfica.
+O modelo utiliza os arquivos \textit{Global.gaml} para instanciar agentes individuais e agentes espaciais e o arquivo \textit{Abstract Experiment.gaml} para exibição de interface gráfica.
 
 \subsubsection{Definições globais}
 
-A política aplicada foi nomeada como create\_no\_meeting\_policy, herdada do arquivo Authority.gaml. A política percorre uma lista de atividades chamada ActivitiesListingPolicy. As atividades definidas como uma atividade com reunião são definidas nos parâmetros globais do COMOKIT. Essa variável global chamada de meeting\_relaxing\_act contém as atividades dos agentes inseridas na lista, que serão proibidas ao escolher essa política. As definições dessa variável estão nas configurações globais de parâmetros (Parameters.gaml):
+A política aplicada foi nomeada como create\_no\_meeting\_policy, herdada do arquivo \textit{Authority.gaml}. A política percorre uma lista de atividades chamada \textit{ActivitiesListingPolicy}. As atividades definidas como uma atividade com reunião são definidas nos parâmetros globais do COMOKIT. Essa variável global chamada de meeting\_relaxing\_act contém as atividades dos agentes inseridas na lista, que serão proibidas ao escolher essa política. As definições dessa variável estão nas configurações globais de parâmetros (\textit{Parameters.gaml}):
 
 \figura{4_36_meeting_relaxing.PNG}{Parâmetros para atividades proibidas ao escolher a política No activity with meeting}{basicmodel}{width=0.75\textwidth}
 
@@ -222,7 +226,7 @@ Para realizar a simulação do modelo No activity with meeting no COMOKIT, foi a
 
 \subsubsection{Resultados}
 
-Para realizar a simulação de escolas e trabalhos fechados, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
+Para realizar a simulação da política restritiva que impede os agentes de praticar esportes e demais atividades, foi ajustado os parâmetros iniciais que define a data inicial da simulação, ajustada para o dia 14 de março de 2020 e o número inicial de infectados, ajustado para 1 caso no condomínio e finalizaram no dia 15 de outubro de 2020, totalizando 7 meses, 214 dias e aproximadamente 5136 horas.
 
 \figura{4_25_no_active_1.PNG}{Dados da simulação após execução do modelo No activity with meeting}{basicmodel}{width=0.75\textwidth}
 

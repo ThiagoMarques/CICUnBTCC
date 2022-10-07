@@ -51,14 +51,14 @@ O COMOKIT necessita de um arquivo no formato shapefile para compor as limitaçõ
 
 De acordo com Almeida (2015) “Esta característica marcante do GIS deve-se ao modo como seus arquivos nativos (shapefiles) relacionam-se entre si e com demais fontes. Um shapefile consiste basicamente em um arquivo principal (*.shp), um arquivo-índice (*.shx) e uma tabela dBASE (*.dbf), havendo ainda outros arquivos acessórios que também podem estar associados a um mesmo shapefile. O arquivo principal é um arquivo de acesso direto no qual cada um representa um conjunto de dados de uma mesma natureza de forma (ponto, linha ou polígono) com uma lista de seus vértices. O arquivo-índice tem a finalidade de indexar a leitura do arquivo principal, de modo a permitir que o software faça buscas rápidas no conteúdo deste. A tabela dBASE contém todos os atributos literais atribuídos às eições presentes naquele arquivo principal. \cite{almeida2015integraccao}
 
-Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "boundary.shp", indicando que este arquivo contém as limitações de estudo do caso.
+Para inserção de dados espaciais no COMOKIT, é necessário inserir obrigatoriamente um arquivo com a nomenclatura "\textit{boundary.shp}", indicando que este arquivo contém as limitações de estudo do caso.
 
-Para identificar os locais e edifícios da simulações, inserimos um arquivo com nome "buildings.shp". Não obrigatório, o arquivo pode conter ou não uma identificação do tipo de edifíco na tabela de atributos do aquivo shapefile. Caso não exista, o COMOKIT fornece um modelo que solicita servidores OSM com relação
-a área definida em "boundary.shp" e constrói automaticamente o arquivo.
+Para identificar os locais e edifícios da simulações, inserimos um arquivo com nome "\textit{buildings.shp}". Não obrigatório, o arquivo pode conter ou não uma identificação do tipo de edifíco na tabela de atributos do aquivo \textit{shapefile}. Caso não exista, o COMOKIT fornece um modelo que solicita servidores OSM com relação
+a área definida em "\textit{boundary.shp}" e constrói automaticamente o arquivo.
 
 \subsection{Dados demográficos}
 
-O COMOKIT trabalha com a leitura de um arquivo no formato CSV (Comma Separated Values) para leitura de informações da população simulada. O arquivo deve conter atributos básicos dos indivíduos como idade, sexo, status de emprego e o identificador de sua residência. Caso o arquivo não esteja presente, a população será gerada com base nas edificações disponíveis.
+O COMOKIT trabalha com a leitura de um arquivo no formato CSV (\textit{Comma Separated Values}) para leitura de informações da população simulada. O arquivo deve conter atributos básicos dos indivíduos como idade, sexo, status de emprego e o identificador de sua residência. Caso o arquivo não esteja presente, a população será gerada com base nas edificações disponíveis.
 
 \figura{3_15_population.png}{Exemplo de um arquivo em CSV}{basicmodel}{width=0.75\textwidth}
 
@@ -69,7 +69,7 @@ GAML ou em arquivos de configurações separados.
 
 \subsection{Modificando os parâmetros em Model/Parameters.gaml}
 
-Os parâmetros já definidos estão disponíveis no arquivo chamado "parameters.gaml". A vantagem deste método é utilizar os parâmetros já pré-definidos no COMOKIT, mas não há flexibilidade e heterogeneidade na simulação.
+Os parâmetros já definidos estão disponíveis no arquivo chamado "\textit{parameters.gaml}". A vantagem deste método é utilizar os parâmetros já pré-definidos no COMOKIT, mas não há flexibilidade e heterogeneidade na simulação.
 
 A documentação técnica do COMOKIT descreve uma lista de parâmetros disponíveis para ajustes no arquivo "Parameters.gaml" \cite{ParametrosCOMOKIT:online}.
 
@@ -142,11 +142,11 @@ De acordo com a documentação técnica do COMOKIT \cite{ComokitDoc}, é possív
 
 \subsection{Geração de população sintética}
 
-Na descrição ODD do COMOKIT \cite{ODDCOMOKit32}, é descrito duas maneiras de gerar uma população sintética de agentes: a partir de um arquivo CSV, onde cada linha corresponde a um agente ou usando o gerador embutido do COMOKIT.
+Na descrição ODD do COMOKIT \cite{ODDCOMOKit32}, é informado duas maneiras de gerar uma população sintética de agentes: a partir de um arquivo CSV, onde cada linha corresponde a um agente ou usando o gerador embutido do COMOKIT.
 
 \subsubsection{Parametrização do gerador integrado}
 
-A documentação do COMOKIT \cite{ComokitDoc} descreve que o gerador padrão do COMOKIT faz uso de um arquivo de configuração para definir as variáveis-chave do algoritmo. Para definir de acordo com o estudo de caso, é necessário criar um arquivo CSV e nomeá-lo para Population parameter.csv. A primeira coluna deve corresponder ao nome do parâmetro e uma segunda coluna o valor do parâmetro.
+A documentação do COMOKIT \cite{ComokitDoc} descreve que o gerador padrão do COMOKIT faz uso de um arquivo de configuração para definir as variáveis-chave do algoritmo. Para definir de acordo com o estudo de caso, é necessário criar um arquivo CSV e nomeá-lo para \textit{Population parameter.csv}. A primeira coluna deve corresponder ao nome do parâmetro e uma segunda coluna o valor do parâmetro.
 
 A documentação descreve os parâmetros que podem ser definidos e os valores padrão quando omitidos:
 
@@ -173,7 +173,7 @@ A documentação descreve os parâmetros que podem ser definidos e os valores pa
 
 \section{Dificuldades com a construção}
 
-Alguns desafios foram superados, como mapear regiões utilizando o processo de atribuição de etiquetas, conhecido como tags no Open Street Map e lidar com a pandemia que estava atingindo números recordes no desenvolvimento do trabalho. 
+Alguns desafios foram superados, como mapear regiões utilizando o processo de atribuição de etiquetas, conhecido como tags no Open Street Map e lidar com a pandemia que estava atingindo números recordes no desenvolvimento do trabalho. A modelagem também foi um desafio, visto que existem diferentes variáveis para a proximidade do mundo real.
 
 \subsection{Mapeamento do Bairro Santa Luzia}
 
