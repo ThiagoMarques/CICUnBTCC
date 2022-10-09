@@ -7,7 +7,7 @@ O objetivo dos estudos foi mostrar a disseminação do Covid-19 nesses locais qu
 Palavras-chave: COMOKIT, COVID-19, políticas de saúde, modelagem e simulação
 
 
-# Conhecimentos Específicos #
+## Conhecimentos Específicos ##
 
 - Simulação baseada em agentes;
 - Modelagem;
