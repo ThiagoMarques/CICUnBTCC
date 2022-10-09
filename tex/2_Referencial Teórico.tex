@@ -21,7 +21,7 @@ Este capítulo busca elucidar conceitos importantes para o entendimento do traba
 
 \subsection{A Pandemia da COVID-19}
 
-A Organização Pan-Americana da Saúde (OPAS) publicou que em 31 de dezembro de 2019, a Organização Mundial da Saúde (OMS) foi alertada sobre casos de pneumonia na cidade de Wuhan, província de Hubei, na República Popular da China. A nova cepa, até o momento ainda desconhecida a seres humanos de coronavírus foi confirmada em janeiro de 2020.
+A Organização Mundial da Saúde (OMS) foi alertada sobre casos de pneumonia na cidade de Wuhan, província de Hubei, na República Popular da China. A nova cepa, até o momento ainda desconhecida a seres humanos de coronavírus foi confirmada em janeiro de 2020.
 
 Ao todo, sete coronavírus humanos (HCoVs) já foram identificados: HCoV-229E, HCoV-OC43, HCoV-NL63, HCoV-HKU1, SARS-COV (que causa síndrome respiratória aguda grave), MERS-COV (que causa síndrome respiratória do Oriente Médio) e o, mais recente, novo coronavírus (que no início foi temporariamente nomeado 2019-nCoV e, em 11 de fevereiro de 2020, recebeu o nome de SARS-CoV-2). Esse novo coronavírus é responsável por causar a doença COVID-19.
 
@@ -116,7 +116,7 @@ As variáveis que moldam as interações entre os agentes assim como o comportam
 
 A modelagem baseada em agentes(MBA) possibilita observar certos comportamentos individuais de humanos e animais que não seriam possíveis distinguir corretamente em sistemas complexos, essa capacidade de analisar comportamentos individuais transforma a observação sobre um fenômeno em uma visão mais simplificada, alguns dos exemplos para esses comportamentos podem ser observados em epidemias, movimento de animais em grupos coordenados, trânsito de veículos. Além disso destaca-se a alta flexibilidade desses Sistemas Baseados em Agentes, uma vez que é possível fazer alterações tanto no ambientes, quantos nos agentes que interagem entre si. Conforme Bonabeau(2002) mesmo modelos simples baseado em agentes pode exibir padrões de comportamento complexos e contribuir com informações valiosas sobre a dinâmica do sistema do mundo real que ele emula \cite{bonabeau2002agent}
 
-\figura{Passaros}{Movimento dos pássaros coordenados em bando}{Passaros}{width=0.75\textwidth}
+\figura{Passaros}{2_3_3_Passaros.jpg}{Passaros}{width=0.75\textwidth}
 
 Axtell (2000) Afirma que a modelagem baseada em agentes pode ser a solução para alguns processos levando a uma compreensão melhor sobre o comportamento do modelo, além de possibilitar melhores testes, permitindo a elaboração de suposições com isso possibilitando novas hipóteses desconhecidas anteriormente.\cite{Axtell:online}
 
@@ -191,7 +191,7 @@ As simulações e experimentos são definidos como duas espécies: modelo e plan
 
 Neste meta-modelo, as instâncias dos filhos do agente conhecem a instância do filho do modelo em que estão hospedados como seu mundo , enquanto a instância de plano de experimento identifica o mesmo agente como uma das simulações de que é responsável. O diagrama a seguir resume esse framework:
 
-\figura{metamodelo_GAMA}{meta-modelo do GAML na forma de um framework }{metamodelo1}{width=0.75\textwidth}
+\figura{metamodelo_GAMA}{meta-modelo do GAML na forma de um framework. Fonte: \cite[p.2]{} }{metamodelo1}{width=0.75\textwidth}
 
 A escrita de um modelo em GAML consiste na definição de um modelo na qual outras espécies, herdando diretamente ou não de um agente e representando entidades serão aninhadas com um ou vários planos de experimentos:
 
@@ -215,17 +215,30 @@ A estrutura conceitual segue um padrão:
 
 O cabeçalho de um arquivo de modelo começa com a declaração do nome do modelo. Este nome é usado para construir o nome da espécie modelo nas quais as simulações serão instanciadas.
 
-\figura{3_1_model}{declaração de um modelo}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    model dummy
+\end{lstlisting}
 
 O exemplo acima criará uma espécie chamada \textit{dummy\underline{ }model}, filho da espécie abstrata model, a partir da qual as simulações serão instanciadas. 
 
 A importação de um modelo pode ser realizada de duas formas: por herança ou importação direta. A imagem abaixo importa dois modelos por herança, ou seja, as declarações dos modelos importados serão mescladas na ordem de importação.
 
-\figura{3_2_import}{importação de um modelo}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    import "relative_patch_to_a_model_file"
+    import "relativa_path_to_another_model_file"
+\end{lstlisting}
 
 A segunda forma de importação chamada de \textit{usage import } é reservado a \textit{micromodelos} e de acordo com a documentação técnica, está em fase experimental.
 
-\figura{3_3_usage_import}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    global {
+      //Definition of [global attributes](GlobalSpecies#declaration), 
+      [actions and behaviors](DefiningActionsAndBehaviors)
+}
+\end{lstlisting}
 
 
 
@@ -236,45 +249,119 @@ Uma espécie define seus atributos, ações e comportamentos, e por fim aspectos
 
 A declaração da espécie global é única e não tem um nome específico. Ela representa um mundo, onde deve conter todos os atributos, ações e comportamentos globais.
 
-\figura{3_4_global}{declaração da espécie global}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    global {
+      //Definition of global attributes, actions, behaviors
+}
+\end{lstlisting}
 
 As espécies regulares podem ser declaradas com o uso da palavra-chave \textit{species} e todas precisam ser renomeadas.
 
-\figura{3_5_regular}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    species nameOfSpecies {
+      //Definition of your species attributes, actions and behaviors and aspects
+    }
+\end{lstlisting}
 
 
 \subsubsection{Declarações do experimento}
 
 A declaração de experimentos começam com o uso da palavra-chave \textit{experiment} e contêm todos os parâmetros de simulação e a definição de saída que podem ser displays, monitores ou inspetores. 
 
-\figura{3_6_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    experiment first_experiment {
+	// definition of parameters (intputs)
+
+	// definition of output
+	output(...)
+    }
+
+    experiment second_experiment {
+	// definition of parameters (intputs)
+
+	// definition of output
+    }
+\end{lstlisting}
+
 
 Existem quatro tipos de experimentos disponíveis no GAMA:
 
 \begin{enumerate}
 \item Experimento GUI que permite a exibição de uma interface gráfica com parâmetros de entrada e saída;
 		
-		\figura{3_7_gui_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    experiment first_experiment {
+	[parameters]
+	[output]
+	[...]
+    }
+\end{lstlisting}
 		
 
 \item Experimento em lote que perimte a execução de várias simulações sucessivas;
 
-		\figura{3_8_batch_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    experiment batch_experiment  type:batch {
+	[parameters]
+	[exploration method]
+	[...]
+    }
+\end{lstlisting}
 
 \item Experimento de testes que permite a escrita de testes de unidade em um modelo para garantir a qualidade;
 
-		\figura{3_9_test_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    experiment test_experiment type:test autorun: True  {
+	[setup]
+	[tests]
+	[...]
+    }
+\end{lstlisting}
 
 \item Experimento de memorização que permite armazenar cada etapa de simulação na memória e voltar etapas anteriores.
 
-		\figura{3_10_memorize_experiment}{experimentos declarados}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+    experiment test_experiment type: memorize {
+	[parameters]
+	[output]
+	[...]
+        }
+\end{lstlisting}
 \end{enumerate}
 
 \subsubsection{Esqueleto básico de um modelo}
 
 Abaixo, a imagem de um esqueleto básico de um modelo no GAMA:
 
-\figura{3_11_basic_model}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
+%Renomear listing%
+\begin{lstlisting}[numbers=left, caption={Código}]
+model name_of_the_model
+
+global{
+	//definition of [global attributes](GlobalSpecies#declaration), 
+	action,	behaviors
+}
+species my_specie{
+	//definition of attibutes, actions, behaviors
+}
+experiment my_experiment /* + specify the type : "type:gui", "type:batch",
+"type:test", or "test:memorize" */
+{
+	//here the definition of your experiment with...
+	// ... your inputs
+	output {
+		// ... and your outputs
+	}
+}
+\end{lstlisting}
+
 
 A estrutura acima é básica e comum a todos os modelos do GAMA. Para construção de modelos, o uso de conceitos de programação são requeridos.
 
