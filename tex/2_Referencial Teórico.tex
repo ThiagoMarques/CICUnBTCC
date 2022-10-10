@@ -60,7 +60,9 @@ O nome da doença foi posteriormente sugerido como COVID-19 pela Organização M
 
 Segundo o Ministério da Saúde, o Brasil já ultrapassou os 30 milhões de pessoas que foram infectados desses mais de 29 milhões recuperados e mais de 660 mil óbitos. Além disso segundo a Organização Mundial da Saúde o número de infectados já ultrapassava 511 milhões de pessoas.
 
-\includegraphics[width=15cm, height=15cm]{MERS.PNG}
+\figura{MERS}{MERS situation update, Februrary 2022. Fonte: MERS outbreaks \cite{csr_mers_nodate}}{MERS}{width=0.75\textwidth}
+
+
 
 \section{Epidemiologia}
 
@@ -108,7 +110,7 @@ No mundo real assim como nas MBAs cada individuo desempenha um papel e suas inte
 
 As variáveis que moldam as interações entre os agentes assim como o comportamento desses agentes com o ambiente e com os demais indivíduos podem ser pensadas de forma mais simples ou elaboradas em contextos mais específicos ou complexos. Dessa forma pode-se observar também limitações na elaboração dos agentes e na construção modelo.
 
-\figura{real_world}{Em um modelo baseado em agente, as unidades individuais do sistema do mundo real a ser modelado e suas interações são representadas de forma explícita e individual no modelo\cite{02Introd63:online}}{real_world}{width=0.75\textwidth}
+\figura{real_world}{Em um modelo baseado em agente, as unidades individuais do sistema do mundo real a ser modelado e suas interações são representadas de forma explícita e individual no modelo. Fonte: Agent-Based Evolutionary Game, \cite{csr_mers_nodate}}{MERS}{width=0.75\textwidth}
 
 \subsection{Principais vantagens e desafios na Modelagem de Agentes}
 
@@ -118,7 +120,7 @@ Axtell (2000) Afirma que a modelagem baseada em agentes pode ser a solução par
 
 Um desafio, comum a todas as técnicas de modelagem, é que o modelo deve ser construído num nível correto de descrição dos fenômenos, usando uma quantidade adequada de detalhes, para servir ao seu propósito. Outro desafio envolve a utilização da MBA nas ciências sociais, que geralmente envolvem seres humanos com comportamentos potencialmente irracionais, de escolhas subjetivas e psicologia complexa, aspectos difíceis de quantificar, calibrar e muitas vezes justificar. Outro desafio está relacionado à própria definição da MBA, a qual trata um sistema no nível de suas unidades constituintes, o que exige elevado poder computacional e tempo para simulação do modelo, conforme a escala e a complexidade modelada.
 
-\figura{2_3_3_Passaros}{Imagem de pássaros}{Passaros}{width=0.75\textwidth}
+\figura{2_3_3_Passaros}{Modelagem de um bando de pássaros}{Passaros}{width=0.75\textwidth}
 
 \section{Geoprocessamento e Sistema de Informações Geográficas}
 
@@ -128,12 +130,11 @@ Geoprocessamento é a utilização de técnicas matemáticas e computacionais qu
 
 As ferramentas que utilizam-se do Geoprocessamento são conhecidas como Sistemas de Informação Geográficas (SIG) ou Geographic Information System (GIS), podem ser entendidos como conjuntos de estruturas abrangendo programas computacionais, informações espaciais e hardwares possibilitando a analise e integração de diversos tipos de dados, criação de bancos, instituições, elaboração de mapas, documentos cartográficos\cite{Burrough:online}.
 
-\figura{2_4_1_Geoprocessamento}{Componentes de um sistema de informação geográfica}{Geoprocessamento Imagem}{width=0.75\textwidth}
+\figura{2_4_1_Geoprocessamento}{Componentes de um sistema de informação geográfica. Fonte: O que é geoprocessamento? \cite{agronoma_o_2020}}{Geoprocessamento Imagem}{width=0.75\textwidth}
 
 \subsection{Ferramenta de Sistema de Informações Geográficas QGIS}
 
-Uma das ferramentas utilizadas na construção do trabalho foi o QGIS, seu nome tem origem em Quantum GIS (QGIS). Esse software faz parte do FOSS (Free and Open Source Software), logo uma das características marcantes do software é ser Código Aberto e gratuito\cite{Qgis:online} e pode ser baixado em diferentes sistemas operacionais como Linux, Mac, Windows. Existem plugins desenvolvidos em diversas linguagens 
-sendo a principal Python. O software possui apoio da comunidade na construção e elaboração de projetos. Por fim dispõe de uma excelente integração com GAMA que foi a ferramenta principal utilizada na modelagem das simulações. 
+Uma das ferramentas utilizadas na construção do trabalho foi o QGIS, seu nome tem origem em Quantum GIS (QGIS). Esse software faz parte do FOSS (Free and Open Source Software), logo uma das características marcantes do software é ser Código Aberto e gratuito\cite{Qgis:online} e pode ser baixado em diferentes sistemas operacionais como Linux, Mac, Windows. Existem plugins desenvolvidos em diversas linguagens sendo a principal Python. O software possui apoio da comunidade na construção e elaboração de projetos. Por fim dispõe de uma excelente integração com GAMA que foi a ferramenta principal utilizada na modelagem das simulações. 
 
 O Qgis é um software livre para Sistema de Informação Geográfica, incubado pela Open Source Geospatial Foundation (OSGeo) e impulsionado por um grupo ativo de desenvolvedores voluntários que regularmente lançam atualizações e correções para os problemas verificados neste aplicativo. É utilizado em ambientes acadêmicos e profissionais, caracterizando-se por oferecer um número crescente de recursos nativos e “plugins” que podem ser desenvolvidos por qualquer usuário que saiba programar em C++ ou Python. Suporta uma ampla gama de formatos geoespaciais, tais como vetores, rasters e bases de dados. \cite{bruno2017aplicabilidade}
 
@@ -194,7 +195,7 @@ A escrita de um modelo em GAML consiste na definição de um modelo na qual outr
 
 Ao executar um experimento no GAMA, é criado um agente de experimentos. O comportamento é especificado pelo plano de experimentos, responsável por criar agentes de simulação que os executará. Recursivamente, a inicialização de um agente de simulação criará a população de agentes das espécies definidas no modelo. Cada um desses agentes, ao serem criados, pode criar a população de sua microespécie \cite{gamaplataform}. 
 
-\figura{metamodelo_and_usermodel_GAMA}{meta-modelo do GAML e modelo de usuário na forma de um framework }{metamodelo2}{width=0.75\textwidth}
+\figura{metamodelo_and_usermodel_GAMA}{meta-modelo do GAML e modelo de usuário na forma de um framework. Fonte: documentação do GAMA \cite{gamaplataform} }{metamodelo2}{width=0.75\textwidth}
 
 \subsection{Organização de um modelo GAML}
 
@@ -395,7 +396,7 @@ Eles realizam suas atividades diárias, como exemplo, ir ao trabalho, escola, fa
 Os agentes incluem seus pais (sua família, que em nosso modelo corresponde aos demais Agentes Individuais que moram no mesmo apartamento em um Edifício ), amigos (com quem podem compartilhar atividades), colegas (colegas de trabalho ou de classe) e sua casa , local de trabalho e edifícios escolares . Uma visão geral da estrutura do modelo é apresentada na forma de um diagrama de classes UML. \cite{ArtigoComokit:online}
 
 
-\figura{3_12_comokit}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
+\figura{3_12_comokit}{declaração de espécies regulares. Fonte: documentação do COMOKIT \cite{ArtigoComokit:online} }{basicmodel}{width=0.75\textwidth}
 
 Os agentes de construção são entidades espaciais onde os agentes individuais podem realizar uma atividade, que depende do tipo de construção. Dois tipos especiais de Edifícios foram definidos porque desempenham um papel importante na simulação: o Exterior, que abriga as atividades realizadas por indivíduos fora da área modelada, e o Hospital, onde os agentes individuais doentes com sintomas críticos podem ser contidos e tratados. Para ter em conta a possível transmissão do vírus através do ambiente, todos os Edifícios estão equipados com uma carga viral, que pode ser utilizada pelo submodelo epidemiológico. \cite{ArtigoComokit:online}
 
@@ -418,7 +419,7 @@ Albert Bandura, em 1961, realizou um experimento social, no qual crianças eram 
 
 Utilizar simulações computacionais baseados em agentes para observar comportamentos de indivíduos que interagem entre si e formam um sistema complexo, é a principal função das Agent-based Modeling and Simulation (ABMS). Esse método permite observar tendências de comportamentos em situações de stress e aliada a praticidade de um sistema computacional, através disso é possível aprender através das observações, elaborar soluções para situações de crises, testa-las e valida-las antes mesmo que possua o caso concreto que envolva vitimas\cite{inproceedings} . 
 
-\figura{2_8_Rota_de_fuga}{Simulação da evacuação de um incêndio.(A) sem bloqueio, (B) com bloqueio depois de 10 segundos, (C) com bloqueio após 45 segundos\cite{bonabeau2002agent}}{Incêndio}{width=0.75\textwidth}
+\figura{2_8_Rota_de_fuga}{Simulação da evacuação de um incêndio.(A) sem bloqueio, (B) com bloqueio depois de 10 segundos, (C) com bloqueio após 45 segundos (imagem disponível em www.helbing.org).\cite{bonabeau2002agent}}{Incêndio}{width=0.75\textwidth}
 
 Conforme Martins\textit{ et el}. \textbf{A experiência clínica simulada no ensino de enfermagem: retrospectiva histórica*}. 2021. 
  \begin{quotation}
