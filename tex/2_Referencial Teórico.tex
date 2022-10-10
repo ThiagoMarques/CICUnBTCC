@@ -106,9 +106,7 @@ No entendimento de Bonabeau (2002), a MBA pode ser vista como conjunto de unidad
 
 No mundo real assim como nas MBAs cada individuo desempenha um papel e suas interações individuais com outros e com o ambiente influenciarão o resultado que o grupo atingirá. A imagem abaixo mostra diversas interações entre pessoas e agentes computacionais.  
 
-
 \figura{real_world}{Em um modelo baseado em agente, as unidades individuais do sistema do mundo real a ser modelado e suas interações são representadas de forma explícita e individual no modelo\cite{02Introd63:online}}{real_world}{width=0.75\textwidth}
-
 
 As variáveis que moldam as interações entre os agentes assim como o comportamento desses agentes com o ambiente e com os demais indivíduos podem ser pensadas de forma mais simples ou elaboradas em contextos mais específicos ou complexos. Dessa forma pode-se observar também limitações na elaboração dos agentes e na construção modelo.
 
@@ -116,11 +114,11 @@ As variáveis que moldam as interações entre os agentes assim como o comportam
 
 A modelagem baseada em agentes(MBA) possibilita observar certos comportamentos individuais de humanos e animais que não seriam possíveis distinguir corretamente em sistemas complexos, essa capacidade de analisar comportamentos individuais transforma a observação sobre um fenômeno em uma visão mais simplificada, alguns dos exemplos para esses comportamentos podem ser observados em epidemias, movimento de animais em grupos coordenados, trânsito de veículos. Além disso destaca-se a alta flexibilidade desses Sistemas Baseados em Agentes, uma vez que é possível fazer alterações tanto no ambientes, quantos nos agentes que interagem entre si. Conforme Bonabeau(2002) mesmo modelos simples baseado em agentes pode exibir padrões de comportamento complexos e contribuir com informações valiosas sobre a dinâmica do sistema do mundo real que ele emula \cite{bonabeau2002agent}.
 
-\figura{2_3_3_Passaros}{Imagem de pássaros}{Passaros}{width=0.75\textwidth}
-
 Axtell (2000) Afirma que a modelagem baseada em agentes pode ser a solução para alguns processos levando a uma compreensão melhor sobre o comportamento do modelo, além de possibilitar melhores testes, permitindo a elaboração de suposições com isso possibilitando novas hipóteses desconhecidas anteriormente.\cite{Axtell:online}
 
 Um desafio, comum a todas as técnicas de modelagem, é que o modelo deve ser construído num nível correto de descrição dos fenômenos, usando uma quantidade adequada de detalhes, para servir ao seu propósito. Outro desafio envolve a utilização da MBA nas ciências sociais, que geralmente envolvem seres humanos com comportamentos potencialmente irracionais, de escolhas subjetivas e psicologia complexa, aspectos difíceis de quantificar, calibrar e muitas vezes justificar. Outro desafio está relacionado à própria definição da MBA, a qual trata um sistema no nível de suas unidades constituintes, o que exige elevado poder computacional e tempo para simulação do modelo, conforme a escala e a complexidade modelada.
+
+\figura{2_3_3_Passaros}{Imagem de pássaros}{Passaros}{width=0.75\textwidth}
 
 \section{Geoprocessamento e Sistema de Informações Geográficas}
 
@@ -132,11 +130,10 @@ As ferramentas que utilizam-se do Geoprocessamento são conhecidas como Sistemas
 
 \figura{2_4_1_Geoprocessamento}{Componentes de um sistema de informação geográfica}{Geoprocessamento Imagem}{width=0.75\textwidth}
 
-
-
 \subsection{Ferramenta de Sistema de Informações Geográficas QGIS}
 
-Uma das ferramentas utilizadas na construção do trabalho foi o QGIS, seu nome tem origem em Quantum GIS (QGIS). Esse software faz parte do FOSS (Free and Open Source Software), logo uma das características marcantes do software é ser Código Aberto é gratuito\cite{Qgis:online} e pode ser baixado em diferentes sistemas operacionais como Linux, Mac, Windows. Existem plugins desenvolvidos em diversas linguagens sendo a principal Python. O software possui apoio da comunidade na construção e elaboração de projetos. Por fim dispõe de uma excelente integração com GAMA que foi a ferramenta principal utilizada na modelagem das simulações. 
+Uma das ferramentas utilizadas na construção do trabalho foi o QGIS, seu nome tem origem em Quantum GIS (QGIS). Esse software faz parte do FOSS (Free and Open Source Software), logo uma das características marcantes do software é ser Código Aberto e gratuito\cite{Qgis:online} e pode ser baixado em diferentes sistemas operacionais como Linux, Mac, Windows. Existem plugins desenvolvidos em diversas linguagens 
+sendo a principal Python. O software possui apoio da comunidade na construção e elaboração de projetos. Por fim dispõe de uma excelente integração com GAMA que foi a ferramenta principal utilizada na modelagem das simulações. 
 
 O Qgis é um software livre para Sistema de Informação Geográfica, incubado pela Open Source Geospatial Foundation (OSGeo) e impulsionado por um grupo ativo de desenvolvedores voluntários que regularmente lançam atualizações e correções para os problemas verificados neste aplicativo. É utilizado em ambientes acadêmicos e profissionais, caracterizando-se por oferecer um número crescente de recursos nativos e “plugins” que podem ser desenvolvidos por qualquer usuário que saiba programar em C++ ou Python. Suporta uma ampla gama de formatos geoespaciais, tais como vetores, rasters e bases de dados. \cite{bruno2017aplicabilidade}
 
@@ -367,8 +364,8 @@ A estrutura acima é básica e comum a todos os modelos do GAMA. Para construç�
 
 \section{COMOKIT}
 
-O COMOKIT (COVID-19 Modeling Kit) é baseado na plataforma de modelagem e simulação em agentes GAMA \cite{gaudou2020comokit}, um modelo que combina vários submodelos especializados para comparação de intervenções contra a pandemia de COVID-19. O COMOKIT nasceu com a necessidade urgente de ferramentas e metodologias que permitam uma análise rápida da eficácia das respostas à COVID-19 em diferentes comunidades e contextos, incluindo os de pequena escala. No artigo publicado pela HAL \cite{gaudou2020comokit}, os desenvolvedores afirmam que fizeram uma abordagem baseada no desenho e simulação de modelos computacionais baseados em agentes, onde os perfis das pessoas e dos domicílios, suas interações, sua evolução no tempo e no espaço, são explicitamente representados e servem de base para descrever a dinâmica da epidemia. Esta é uma perspectiva de “sistemas complexos”, onde essa dinâmica não é apenas o resultado de um mecanismo de transmissão, mas também de interações não lineares entre atores com relações e mecanismos complexos em vários níveis de organização, que agem e interagem entre si e com seu ambiente.
-Como afirmado em Drogoul et al. \cite{gaudou2020comokit}, o COMOKIT segue um conjunto de princípios:
+O COMOKIT (COVID-19 Modeling Kit) é baseado na plataforma de modelagem e simulação em agentes GAMA \cite{ParametrosCOMOKIT:online}, um modelo que combina vários submodelos especializados para comparação de intervenções contra a pandemia de COVID-19. O COMOKIT nasceu com a necessidade urgente de ferramentas e metodologias que permitam uma análise rápida da eficácia das respostas à COVID-19 em diferentes comunidades e contextos, incluindo os de pequena escala. No artigo publicado pela HAL \cite{banks1996ii}, os desenvolvedores afirmam que fizeram uma abordagem baseada no desenho e simulação de modelos computacionais baseados em agentes, onde os perfis das pessoas e dos domicílios, suas interações, sua evolução no tempo e no espaço, são explicitamente representados e servem de base para descrever a dinâmica da epidemia. Esta é uma perspectiva de “sistemas complexos”, onde essa dinâmica não é apenas o resultado de um mecanismo de transmissão, mas também de interações não lineares entre atores com relações e mecanismos complexos em vários níveis de organização, que agem e interagem entre si e com seu ambiente.
+Como afirmado em Drogoul et al. \cite{ParametrosCOMOKIT:online}, o COMOKIT segue um conjunto de princípios:
 
 • estar o mais próximo possível da tomada de decisão pública, tendo a possibilidade de responder a perguntas concretas;
 
@@ -384,23 +381,23 @@ Como afirmado em Drogoul et al. \cite{gaudou2020comokit}, o COMOKIT segue um con
 
 • oferecer um fácil acesso à experimentação em larga escala e validação estatística, facilitando a exploração de seus parâmetros;
 
-De acordo com a documentação, o COMOKIT visa simular e comparar a aplicação de políticas para mitigar a disseminação do COVID-19 na escala de uma área urbana, com a doença sendo modelada na escala individual. Seu objetivo é responder a perguntas como: A contenção de um bairro é mais eficaz do que a de um condomínio residencial? O fechamento da escola reduz os picos de transmissão? Como o uso de máscaras afeta a dinâmica da epidemia? Qual deve ser a duração ideal da contenção? Que proporção da população deve ser autorizada a se envolver em atividades durante uma contenção? \cite{gaudou2020comokit}
+De acordo com a documentação, o COMOKIT visa simular e comparar a aplicação de políticas para mitigar a disseminação do COVID-19 na escala de uma área urbana, com a doença sendo modelada na escala individual. Seu objetivo é responder a perguntas como: A contenção de um bairro é mais eficaz do que a de um condomínio residencial? O fechamento da escola reduz os picos de transmissão? Como o uso de máscaras afeta a dinâmica da epidemia? Qual deve ser a duração ideal da contenção? Que proporção da população deve ser autorizada a se envolver em atividades durante uma contenção? \cite{ODDCOMOKit32:online}
 
-Em sua documentação, o COMOKIT combina um submodelo de transmissão direta de pessoa para pessoa, um submodelo de transmissão ambiental através do ambiente construído, um modelo de design de políticas e um modelo baseado em agenda de mobilidade e ocupação de pessoas a uma taxa de 1h. Um ponto chave é que permite a representação de heterogeneidades em características individuais (gênero, idade, família), agendas (baseadas em estruturas sociais, serviços disponíveis ou categorias de idade), comportamentos de relações sociais (por exemplo, cumprimento de políticas) e resposta a COVID-19. \cite{gaudou2020comokit}
+Em sua documentação, o COMOKIT combina um submodelo de transmissão direta de pessoa para pessoa, um submodelo de transmissão ambiental através do ambiente construído, um modelo de design de políticas e um modelo baseado em agenda de mobilidade e ocupação de pessoas a uma taxa de 1h. Um ponto chave é que permite a representação de heterogeneidades em características individuais (gênero, idade, família), agendas (baseadas em estruturas sociais, serviços disponíveis ou categorias de idade), comportamentos de relações sociais (por exemplo, cumprimento de políticas) e resposta a COVID-19. \cite{ArtigoComokit:online}
 
 
 \subsubsection{Descrição das Entidades Modelo}
 
-A entidade central do modelo é o tipo individual (ou espécie) de agentes: representa os habitantes individuais da área em consideração com suas características individuais (idade, sexo, status ocupacional) e seu status epidemiológico, se foram testados, e outros valores epidemiológicos individuais. \cite{gaudou2020comokit}
+A entidade central do modelo é o tipo individual (ou espécie) de agentes: representa os habitantes individuais da área em consideração com suas características individuais (idade, sexo, status ocupacional) e seu status epidemiológico, se foram testados, e outros valores epidemiológicos individuais. \cite{ArtigoComokit:online}
 
-Eles realizam suas atividades diárias, como exemplo, ir ao trabalho, escola, fazer compras, comer fora, sempre de acordo com sua agenda pessoal. Essa agenda é um conjunto de atividades geradas que podem ser compartilhadas por várias pessoas como exemplo, sair para comer com os amigos, dependendo da idade e do status familiar do agente individual. \cite{gaudou2020comokit}
+Eles realizam suas atividades diárias, como exemplo, ir ao trabalho, escola, fazer compras, comer fora, sempre de acordo com sua agenda pessoal. Essa agenda é um conjunto de atividades geradas que podem ser compartilhadas por várias pessoas como exemplo, sair para comer com os amigos, dependendo da idade e do status familiar do agente individual. \cite{ArtigoComokit:online}
 
-Os agentes incluem seus pais (sua família, que em nosso modelo corresponde aos demais Agentes Individuais que moram no mesmo apartamento em um Edifício ), amigos (com quem podem compartilhar atividades), colegas (colegas de trabalho ou de classe) e sua casa , local de trabalho e edifícios escolares . Uma visão geral da estrutura do modelo é apresentada na forma de um diagrama de classes UML. \cite{gaudou2020comokit}
+Os agentes incluem seus pais (sua família, que em nosso modelo corresponde aos demais Agentes Individuais que moram no mesmo apartamento em um Edifício ), amigos (com quem podem compartilhar atividades), colegas (colegas de trabalho ou de classe) e sua casa , local de trabalho e edifícios escolares . Uma visão geral da estrutura do modelo é apresentada na forma de um diagrama de classes UML. \cite{ArtigoComokit:online}
 
 
 \figura{3_12_comokit}{declaração de espécies regulares}{basicmodel}{width=0.75\textwidth}
 
-Os agentes de construção são entidades espaciais onde os agentes individuais podem realizar uma atividade, que depende do tipo de construção. Dois tipos especiais de Edifícios foram definidos porque desempenham um papel importante na simulação: o Exterior, que abriga as atividades realizadas por indivíduos fora da área modelada, e o Hospital, onde os agentes individuais doentes com sintomas críticos podem ser contidos e tratados. Para ter em conta a possível transmissão do vírus através do ambiente, todos os Edifícios estão equipados com uma carga viral, que pode ser utilizada pelo submodelo epidemiológico. \cite{gaudou2020comokit}
+Os agentes de construção são entidades espaciais onde os agentes individuais podem realizar uma atividade, que depende do tipo de construção. Dois tipos especiais de Edifícios foram definidos porque desempenham um papel importante na simulação: o Exterior, que abriga as atividades realizadas por indivíduos fora da área modelada, e o Hospital, onde os agentes individuais doentes com sintomas críticos podem ser contidos e tratados. Para ter em conta a possível transmissão do vírus através do ambiente, todos os Edifícios estão equipados com uma carga viral, que pode ser utilizada pelo submodelo epidemiológico. \cite{ArtigoComokit:online}
 
 Os comportamentos horários dos indivíduos são determinados por suas agendas, que associam Atividades com horas. Os indivíduos têm preferências por determinados tipos de Atividades que podem ser definidas de acordo com sua idade e sexo: para uma atividade de lazer, uma criança pode preferir ir a uma brinquedoteca enquanto uma pessoa mais velha pode preferir ir ao cinema. O Edifício onde os Indivíduos realizam uma Atividade pode ser escolhido aleatoriamente (uniformemente), como o mais próximo, ou de acordo com uma probabilidade (função negativa da distância e função positiva da área do local alvo). O COMOKIT também define uma série de atividades específicas para representar algumas clássicas: 
 \begin{itemize}
@@ -411,9 +408,9 @@ Os comportamentos horários dos indivíduos são determinados por suas agendas, 
 \item visitar um amigo.
 \end{itemize}
 
-Obviamente, as atividades personalizadas também podem ser criadas a partir das espécies genéricas de atividade. \cite{gaudou2020comokit}
+Obviamente, as atividades personalizadas também podem ser criadas a partir das espécies genéricas de atividade. \cite{ArtigoComokit:online}
 
-No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho. Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{gaudou2020comokit}
+No COMOKIT, é dada especial atenção às políticas que alteram o comportamento da população para reduzir o contato e, portanto, as infecções entre as pessoas: a capacidade de um indivíduo se envolver em uma determinada atividade é limitada pela autorização do agente da Autoridade. A autorização para o exercício de atividades específicas depende da Política adotada e controlada por esta Autoridade. Exemplos de Política incluem contenção total, fechamento de escolas, fechamento de locais de trabalho. Essas Políticas podem ser limitadas a uma determinada área (usando \textit{SpatialPolicy}) ou podem ser mais ou menos tolerantes (por exemplo, a contenção pode ser completa ou completa, mas para algumas pessoas ou uma certa porcentagem da população, usando \textit{PartialPolicy}). \cite{ArtigoComokit:online}
 
 \section{Simulações e modelagem na aprendizagem}
 
